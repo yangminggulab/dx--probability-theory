@@ -1,0 +1,897 @@
+\chapter{随机事件及其概率}
+\section {基本概念}
+\begin{enumerate}
+  \item 若 $A \subset B$，则称 $B$ 包含 (contain) $A$。它表示：在试验中，若 $A$ 出现，则 $B$ 一定出现。
+  \item 若 $A \subset B$，并且 $B \subset A$，则称 $A$ 与 $B$ 相等 (identical)，记成 $A=B$。
+  \item 令 $A \cup B = \{\omega \mid \omega \in A \ \text{或} \ \omega \in B\}$，称其为 $A$ 与 $B$ 的并 (union)，表示 $A$ 与 $B$ 至少一个出现。类似地，可定义 $n$ 个事件 $A_1,A_2,\dots,A_n$ 的并
+  \[
+    \bigcup_{k=1}^n A_k,
+  \]
+  表示 $A_1,A_2,\dots,A_n$ 中至少一个出现；可列无穷个事件 $A_1,A_2,\dots$ 的并
+  \[
+    \bigcup_{k=1}^\infty A_k,
+  \]
+  表示 $A_1,A_2,\dots$ 中至少一个出现。
+  \item 令 $A \cap B = \{\omega \mid \omega \in A \ \text{且} \ \omega \in B\}$，称其为 $A$ 与 $B$ 的交 (intersection)，表示 $A$ 与 $B$ 都出现。类似地，可定义 $n$ 个事件 $A_1,A_2,\dots,A_n$ 的交
+  \[
+    \bigcap_{k=1}^n A_k,
+  \]
+  表示 $A_1,A_2,\dots,A_n$ 都出现；可列无穷个事件 $A_1,A_2,\dots$ 的交
+  \[
+    \bigcap_{k=1}^\infty A_k,
+  \]
+  表示 $A_1,A_2,\dots$ 都出现。
+
+  有时也简记
+  \[
+    \bigcap_{k=1}^n A_k = A_1 A_2 \cdots A_n.
+  \]
+
+  若 $A \cap B = \varnothing$，则称 $A$ 与 $B$ 互斥 (mutually exclusive) 或互不相容 (incompatible)。
+  它表示：在试验中，若 $A$ 出现，则 $B$ 不出现；若 $B$ 出现，则 $A$ 不出现。
+  \item 令 $A-B = \{\omega \mid \omega \in A \ \text{且} \ \omega \notin B\}$，称其为 $A$ 与 $B$ 的差 (difference)，表示 $A$ 出现，但 $B$ 不出现。特别地，称 $\Omega - A$ 为 $A$ 的逆事件 (complement event) 或对立事件 (opposite event)，记成 $\overline{A}$。
+\end{enumerate}
+
+需要注意的是，如果 $A, B, A_k(k \ge 1)$ 是事件，我们总假设
+\[
+\bigcup_k A_k,\quad \bigcap_k A_k,\quad A-B
+\]
+也都是事件，其中 $\bigcup_k A_k$ 表示 $\bigcup_{k=1}^n A_k$ 或 $\bigcup_{k=1}^\infty A_k$，$\bigcap_k A_k$ 表示 $\bigcap_{k=1}^n A_k$ 或 $\bigcap_{k=1}^\infty A_k$。
+
+在进行事件的运算时，经常用到如下规则：
+\begin{enumerate}
+  \item[(1)] 交换律 (commutative law)：$A \cup B = B \cup A,\quad A \cap B = B \cap A$；
+  \item[(2)] 结合律 (associativity law)：$(A \cup B)\cup C = A \cup (B \cup C), \quad (A \cap B)\cap C = A \cap (B \cap C)$；
+  \item[(3)] 分配律 (distributive law)：$A \cup \bigcap_k A_k = \bigcap_k (A \cup A_k), \quad A \cap \bigcup_k A_k = \bigcup_k (A \cap A_k)$；
+  \item[(4)] 德摩根律 (对偶) (De Morgan’s law)：
+
+  \[
+  \overline{\bigcup_k A_k} = \bigcap_k \overline{A_k}, \qquad
+  \overline{\bigcap_k A_k} = \bigcup_k \overline{A_k}.
+  \]
+\end{enumerate}
+
+此外，还常常遇到
+\[
+A - B = A \cap \overline{B}, \qquad A = (A \cap B) \cup (A - B).
+\]
+\begin{theorem}
+    常用的事件运算简写规则：
+\begin{itemize}
+  \item 交集：$A \cap B \;\;\to\;\; AB$；交是乘越乘概率越小
+  \item 并集：$A \cup B \;\;\to\;\; A \cup B \quad$（有时简写成 $A+B$）；并是加越加概率越大。
+  \item 补集：$\overline{A}$ 保持不变；
+  \item 差集：$A - B \;\;\to\;\; A\overline{B}$。
+\end{itemize}
+\end{theorem}
+\begin{definition}[互斥事件]
+设 $A,B$ 是两个事件，若
+\[
+A \cap B = \varnothing,
+\]
+则称 $A,B$ 是\textbf{互斥事件}（mutually exclusive events）。
+这表示在一次试验中，$A,B$ 不可能同时发生，但它们可能都不发生。
+\end{definition}
+
+\begin{definition}[对立事件]
+设 $A$ 是一个事件，记
+\[
+\overline{A} = \Omega - A,
+\]
+则称 $\overline{A}$ 为 $A$ 的\textbf{对立事件}（complementary event）。
+对立事件的性质是：在一次试验中，必有且仅有一个发生，即
+\[
+A \cap \overline{A} = \varnothing, 
+\qquad 
+A \cup \overline{A} = \Omega.
+\]
+\end{definition}
+
+\begin{remark}
+互斥事件只要求“不能同时发生”，但不保证至少有一个发生；  
+对立事件不仅“不能同时发生”，而且“必有一个发生”。  
+因此，对立事件是一对特殊的互斥事件。
+\end{remark}
+\begin{proposition}[二项分布 vs 超几何分布的区别]
+\,
+
+\textbf{1. 实验背景不同}
+\begin{itemize}
+  \item \textbf{二项分布}：每次试验相互独立，且总体可以看作 \textbf{无限大} 或 \textbf{有放回抽样}。  
+  例如：扔硬币 $10$ 次，数正面出现的次数。
+  \item \textbf{超几何分布}：从有限总体里 \textbf{不放回抽样}，试验之间 \textbf{相互依赖}。  
+  例如：从一副扑克牌里抽 $5$ 张，看有多少张红桃。
+\end{itemize}
+
+\textbf{2. 参数不同}
+\begin{itemize}
+  \item \textbf{二项分布}：参数为试验次数 $n$，成功概率 $p$。  
+  记作：$X \sim \mathrm{Bin}(n,p)$。  
+  概率质量函数 (PMF)：
+  \[
+    P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k=0,1,\dots,n.
+  \]
+
+  \item \textbf{超几何分布}：参数为总体大小 $N$，其中成功元素个数 $M$，抽取样本数 $n$。  
+  记作：$X \sim \mathrm{Hypergeo}(N,M,n)$。  
+  概率质量函数 (PMF)：
+  \[
+    P(X=k) = \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}, 
+    \quad \max(0,n-(N-M)) \leq k \leq \min(n,M).
+  \]
+\end{itemize}
+
+\end{proposition}
+\begin{definition}[古典概率模型]\label{def:classical}
+若随机试验 $E$ 具有如下特点：
+\begin{enumerate}
+  \item 样本空间 $\Omega$ 有有限个样本点；
+  \item 各样本点在试验中出现是等可能的。
+\end{enumerate}
+则称这样的试验模型为古典概率模型（classical probability model），简称古典模型；对应的概率为古典概率（classical probability），简称概率。
+\end{definition}
+
+对一个古典模型，假设试验 $E$ 的样本空间为
+\[
+\Omega = \{\omega_1,\omega_2,\dots,\omega_n\},
+\]
+事件 $A$ 含 $k$ 个样本点 $\{\omega_{i_1},\omega_{i_2},\dots,\omega_{i_k}\}$，
+则定义 $A$ 的古典概率为
+\[
+P(A) = \sum_{j=1}^{k} P(\{\omega_{i_j}\})
+= \sum_{j=1}^{k} \frac{1}{n}
+= \frac{k}{n}
+= \frac{\text{$A$ 中样本点数}}{\Omega\ \text{中样本点数}}. \tag{1.2.1}
+\]
+
+古典概率具有以下性质：
+\begin{enumerate}
+  \item $0 \leq P(A) \leq 1$，$A$ 是试验的任意事件；
+  \item $P(\Omega)=1$；
+  \item 若 $m \geq 2$，事件 $A_1,A_2,\dots,A_m$ 两两互斥，则有
+  \[
+  P\!\left(\bigcup_{i=1}^m A_i\right) = \sum_{i=1}^m P(A_i).
+  \]
+\end{enumerate}
+
+从 (3) 可推出，若 $A$ 为事件，则 $P(A)=1-P(\overline{A})$，有时可用此公式简化计算。
+全概率+贝叶斯一道大题
+\begin{definition}{统计概率模型}  
+
+当试验次数 $n \to \infty$ 时，事件 $A$ 出现的频率 $f_n(A)$ 稳定于某常数，称为事件 $A$ 的\emph{统计概率} (statistical probability)。  
+这种概率模型称为\emph{统计概率模型}，简称\emph{统计模型}。  
+
+统计概率通过试验得到，不要求样本空间有限，也不要求样本点等可能。虽不能作为严格的数学定义，但可用于验证理论和近似计算。  
+
+统计概率具有以下性质：  
+\begin{enumerate}
+  \item $0 \leq f_n(A) \leq 1$，其中 $A$ 是任意事件；
+  \item $f_n(\Omega) = 1$；
+  \item 若 $A_1, A_2, \dots, A_m$ 两两互斥，则
+  \[
+  f_n\!\left(\bigcup_{i=1}^m A_i \right) = \sum_{i=1}^m f_n(A_i).
+  \]
+\end{enumerate}
+\end{definition}
+\begin{definition}[几何概型]
+  设 $n=1,2,3$，试验 $E$ 的样本空间 $\Omega$ 是 $n$ 维空间中的一个有有限正度量的集合，
+每个样本点在试验中的出现是等可能的。设事件 $A$ 是 $\Omega$ 的有度量的子集，
+以 $\mu$ 表示度量（当 $n=1$ 时，$\mu$ 为长度；当 $n=2$ 时，$\mu$ 为面积；
+当 $n=3$ 时，$\mu$ 为体积）。定义 $A$ 的概率
+\[
+P(A) = \frac{\mu(A)}{\mu(\Omega)},
+\]
+称这种概率模型为几何概率模型 (geometric probability model)，简称几何模型。
+所定义的概率 $P(A)$ 为几何概率 (geometric probability)。
+当 $n>3$ 时，也可类似地定义 $n$ 维空间中的几何模型和几何概率。
+
+易知，几何概率具有以下性质：
+\begin{enumerate}
+  \item $0 \leq P(A) \leq 1$，$A$ 是试验的任意事件；
+  \item $P(\Omega) = 1$；
+  \item 对有限个或可列无穷个两两互斥事件构成的族 $\{A_i\}$，有
+  \[
+  P\!\left(\bigcup_i A_i \right) = \sum_i P(A_i).
+  \]
+\end{enumerate}
+
+特别地，对任意事件 $A$，有
+\[
+P(\overline{A}) = 1 - P(A).
+\]  
+\end{definition}几何概型 (Geometric Probability Model) 的核心思想是：
+\begin{itemize}
+  \item 样本点不是有限个，而是落在一个连续区间、平面或空间里；
+  \item 每个点出现的可能性是均匀的；
+  \item 事件的概率 = 事件区域的“度量” $\div$ 整个样本空间的“度量”。
+\end{itemize}
+这里度量可以是长度、面积、体积。
+
+\bigskip
+
+\textbf{例子 1：点在区间上随机取}  
+
+在区间 $[0,1]$ 上随机取一个点 $X$，求事件 “$X<0.3$” 的概率。
+\begin{itemize}
+  \item 样本空间：区间 $[0,1]$，长度 $=1$；
+  \item 事件区域：$[0,0.3]$，长度 $=0.3$；
+  \item 概率：
+  \[
+  P(X<0.3) = \frac{0.3}{1} = 0.3.
+  \]
+\end{itemize}
+\begin{example}。针的中心决定的是针理线的距离，$\phi$
+平面上有一族平行线，相邻两线的距离都是 $a$，向平面抛一长为 $l<a$ 的针，求针与平行线相交的概率。
+\end{example}
+
+\begin{solution}
+因为 $l<a$，所以针至多与一条平行线相交。设针抛在平面上时，针的中点到最近的一条平行线的距离为 $x$，平行线与针的夹角为 $\varphi$。$(\varphi,x)$ 虽不能决定针在平面上的具体位置，但我们不关心针与哪一条平行线相交，也不关心针与平行线在何处相交，只关心“相交”或“不相交”。  
+
+取样本空间：
+\[
+\Omega = \{(\varphi,x)\mid 0\le \varphi < \pi,\; 0\le x \le \tfrac{a}{2}\}.
+\]
+
+每个样本点的出现是等可能的。当 $\varphi$ 固定时，针与平行线相交的充要条件是
+\[
+x \le \tfrac{l}{2}\sin\varphi.
+\]
+
+设事件 $A=\{\text{针与平行线相交}\}$，则
+\[
+P(A) = \frac{|A|}{|\Omega|}
+= \frac{\int_0^\pi \tfrac{l}{2}\sin\varphi \, d\varphi}{\pi \cdot \tfrac{a}{2}}
+= \frac{2l}{\pi a}.
+\]
+\end{solution}
+\section{概率的公理化}
+\begin{definition}[1.3.1可测空间]
+设 $\Omega$ 是一个非空集合，$\mathcal{F}$ 是 $\Omega$ 的一些子集所构成的集合族，若满足：
+\begin{enumerate}
+  \item $\Omega \in \mathcal{F}$；
+  \item 若 $A \in \mathcal{F}$，则 $\overline{A} = \Omega - A \in \mathcal{F}$ （对逆封闭）；
+  \item 若 $A_i \in \mathcal{F},\; i=1,2,\dots$，则 $\bigcup_{i=1}^\infty A_i \in \mathcal{F}$ （对可列并封闭），
+\end{enumerate}
+则称 $\mathcal{F}$ 是 $\Omega$ 的一个 $\sigma$-代数。$\mathcal{F}$ 中的元素称为 $\Omega$ 上的事件，$(\Omega,\mathcal{F})$ 称为可测空间。
+\end{definition}
+
+\begin{definition}[ $\sigma$-代数]
+设 $X$ 是一个集合，令 $\mathcal{P}(X)$ 为 $X$ 的幂集。设 $\mathcal{M} \subset \mathcal{P}(X)$。  
+我们称 $\mathcal{M}$ 是 $X$ 上的一个 $\sigma$-代数，当且仅当：
+\begin{enumerate}
+  \item (\(\mathcal{M}\) 包含空集) \quad $\varnothing \in \mathcal{M}$；
+  \item (\(\mathcal{M}\) 在补集下封闭) \quad 若 $E \in \mathcal{M}$，则 $E^C = X-E \in \mathcal{M}$；
+  \item (\(\mathcal{M}\) 在可数并下封闭) \quad 若 $\{E_n\}_{n\in\mathbb{N}} \subset \mathcal{M}$，则 $\bigcup_{n=1}^\infty E_n \in \mathcal{M}$。
+\end{enumerate}
+\end{definition}
+\begin{dxtips}[$\sigma$代数]
+ $\sigma$-代数是由 $X$ 的一些子集组成的。  
+
+平凡 $\sigma$-代数里面只有 $\varnothing$ 和 $X$ 本身。  
+
+幂集就是所有子集，$\sigma$-代数是幂集中可以自己封闭的一部分。  
+
+第二条比如集合 $X=\{1,2,3\}$，集合族是 $\{X,\varnothing,\{1\}\}$，  
+但是 $\{1\}$ 的补集 $\{2,3\}$ 不在这个集合族里面。   
+\end{dxtips}
+\begin{theorem}[$\sigma$代数封闭性]
+设 $\mathcal{F}$ 为 $\Omega$ 的 $\sigma$-代数，则
+\begin{enumerate}
+  \item $\varnothing \in \mathcal{F}$；
+  \item 对任意 $A_1,A_2,\dots,A_n \in \mathcal{F},\; n \geq 2$，有 
+  \[
+  \bigcup_{i=1}^n A_i \in \mathcal{F}；
+  \]
+  \item 对任意 $A_1,A_2,\dots,A_n \in \mathcal{F},\; n \geq 2$，有 
+  \[
+  \bigcap_{i=1}^n A_i \in \mathcal{F}；
+  \]
+  \item 对任意 $A_i \in \mathcal{F},\; i=1,2,\dots$，有 
+  \[
+  \bigcap_{i=1}^\infty A_i \in \mathcal{F}；
+  \]
+  \item 对任意 $A,B \in \mathcal{F}$，有 $A-B \in \mathcal{F}$。
+\end{enumerate}
+\end{theorem}
+由定理 1.3.1 可知，$\sigma$-代数 $\mathcal{F}$ 对有限并、可列无穷并、有限交、可列无穷交及差的运算保持封闭。  
+因此，事件的有限并、可列无穷并、有限交、可列无穷交及差的运算结果仍是事件。
+\begin{definition}[概率空间]
+设 $\Omega$ 是某试验的样本空间，$(\Omega,\mathcal{F})$ 是可测空间 (measurable space)，
+若在 $\mathcal{F}$ 上定义的实值函数 $P$ 满足：
+\begin{enumerate}
+  \item 非负性 (nonnegativity)：对任意 $A \in \mathcal{F}$，有 $P(A) \geq 0$；
+  \item 规范性 (normalization)：$P(\Omega) = 1$；
+  \item 可列可加性 (countable additivity)：对 $\mathcal{F}$ 中任意两两互斥事件列 $A_1,A_2,\dots$，均有
+  \[
+  P\!\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty P(A_i).
+  \]
+\end{enumerate}
+则称 $P$ 为 $\mathcal{F}$ 上的概率测度，简称概率；称 $(\Omega,\mathcal{F},P)$ 为概率空间。
+\end{definition}
+\begin{proposition}[概率空间性质]
+ \begin{enumerate}
+  \item \textbf{空集概率：}
+  \[
+    P(\varnothing) = 0.
+  \]
+
+  \item \textbf{有限可加性 (finite additivity)：}  
+  对 $\mathscr{F}$ 中任意两两互斥的 $A_1, A_2, \dots, A_n$，有
+  \[
+    P\!\left(\bigcup_{i=1}^n A_i\right) 
+    = \sum_{i=1}^n P(A_i). \tag{1.3.2}
+  \]
+
+  \item \textbf{可减性 (separability)：}  
+  对任意 $A,B \in \mathscr{F}$ 且 $B \subset A$，注意必须B是A的子集。有
+  \[
+    P(A-B) = P(A) - P(B).
+  \]
+
+  \item \textbf{单调性 (monotonicity)：}  
+  对任意 $A,B \in \mathscr{F}$ 且 $B \subset A$，有
+  \[
+    P(B) \leq P(A).
+  \]
+
+  \item \textbf{多除少补性 (principle of inclusion-exclusion)：}  
+  对任意 $A_1, A_2, \dots, A_n \in \mathscr{F},\; n=2,3,\dots$，有
+  \[
+    P\!\left(\bigcup_{i=1}^n A_i\right)
+    = \sum_{i=1}^n P(A_i)
+    - \sum_{1 \leq i < j \leq n} P(A_i A_j)
+    + \sum_{1 \leq i < j < k \leq n} P(A_i A_j A_k)
+    - \cdots
+    + (-1)^{\,n-1} P(A_1 A_2 \cdots A_n). \tag{1.3.3}
+  \]
+  \item \textbf{下连续性 (lower continuity)：}  
+  若 $A_n \in \mathscr{F}$，且 $A_n \subset A_{n+1},\; n=1,2,\dots$，则
+  \[
+    P\!\left(\bigcup_{n=1}^\infty A_n\right) = \lim_{n \to \infty} P(A_n).
+  \]
+
+  \item \textbf{上连续性 (upper continuity)：}  
+  若 $A_n \in \mathscr{F}$，且 $A_{n+1} \subset A_n,\; n=1,2,\dots$，则
+  \[
+    P\!\left(\bigcap_{n=1}^\infty A_n\right) = \lim_{n \to \infty} P(A_n).
+  \]
+
+  \item \textbf{在 $\varnothing$ 处上连续性：}  
+  若 $A_n \in \mathscr{F},\; A_{n+1} \subset A_n,\; n=1,2,\dots$，且
+  \[
+    \bigcap_{n=1}^\infty A_n = \varnothing,
+  \]
+  则
+  \[
+    \lim_{n \to \infty} P(A_n) = 0.
+  \]
+  \textit{证明：} 由 $P(\varnothing)=0$ 及上连续性，得结论。
+
+  \item \textbf{有限次可加性 (finite subadditivity)：}  
+  设 $A_1,A_2,\dots,A_n \in \mathscr{F}$，则
+  \[
+    P\!\left(\bigcup_{i=1}^n A_i\right) \leq \sum_{i=1}^n P(A_i). \tag{1.3.5}
+  \]
+
+  \item \textbf{可列次可加性 (countable subadditivity)：}  
+  设 $A_n \in \mathscr{F},\; n=1,2,\dots$，则
+  \[
+    P\!\left(\bigcup_{i=1}^\infty A_i\right) \leq \sum_{i=1}^\infty P(A_i). \tag{1.3.6}
+  \]
+  
+  \item \textbf{加法定理}
+对任意两个随机事件 $A, B$，有
+\[
+P(A \cup B) = P(A) + P(B) - P(AB).
+\]
+
+\end{enumerate}   
+\end{proposition}
+\begin{dxtips}[零概率事件不一定是不可能事件]
+在概率论中有如下结论：
+\begin{itemize}
+  \item 对于空事件，有
+  \[
+    P(\varnothing) = 0,
+  \]
+  这是由公理保证的，因为空集表示不可能事件。
+  \item 对于一般事件 $A$，即使
+  \[
+    P(A) = 0,
+  \]
+  也不能推出 $A$ 是不可能事件。在连续型概率空间中，往往存在概率为零但可能发生的事件，例如：
+  \[
+    X \sim U(0,1), \quad A=\{X=0.5\}, \quad P(A)=0,
+  \]
+  但事件 $A$ 并不是空集，只是所谓的“零概率事件”。
+\end{itemize}
+因此：
+\[
+P(\varnothing)=0 \;\;\Longleftrightarrow\;\; \text{不可能事件}, 
+\quad
+P(A)=0 \;\;\centernot\Longrightarrow\;\; A \text{ 不可能}.
+\]
+\end{dxtips}
+\begin{theorem}[可测空间性质]
+设 $(\Omega, \mathcal{F})$ 是一个可测空间，$P$ 是定义在 $\mathcal{F}$ 上的非负实值函数，满足 $P(\Omega) = 1$ 且有有限可加性。则下列条件等价：
+\begin{enumerate}
+  \item $P$ 有可列可加性；
+  \item $P$ 有下连续性；
+  \item $P$ 有上连续性；
+  \item $P$ 在 $\varnothing$ 处有上连续性。
+\end{enumerate}
+\end{theorem}
+\section{条件概率}
+实际问题中，除需考虑“事件 $A$ 出现的概率”外，有时还要考虑“在事件 $B$ 已经出现的条件下，事件 $A$ 出现的概率”。一般情况下，两者不同。为了有所区别，常把后者称为条件概率（conditional probability），记成 $P(A|B)$ 或 $P_B(A)$。称 $P(A|B)$ 为在事件 $B$ 出现的条件下，事件 $A$ 出现的概率。
+
+
+\begin{definition}[条件概率]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$A,B \in \mathcal{F}$ 且 $P(B) > 0$，称
+\[
+  \frac{P(AB)}{P(B)}
+\]
+为在事件 $B$ 出现的条件下，事件 $A$ 出现的条件概率，记作 $P(A|B)$ 或 $P_B(A)$，即
+\[
+  P(A|B) = P_B(A) = \frac{P(AB)}{P(B)}.
+\tag{1.4.1}
+\]
+
+注意到，当 $B = \Omega$ 时，有
+\[
+  P_B(A) = P(A|B) = P(A).
+\]
+\end{definition}
+
+\begin{dxtips}
+    在A发生的前提下发生B，也就A和B的交集占A的面积比。除以A的的发生概率就是“把样本空间从 $\Omega$ 切换成 A
+\end{dxtips}
+
+\begin{theorem}[同时发生概率和条件概率的关系]
+由条件概率的定义知：当 $P(B) > 0$ 时，有
+\begin{equation}
+P(AB) = P(B) P(A|B). \tag{1.4.2}
+\end{equation}
+
+当 $P(A) > 0$ 时，有
+\begin{equation}
+P(AB) = P(A) P(B|A). \tag{1.4.3}
+\end{equation}
+
+通常称 (1.4.2) 式和 (1.4.3) 式为概率的乘法公式 (multiplication formula)。
+更一般地，有下述定理。
+\\若 $A_1, A_2, \dots, A_n \in \mathcal{F}$，$n \geq 2$，且 $P(A_1 A_2 \cdots A_{n-1}) > 0$，则有
+\begin{equation}
+P(A_1 A_2 \cdots A_n) = P(A_1) P(A_2|A_1) P(A_3|A_1 A_2) \cdots P(A_n|A_1 A_2 \cdots A_{n-1}). \tag{1.4.4}
+\end{equation}
+\end{theorem}
+\begin{theorem}[全概率公式]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$\{A_i\}$ 是有限个或可列无穷个两两互斥事件的集合，
+所有 $P(A_i) > 0$ 且 $\bigcup_i A_i = \Omega$，则对任意 $B \in \mathcal{F}$，有
+\begin{equation}
+P(B) = \sum_i P(A_i) P(B \mid A_i). \tag{1.4.5}
+\end{equation}
+\end{theorem}
+\begin{corollary}[1.4.1]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$\{A_i\}$ 是有限个或可列无穷个两两互斥事件的集合，所有 $P(A_i) > 0$。  
+对任意事件 $B \subset \bigcup_i A_i$，式 (1.4.5) 仍然成立。
+\end{corollary}
+
+\begin{theorem}[条件全概率公式]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$\{A_i\}$ 是有限个或可列无穷个两两互斥事件的集合，$\bigcup_i A_i = \Omega$，  
+$D \in \mathcal{F}$ 且所有 $P(A_i D) > 0$。则对任意 $B \in \mathcal{F}$，有
+\begin{equation}
+P(B \mid D) = \sum_i P(A_i \mid D) P(B \mid A_i D). \tag{1.4.6}
+\end{equation}
+\end{theorem}
+称式 (1.4.6) 为 \textbf{条件全概率公式} (conditional total probability formula)。  
+
+注意到，在条件全概率公式中，取 $D = \Omega$，即可得到 \textbf{全概率公式}。
+\begin{corollary}[1.4.2]
+设 $(\Omega, \mathscr{F}, P)$ 是概率空间，$\{A_i\}$ 是有限个或可列无穷个两两互斥事件的集合，$D \in \mathscr{F}$ 且所有 $P(A_i D) > 0$，  
+则对任意事件 $B \subset \bigcup_i A_i$，公式 (1.4.6) 仍成立。
+\end{corollary}
+\subsection{贝叶斯公式}
+对于全概率公式，有
+\[
+P(B) = \sum_i P(A_i)\, P(B \mid A_i).
+\]
+其中，$P(A_i)$ 称为原因概率（probability of cause），
+\textcolor{blue}{\(P(B \mid A_i)\)} 称为事前概率或实验前概率
+（priori probability），表示在原因 $A_i$ 已知时，结果 $B$ 出现的可能性。
+
+若结果 $B$ 已经出现，则关心的是
+$
+\textcolor{blue}{P(A_i \mid B)},
+$它称为事后概率或实验后概率
+（posterior probability），表示在结果 $B$ 已知时，原因 $A_i$ 出现的可能性。
+
+\begin{dxtips}
+    \begin{itemize}
+  \item $P(B \mid A_i)$ 表示在 $A_i$ 已经发生的条件下，事件 $B$ 发生的概率。\\
+  \quad $\Rightarrow$ 可以理解为：已知原因 $A_i$，结果 $B$ 出现的可能性。
+  
+  \item $P(A_i \mid B)$ 表示在 $B$ 已经发生的条件下，事件 $A_i$ 发生的概率。\\
+  \quad $\Rightarrow$ 可以理解为：已知结果 $B$，原因 $A_i$ 出现的可能性。
+\end{itemize}
+\end{dxtips}
+\begin{theorem}[贝叶斯公式]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$\{A_i\}$ 是有限个或可列无穷个两两互斥事件的集合，
+所有 $P(A_i) > 0$ 且 $\bigcup_i A_i = \Omega$。则对任意有正概率的事件 $B$，有
+\begin{equation}
+    P(A_i \mid B) = \frac{P(A_i) P(B \mid A_i)}{\sum\limits_j P(A_j) P(B \mid A_j)}.
+    \tag{1.4.7}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+将 $P(A_i \mid B)$ 按条件概率的定义写成分式，分子用乘法公式展开，
+分母用全概率公式展开，即得证。称 (1.4.7) 式为 \textbf{贝叶斯公式}
+（Bayesian formula）。
+\end{proof}
+\begin{dxtips}
+    在 $B$ 的前提下发生 $A_i$ 的概率等于
+\[
+P(A_i \mid B) \;=\;
+\frac{P(A_i)\,\times\,P(B \mid A_i)}{\sum_j P(A_j)P(B \mid A_j)}，
+\]
+即“发生 $A_i$ 的概率乘以在 $A_i$ 前提下发生 $B$ 的概率，
+再除以所有可能原因导致 $B$ 的总概率”。事实上，贝叶斯公式就是条件概率按定义展开的结果：
+\[
+P(A_i \mid B) = \frac{P(A_i \cap B)}{P(B)}
+= \frac{P(A_i)\,\dfrac{P(A_i \cap B)}{P(A_i)}}{P(B)}
+= \frac{P(A_i)\,P(B \mid A_i)}{P(B)},
+\]
+其中分母 $P(B)$ 再由全概率公式表示为
+\[
+P(B) = \sum_j P(A_j)\,P(B \mid A_j).
+\]
+\end{dxtips}
+\begin{corollary}[只要求 $B \subset \bigcup_i A_i$，并不强制 $\bigcup_i A_i = \Omega$]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$\{A_i\}$ 是有限个或可列无穷个两两互斥事件的集合，
+所有 $P(A_i) > 0$。则对任意有正概率的事件 $B \subset \bigcup_i A_i$，公式 (1.4.7) 成立。
+\end{corollary}
+\section{事件独立性}
+\begin{definition}[独立的定义]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$A,B \in \mathcal{F}$。
+如果成立
+\[
+P(AB) = P(A) P(B),
+\]
+则称事件 $A$ 与 $B$ \emph{相互独立}（mutual independence），简称独立。
+
+\medskip
+初学者有时将两事件的“相互独立”与“互斥”混为一谈。实际上，
+两个事件的相互独立是事件的概率性质，而两个事件互斥只涉及
+两个事件的关系，二者不是同一概念。
+\end{definition}
+\begin{theorem}
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$A,B \in \mathcal{F}$，且 $P(B) > 0$。  
+则 $A$ 与 $B$ 相互独立的充要条件是
+\[
+P(A \mid B) = P(A).
+\]
+\end{theorem}
+
+\begin{proof}
+若 $A$ 与 $B$ 相互独立，则 $P(AB) = P(A)P(B)$，从而
+\[
+P(A \mid B) = \frac{P(AB)}{P(B)} = P(A).
+\]
+
+若 $P(A \mid B) = P(A)$，则
+\[
+\frac{P(AB)}{P(B)} = P(A),
+\]
+从而 $P(AB) = P(A)P(B)$，即 $A$ 与 $B$ 相互独立。
+\end{proof}
+
+\noindent
+定理 1.5.1 揭示出：当相应的条件概率有意义时，两个事件相互独立等价于事件概率不依赖于条件。这同独立的直观意义一致。
+\begin{theorem}
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$A,B \in \mathcal{F}$。  
+若 $A$ 与 $B$ 相互独立，则 $A$ 与 $\overline{B}$，$\overline{A}$ 与 $B$，以及 $\overline{A}$ 与 $\overline{B}$ 也相互独立。
+\end{theorem}
+\begin{definition}[独立事件同时发生概率就是他们概率直接乘]定理[1.5.2]
+设 $(\Omega, \mathcal{F}, P)$ 是概率空间，$n \geq 2$，$A_1, A_2, \dots, A_n \in \mathcal{F}$。  
+若对任意 $2 \leq k \leq n$，$1 \leq i_1 < i_2 < \cdots < i_k \leq n$，有
+\[
+P(A_{i_1} A_{i_2} \cdots A_{i_k}) = P(A_{i_1}) P(A_{i_2}) \cdots P(A_{i_k}),
+\]
+则称 $A_1, A_2, \dots, A_n$ 相互独立。
+
+\medskip
+
+注意到，定义 1.5.2 要求成立的等式共有
+\[
+C_n^2 + C_n^3 + \cdots + C_n^n = 2^n - n - 1
+\]
+个。
+\end{definition}
+\begin{theorem}定理[1.5.3]
+设 $(\Omega,\mathcal{F},P)$ 是概率空间，若事件 $A_1,A_2,\dots,A_n$ 相互独立，且 $n\ge 2$。则对任意
+\[
+2\le k\le n,\qquad 1\le i_1<i_2<\cdots<i_k\le n,
+\]
+事件 $B_{i_1},B_{i_2},\dots,B_{i_k}$ 也相互独立，其中每个 $B_{i_j}$ 取 $A_{i_j}$ 或 $\overline{A_{i_j}}$。
+\end{theorem}
+
+\begin{definition}[伯努利模型]
+设 $n \geq 2$，把试验 $E$ 重复做 $n$ 次，若对第 $i$ 次试验的任意结果 $A_i,\ i=1,2,\dots,n$，事件 $A_1,A_2,\dots,A_n$ 相互独立，则称这 $n$ 次试验为 $n$ 次重复独立试验。特别地，当 $E$ 只有 $A$ 和 $\overline{A}$ 两个结果时，称 $n$ 次重复独立试验为 $n$ 次伯努利试验。  
+
+并约定，把 $E$ 做一次的试验称为一次伯努利试验。对 $n$ 次伯努利试验（$n$-fold Bernoulli trials），通常用 $A$ 表示试验成功，$\overline{A}$ 表示试验失败，记
+\[
+P(A)=p,\qquad P(\overline{A})=q=1-p,\qquad 0<p<1.
+\]
+
+称这种概率模型为 $n$ 次伯努利模型（Bernoulli trial model）。
+\end{definition}
+\begin{theorem}[由于都是独立事件所以用排列组合即可]
+对 $n$ 次伯努利模型，如果用 $b(k; n, p)$ 表示事件 $A$ 在 $n$ 次试验中恰出现 $k$ 次的概率，则
+\[
+b(k; n, p) = C_n^k p^k q^{\,n-k}, \quad k = 0,1,\ldots,n,
+\]
+且
+\[
+\sum_{k=0}^n b(k; n, p) = 1.
+\]
+\end{theorem}
+
+\begin{proof}
+由独立性，$A$ 在指定的 $k$ 次试验中出现，在其余 $n-k$ 次试验中不出现（即在其余 $n-k$ 次试验中出现 $\bar A$）的概率为 $p^k q^{\,n-k}$。  
+而在 $n$ 次试验中指定 $k$ 次试验有 $C_n^k$ 种方式，所以，由概率的有限可加性，得
+\[
+b(k; n, p) = C_n^k p^k q^{\,n-k}, \quad k = 0,1,\ldots,n.
+\]
+
+并且
+\[
+\sum_{k=0}^n b(k; n, p) 
+= \sum_{k=0}^n C_n^k p^k q^{\,n-k} 
+= (p+q)^n = 1.
+\]
+\end{proof}
+
+
+\section{作业}
+
+\begin{homework}[1.1]
+写出下列随机试验的样本空间：
+
+\begin{enumerate}
+  \item 掷三颗骰子，观察所得点数之和；
+  \item 抽检产品，直到抽到 $10$ 件正品为止，记录抽检产品的数量；
+  \item 从编号分别为 $1,2,3,4,5$ 的 $5$ 件产品中任取两件，观察取出哪两件；
+  \item 观察某地一天内的最高气温和最低气温（假设最低气温不低于 $T_1$，最高气温不高于 $T_2$）；
+  \item 将长为 $l$ 的线段分成三段，观察各段长度。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.2]
+设 $A,B,C$ 为事件，用 $A,B,C$ 的运算关系表示下列事件：
+
+\begin{enumerate}
+  \item $A$ 与 $B$ 出现，但 $C$ 不出现；
+  \item $A$ 出现，且 $B$ 与 $C$ 至少一个出现；
+  \item $A,B,C$ 中至少一个出现；
+  \item $A,B,C$ 中恰有一个出现；
+  \item $A,B,C$ 中至少两个出现；
+  \item $A,B,C$ 中恰有两个出现；
+  \item $A,B,C$ 中至少多个出现；
+  \item $A,B,C$ 中至少多个两个出现。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.3]
+设 $A,B,C$ 为事件，试说明下列关系式的含义，并画出相应的 Venn 图：
+
+\begin{enumerate}
+  \item $A \cap B \cap C = A$；
+  \item $A \cup B \cup C = A$；
+  \item $A \cap B \subset C$；
+  \item $C \subset A \cap B$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.4]
+任选一五位正整数，求其后四位各不相同的概率。
+\end{homework}
+
+\begin{homework}[1.5]
+袋中有 $r+b$ 个同型号小球，其中 $r$ 个红色，$b$ 个黑。作不返回抽取，每次取一个，
+取 $k$ 次，$k \le r+b$，求最后取出的球是红球的概率。
+\end{homework}
+
+\begin{homework}[1.6]
+袋中有同型号黑、白球若干。现随机不放回地相继抽取两球，假定抽到两个白球的概率为 $1/3$，问：
+
+\begin{enumerate}
+  \item 袋中球的最小数目是多少？
+  \item 如果黑球数目是偶数，袋中球的最少数目是多少？
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.7]
+甲抛硬币 $k+1$ 次，乙抛 $k$ 次。求抛出正面次数甲比乙多的概率。
+\end{homework}
+
+\begin{homework}[1.8]
+库房中有油漆 $17$ 桶，其中白漆 $10$ 桶，黑漆 $4$ 桶，红漆 $3$ 桶。在这 $17$ 桶油漆中任取 $9$ 桶，求正好 $4$ 桶白漆、$3$ 桶黑漆和 $2$ 桶红漆的概率。
+\end{homework}
+
+\begin{homework}[1.9]
+将 $3$ 个球放入编号 $1$ 至 $4$ 的 $4$ 个盒，每球入各盒等可能。求下列事件的概率：
+
+\begin{enumerate}
+  \item 恰有两个空盒；
+  \item 有球盒的最小编号为 $2$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.10]
+$50$ 只钉钉中有 $3$ 只强度太弱。随机地取钉钉用于 $10$ 个部件，每个部件用 $3$ 只。若将 $3$ 只强度太弱的钉钉装在同一部件上，则此部件不能使用，求出现部件不能使用的概率。
+\end{homework}
+
+\begin{homework}[1.11]
+将 $k$ 个不同的球任意放入编号为 $1$ 至 $n$ 的 $n$ 个盒（$k \le n$），每球入各盒等可能。求下列事件的概率：
+
+\begin{enumerate}
+  \item 指定的 $k$ 个盒恰各有一球；
+  \item 每盒至多 $1$ 球；
+  \item 某指定的盒恰有 $m$ 个球。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.12]
+甲、乙两货轮驶向一个不能使它们同时使用的码头。假设两货轮在一昼夜内各时刻到达码头都是等可能的，且甲货轮使用码头的时间是 $1$ 小时，乙货轮使用码头的时间是 $2$ 小时，求两货轮到达码头后能直接使用码头的概率。
+\end{homework}
+
+\begin{homework}[1.13]
+将长为 $l$ 的线段折成三段，求下列事件的概率：
+
+\begin{enumerate}
+  \item 三段可构成一个三角形；
+  \item 最长一段不超过 $2l/3$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.14]
+在区间 $(0,1)$ 内任取两数，求下列事件的概率：
+
+\begin{enumerate}
+  \item 两数之差大于 $0.2$；
+  \item 两数之和小于 $1.2$；
+  \item 前两个事件同时出现。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.15]
+设 $A,B$ 是事件，$P(A)=x,\ P(B)=y,\ P(AB)=z$。求：
+
+\begin{enumerate}
+  \item $P(\overline{A \cup B})$；
+  \item $P(\overline{AB})$；
+  \item $P(\overline{A} \cup B)$；
+  \item $P(\overline{A}\ \overline{B})$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.16]
+设 $A,B,C$ 是事件，$P(A)=P(B)=P(C)=0.25,\ P(AB)=P(BC)=0,\ P(AC)=0.125$，求 $A,B,C$ 中至少一个出现的概率。
+\end{homework}
+\begin{homework}[1.17]
+一辆载有 $25$ 名乘客的巴士从机场开出，沿途经 $9$ 个站点。假设每位乘客在任一站点下车是等可能的，且只有在有乘客下车时巴士才停车。求下列事件的概率：
+
+\begin{enumerate}
+  \item 巴士在第 $i$ 站停车，$i=1,2,\dots,9$；
+  \item 巴士在第 $i$ 站和第 $j$ 站均停车，$1 \le i < j \le 9$；
+  \item 巴士在第 $i$ 站和第 $j$ 站至少停 $1$ 次，$1 \le i < j \le 9$；
+  \item 在第 $i$ 站有 $3$ 人下车，$i=1,2,\dots,9$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.18]
+设 $A,B$ 是事件，$P(A)=0.3,\ P(B)=0.4,\ P(AB)=0.5$，求 $P(B \mid A \cup \overline{B})$。
+\end{homework}
+
+\begin{homework}[1.19]
+设 $A,B$ 是事件，$P(A)=1/4,\ P(B \mid A)=1/3,\ P(A \mid B)=1/2$，求 $P(A \cup B)$。
+\end{homework}
+
+\begin{homework}[1.20]
+设 $A,B$ 是事件，$P(A)=a,\ P(B)=b>0$，试证：
+\[
+P(A \mid B) \ge \frac{a+b-1}{b}.
+\]
+\end{homework}
+
+\begin{homework}[1.21]
+以往数据显示，某家庭患感冒规律如下：孩子感冒的概率为 $0.6$；孩子感冒的条件下，母亲感冒的概率为 $0.5$；孩子与母亲感冒的条件下，父亲感冒的概率为 $0.4$。求孩子和母亲感冒，但父亲未感冒的概率。
+\end{homework}
+
+\begin{homework}[1.22]
+$10$ 件产品中有 $2$ 件次品、$8$ 件正品。作不返回抽取，每次任取 $1$ 件，取 $2$ 次，求下列事件的概率：
+
+\begin{enumerate}
+  \item 取 $2$ 件正品；
+  \item 取 $2$ 件次品；
+  \item 第二次取到次品。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.23]
+一等小麦种子中混有 $5\%$ 的二等和 $3\%$ 的三等种子。已知一、二、三等种子将来长出的穗有 $50$ 颗以上麦粒的概率分别为 $50\%$、$15\%$ 和 $10\%$。假设 $3$ 种种子发芽率相同，求用上述小麦种子播种后，该批种子所结的穗有 $50$ 颗以上麦粒的概率。
+\end{homework}
+
+\begin{homework}[1.24]
+某仪器有三个指示灯，其工作相互独立，烧坏第一、第二、第三个指示灯的概率分别为 $0.1, 0.2$ 和 $0.3$。当烧坏 $1$ 个灯时，仪器出现故障的概率为 $0.25$；当烧坏 $2$ 个灯时，仪器出现故障的概率为 $0.6$；当烧坏 $3$ 个灯时，仪器出现故障的概率为 $0.9$。求仪器出现故障的概率。
+\end{homework}
+
+\begin{homework}[1.25]
+某地区男女两性人口比例为 $51:49$，男性中的 $5\%$ 是色盲患者，女性中的 $2.5\%$ 是色盲患者。今从人群中随机地抽取一人，恰好是色盲患者，求此人为男性的概率。
+\end{homework}
+
+\begin{homework}[1.26]
+有两批同型号产品，第一批 $14$ 件，其中有 $2$ 件次品，装在第一箱中；第二批 $10$ 件，其中有 $1$ 件次品，装在第二箱中。现从第一箱中任意取出两件混入第二箱中，然后再从第二箱中任意取出 $1$ 件。
+
+\begin{enumerate}
+  \item 求从第二箱中取到的是次品的概率；
+  \item 若已知从第二箱中取到的是次品，求从第一箱中取到过次品的概率。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.27]
+设一架坠毁的飞机掉在 $3$ 个可能区域中的任何一个是等可能的；如果飞机坠毁在区域 $A_i\ (i=1,2,3)$，经快速搜索后能发现其残骸的概率为 $\alpha_i\ (i=1,2,3)$。现已快速搜寻了区域 $A_1$，但未发现飞机残骸。求飞机坠落在 $3$ 个区域内的条件概率。
+\end{homework}
+
+\begin{homework}[1.28]
+设某种昆虫产 $n$ 个卵的概率为 $e^{-\lambda}\lambda^n/n!,\ n=0,1,2,\dots$, $\lambda>0$ 为常数，每个卵能孵化成幼虫的概率均为 $p(0<p<1)$，且各卵能否孵化成幼虫相互独立。
+
+\begin{enumerate}
+  \item 求每只昆虫有 $k$ 个后代（幼虫）的概率，$k=0,1,2,\dots$；
+  \item 若已知某只昆虫有 $k$ 个后代，求它曾产了 $m$ 个卵的概率，$m=k,k+1,\dots$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.29]
+设 $A,B$ 是事件，$0<P(A)<1$ 且 $P(B\mid A)=P(\overline{B}\mid A)$。试证：$A$ 与 $B$ 独立。
+\end{homework}
+
+\begin{homework}[1.30]
+如果事件 $A,B,C$ 满足 $P(AB\mid C)=P(A\mid C)\cdot P(B\mid C)$，其中 $P(C)>0$，则称事件 $A$ 与 $B$ 关于事件 $C$ 条件独立。试证：
+
+\begin{enumerate}
+  \item 当 $P(BC)>0$ 时，上述条件独立的充分必要条件是 $P(A\mid BC)=P(A\mid C)$；
+  \item 举例说明“独立”与“条件独立”没有蕴涵关系。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1.31]
+在 $4$ 次独立试验中，事件 $A$ 至少出现 $1$ 次的概率为 $0.5904$，求在 $3$ 次独立试验中，事件 $A$ 出现 $1$ 次的概率。
+\end{homework}
+
+\begin{homework}[1.32]
+某国家的统计数据显示，该国人 O、A、B 和 AB 四种血型的人口所占比例分别为 $46\%,40\%,11\%$ 和 $3\%$。先从该国任选 $5$ 人，求下列事件的概率：
+
+\begin{enumerate}
+  \item 两人为 O 型，其他三人分别为 A 型、B 型和 AB 型；
+  \item 三人为 O 型，其他两人为 A 型；
+  \item 没有人为 AB 型。
+\end{enumerate}
+\end{homework}
+\begin{homework}[1.33]
+甲、乙二人进行围棋比赛，直到一方先多胜两盘为止。如果每盘比赛甲胜的概率为 $0.65$，乙胜的概率为 $0.35$。求比赛结果甲获胜的概率。
+\end{homework}
+
+\begin{homework}[1.34]
+甲、乙二人玩摸球游戏，两个人轮流从装有 $r$ 个红球和 $b$ 个黑球的盒中摸球（摸到的球取出后不放回）。若规定先摸到红球者为胜方，求先摸球者为胜方的概率。
+\end{homework}
+
+\begin{homework}[1.35]
+设在一次试验中，事件 $A$ 出现的概率为 $p\ (0<p<1)$。求在 $n$ 次重复试验中，事件 $A$ 出现偶数次的概率。
+\end{homework}
+
+\begin{homework}[1.36]
+连续抛一枚匀质硬币，直到出现两次正面为止，求恰抛币 $n$ 次的概率。
+\end{homework}
+
+

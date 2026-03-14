@@ -1,0 +1,562 @@
+\chapter{大数定理与中心极限定理}
+\section{四种收敛}
+\begin{definition}[随机变量序列的 $r$ 阶收敛]
+设 $(\Omega,\mathcal{F},P)$ 为概率空间，$X_1,X_2,\dots$ 为定义在其上的一列随机变量，
+且 $E\!\left[|X_n|^{\,r}\right]<\infty$、$E\!\left[|X|^{\,r}\right]<\infty$，其中 $r>0$ 为常数。
+若
+\[
+\lim_{n\to\infty} E\!\left[\,|X_n - X|^{\,r}\,\right]=0,
+\]
+则称 $\{X_n\}$ \emph{$r$ 阶收敛} 于 $X$，记为
+\[
+X_n \xrightarrow[r]{} X.
+\]
+\end{definition}
+\begin{note}
+    当 $n\to\infty$ 时，$X_n$ 与 $X$ 的 $r$ 次平均误差 $E[|X_n-X|^{r}]$ 趋于 0，称 $\{X_n\}$ 在 $r$ 阶上收敛到 $X$。
+\end{note}
+\begin{note}[r 阶收敛与实变函数收敛的类比]
+
+随机变量序列的 $r$ 阶收敛
+\[
+E\bigl[\,|X_n - X|^{r}\,\bigr] \to 0
+\]
+可以直接类比为实变函数序列的 $L^{r}$ 收敛
+\[
+\int |f_n - f|^{r}\, d\mu \to 0.
+\]
+
+\begin{itemize}
+  \item 在概率论中，$E[\cdot]$ 本质上就是对概率测度 $P$ 的积分；
+  \item 概率空间 $(\Omega,\mathcal F,P)$ 可以看成一个特殊的测度空间；
+  \item 因此 $E[|X_n - X|^{r}] \to 0$ 就对应于
+        $\displaystyle \int |f_n - f|^{r}\, d\mu \to 0$。
+\end{itemize}
+
+换句话说：
+
+\[
+\text{“$X_n$ 在 $r$ 阶收敛到 $X$”} 
+\quad\Longleftrightarrow\quad
+\text{“$X_n$ 在 $L^{r}$ 空间中收敛到 $X$”。}
+\]
+
+\end{note}
+\begin{example}[一个最具体的 $r$ 阶收敛例子：取 $r=2$（均方收敛）]
+取概率空间
+\[
+\Omega=\{0,1\},\qquad 
+\mathcal F=2^\Omega,\qquad
+P(\{0\})=P(\{1\})=\tfrac12.
+\]
+定义随机变量（都映射到 $\mathbb R$）
+\[
+X(\omega)=0,\qquad
+X_n(\omega)=\frac{1}{n}\,\omega \quad (n\ge1).
+\]
+
+则对每个 $\omega\in\Omega$，
+\[
+|X_n(\omega)-X(\omega)|^2=
+\begin{cases}
+0, & \omega=0,\\[4pt]
+\frac{1}{n^2}, & \omega=1.
+\end{cases}
+\]
+
+因此
+\[
+\mathbb E\bigl(|X_n-X|^2\bigr)
+=
+\sum_{\omega\in\Omega}|X_n(\omega)-X(\omega)|^2\,P(\{\omega\})
+=
+0\cdot\tfrac12+\frac{1}{n^2}\cdot\tfrac12
+=
+\frac{1}{2n^2}
+\xrightarrow[n\to\infty]{}0.
+\]
+
+故
+\[
+X_n \xrightarrow{\,2\,} X,
+\]
+即 $X_n$ 在 $L^2$（均方意义）下收敛到 $X$。
+
+\medskip
+\noindent
+\textbf{注意：}这里的期望 $\mathbb E(\cdot)$ 是对同一个底层概率测度 $P$ 计算的，
+不是“用 $X_n$ 的概率”也不是“用 $X$ 的概率”。
+\end{example}
+\begin{definition}[随机变量序列的几乎处处收敛]
+设 $(\Omega,\mathcal{F},P)$ 为一个概率空间，$X_1,X_2,\dots$ 为定义在其上的一列随机变量。
+若
+\[
+P\!\left( \lim_{n\to\infty} X_n = X \right)=1,
+\]
+则称随机变量序列 $\{X_n\}$ \emph{以概率 $1$ 收敛}（或\emph{几乎处处收敛}）于 $X$，记为
+\[
+X_n \xrightarrow{\ \text{a.s.}\ } X
+\qquad\text{或}\qquad 
+\lim_{n\to\infty} X_n = X,\ \text{a.s.}
+\]
+
+若 $X_n \xrightarrow{\text{a.s.}} X$，则称集合
+\[
+A=\{\omega\in\Omega:\ \lim_{n\to\infty} X_n(\omega)=X(\omega)\}
+\]
+为随机变量序列 $\{X_n\}$ 的\emph{收敛点集}，且有
+\[
+P(A)=1.
+\]
+\end{definition}
+\begin{note}
+    当 $n\to\infty$ 时，$X_n(\omega)$ 对几乎所有 $\omega$ 都收敛到 $X(\omega)$，就称 $X_n$ 几乎处处收敛于 $X$。
+\end{note}
+\begin{note}[几乎处处收敛与实变函数收敛的类比]
+
+随机变量序列的几乎处处收敛（a.s. 收敛）
+\[
+P\bigl(\{\omega\in\Omega:\ \lim_{n\to\infty}X_n(\omega)=X(\omega)\}\bigr)=1
+\]
+可以直接类比为实变函数序列在测度空间上的几乎处处收敛（a.e. 收敛）
+\[
+\mu\bigl(\{x:\ \lim_{n\to\infty}f_n(x)=f(x)\}\bigr)=1.
+\]
+
+\begin{itemize}
+  \item 在概率论中，$P$ 是一个概率测度，可以看成一般测度 $\mu$ 的特殊情形；
+  \item “几乎处处”都收敛，指的是允许在一个零测集（概率为 $0$ 的集合）上不收敛；
+  \item 因此 $X_n \xrightarrow{\text{a.s.}} X$ 就对应于
+        $f_n \xrightarrow{\text{a.e.}} f$。
+\end{itemize}
+
+换句话说：
+
+\[
+\text{“$X_n$ 几乎处处收敛到 $X$”} 
+\quad\Longleftrightarrow\quad
+\text{“$X_n$ 作为函数在测度空间中几乎处处收敛到 $X$”。}
+\]
+
+\end{note}
+\begin{definition}[随机变量序列的依概率收敛]
+设 $(\Omega,\mathcal{F},P)$ 为一个概率空间，
+$X_1,X_2,\dots$ 为定义在其上的一列随机变量，
+$X$ 为该空间上的一个随机变量。
+
+若对任意 $\varepsilon>0$，都有
+\[
+\lim_{n\to\infty} P\bigl(|X_n - X| < \varepsilon \bigr) = 1,
+\]
+则称随机变量序列 $\{X_n\}$ \emph{依概率收敛} 于 $X$，
+记为
+\[
+X_n \xrightarrow{\ P\ } X.
+\]
+\end{definition}
+\begin{theorem}[依概率收敛的运算律]
+设随机变量序列 $\{X_n\}$、$\{Y_n\}$ 满足
+\[
+X_n \xrightarrow{P} a, \qquad Y_n \xrightarrow{P} b,
+\]
+其中 $a,b$ 为常数，则有以下结论：
+
+\begin{enumerate}
+    \item 加减法：
+    \[
+    X_n \pm Y_n \xrightarrow{P} a \pm b.
+    \]
+
+    \item 乘法：
+    \[
+    X_n Y_n \xrightarrow{P} ab.
+    \]
+
+    \item 除法（若 $b \neq 0$）：
+    \[
+    \frac{X_n}{Y_n} \xrightarrow{P} \frac{a}{b}.
+    \]
+\end{enumerate}
+
+即依概率收敛在四则运算下保持收敛性。
+\end{theorem}
+\begin{definition}[依分布收敛]
+设 $\{X_n\}$ 为一列随机变量，其对应的分布函数为 $F_n(x)$；
+设 $X$ 为另一随机变量，其分布函数为 $F(x)$。
+
+如果对 $F(x)$ 的任意连续点 $x$，都有
+\[
+\lim_{n\to\infty} F_n(x) = F(x),
+\]
+则称随机变量序列 $\{X_n\}$ \emph{依分布收敛} 于 $X$，
+记为
+\[
+X_n \xrightarrow{\ \mathcal{L}\ } X
+\qquad\text{或}\qquad
+X_n \xrightarrow{d} X.
+\]
+\end{definition}
+\begin{theorem}[依分布收敛的判定：特征函数法]
+设 $\{X_n\}$ 为一列随机变量，其分布函数为 $F_n(x)$，特征函数为 
+$\varphi_n(t)=\mathbb{E}(e^{itX_n})$；
+设 $X$ 为随机变量，其分布函数为 $F(x)$，特征函数为 $\varphi(t)$。
+
+则
+\[
+X_n \xrightarrow{\mathcal{L}} X
+\]
+的充要条件是：
+对所有 $t\in\mathbb{R}$，有
+\[
+\lim_{n\to\infty} \varphi_n(t)=\varphi(t).
+\]
+\end{theorem}
+这个定理给人们提供了一个判断随机变量序列依分布收敛的有效工具。
+它把随机变量序列依分布收敛问题转化成了函数列收敛问题。
+\begin{theorem}[随机变量几种收敛方式之间的关系]
+设 $\{X_n\}_{n\ge 1}$ 与 $X$ 为定义在同一概率空间上的随机变量，则有：
+\begin{itemize}
+  \item
+  \[
+  X_n \xrightarrow{P} X \;\Longrightarrow\; X_n \xrightarrow{L} X .
+  \]
+  若随机变量序列依概率收敛于 $X$，则其依分布收敛于 $X$。
+
+  \item
+  \[
+  X_n \xrightarrow{P} c \;\Longleftrightarrow\; X_n \xrightarrow{L} c .
+  \]
+  当极限为常数时，依概率收敛与依分布收敛等价。
+
+  \item
+  \[
+  X_n \xrightarrow{r} X \;\Longrightarrow\; X_n \xrightarrow{P} X .
+  \]
+  若随机变量序列依均方收敛于 $X$，则其依概率收敛于 $X$。
+
+  \item
+  \[
+  X_n \xrightarrow{a.s.} X \;\Longrightarrow\; X_n \xrightarrow{P} X .
+  \]
+  若随机变量序列几乎处处收敛于 $X$，则其依概率收敛于 $X$。
+\end{itemize}
+\end{theorem}
+\section{弱大数定律}
+
+\begin{definition}[弱大数定律]
+设 $(\Omega,\mathcal{F},P)$ 为一概率空间，
+$X_1,X_2,\dots$ 为定义在其上的一列期望存在的随机变量。
+若对任意 $\varepsilon>0$，都有
+\[
+\lim_{n\to\infty}
+P\!\left(
+\left|
+\frac{1}{n}\sum_{i=1}^n X_i-\mu
+\right|<\varepsilon
+\right)=1,
+\]
+其中
+\[
+\mu=\frac{1}{n}\sum_{i=1}^n E(X_i),
+\]
+则称随机变量序列 $\{X_n\}$ 服从\emph{弱大数定律}。
+\end{definition}
+弱大数定律说明：当样本量趋于无穷大时，样本均值依概率收敛到总体期望
+\begin{definition}[切比雪夫不等式]
+
+设随机变量 $X$ 具有期望 $E(X)$ 和方差 $\sigma^2<\infty$。
+则对任意 $\varepsilon>0$，有
+\[
+P\!\left(\,|X-E(X)|\ge \varepsilon\,\right)
+\le
+\frac{\sigma^2}{\varepsilon^2}.
+\]
+等价地，
+\[
+P\!\left(\,|X-E(X)|< \varepsilon\,\right)
+\ge
+1-\frac{\sigma^2}{\varepsilon^2}.
+\]
+\end{definition}
+\begin{note}[切比雪夫不等式的含义]
+切比雪夫不等式刻画了随机变量围绕其期望的集中性：
+\begin{itemize}
+  \item 偏离阈值：$\varepsilon>0$；
+  \item 偏离事件：$\lvert X-E(X)\rvert\ge\varepsilon$；
+  \item 概率上界：$\displaystyle P\bigl(\lvert X-E(X)\rvert\ge\varepsilon\bigr)
+  \le \frac{\sigma^{2}}{\varepsilon^{2}}$。
+\end{itemize}
+因此，\textbf{方差越小，随机变量偏离期望较远的概率就越小。}
+\end{note}
+\begin{theorem}[Markov 不等式]
+设随机变量 $Y\ge 0$（几乎处处），则对任意 $a>0$，
+\[
+P(Y\ge a)\le \frac{\mathbb E[Y]}{a}.
+\]
+\end{theorem}
+
+\begin{proof}
+在事件 $\{Y\ge a\}$ 上有 $Y\ge a$，因此对任意 $\omega\in\Omega$，
+\[
+Y(\omega)\ge a\,\mathbf 1_{\{Y\ge a\}}(\omega).
+\]
+两边取期望得
+\[
+\mathbb E[Y]\ge a\,\mathbb E\!\left[\mathbf 1_{\{Y\ge a\}}\right]
+= a\,P(Y\ge a),
+\]
+从而
+\[
+P(Y\ge a)\le \frac{\mathbb E[Y]}{a}.
+\]
+\end{proof}
+
+\begin{theorem}[Chebyshev 不等式]
+设随机变量 $X$ 具有期望 $\mathbb E[X]$ 与方差
+$\operatorname{Var}(X)=\sigma^2<\infty$，
+则对任意 $\varepsilon>0$，
+\[
+P\bigl(|X-\mathbb E[X]|\ge \varepsilon\bigr)
+\le \frac{\sigma^2}{\varepsilon^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+令
+\[
+Y=(X-\mathbb E[X])^2\ge 0,\qquad a=\varepsilon^2.
+\]
+由 Markov 不等式，
+\[
+P\bigl(|X-\mathbb E[X]|\ge \varepsilon\bigr)
+=
+P\bigl((X-\mathbb E[X])^2\ge \varepsilon^2\bigr)
+\le
+\frac{\mathbb E\!\left[(X-\mathbb E[X])^2\right]}{\varepsilon^2}.
+\]
+注意到
+\[
+\mathbb E\!\left[(X-\mathbb E[X])^2\right]
+=\operatorname{Var}(X)
+=\sigma^2,
+\]
+故
+\[
+P\bigl(|X-\mathbb E[X]|\ge \varepsilon\bigr)
+\le \frac{\sigma^2}{\varepsilon^2}.
+\]
+\end{proof}
+\begin{theorem}[切比雪夫大数定律（独立情形）]
+设 $X_1,X_2,\dots$ 为相互独立的随机变量序列，
+且每个 $X_i$ 的方差 $D(X_i)$ 存在，并满足
+\[
+\sup_{i} D(X_i)<\infty.
+\]
+记
+\[
+\mu=\frac{1}{n}\sum_{i=1}^n E(X_i).
+\]
+则对任意 $\varepsilon>0$，都有
+\[
+\lim_{n\to\infty}
+P\!\left(
+\left|
+\frac{1}{n}\sum_{i=1}^n X_i-\mu
+\right|<\varepsilon
+\right)=1.
+\]
+\end{theorem}
+在独立且方差一致有界的条件下，样本均值依概率收敛到其期望的平均值。
+\begin{theorem}[伯努利大数定律]
+设进行 $n$ 次相互独立的伯努利试验，事件 $A$ 在每次试验中发生的概率为 $p$。
+记 $S_n$ 为 $n$ 次试验中事件 $A$ 发生的次数。
+
+引入随机变量
+\[
+X_i=
+\begin{cases}
+1, & \text{若第 $i$ 次试验中事件 $A$ 发生},\\
+0, & \text{否则},
+\end{cases}
+\qquad i=1,2,\dots,n.
+\]
+则
+\[
+S_n=\sum_{i=1}^n X_i,
+\qquad
+\frac{S_n}{n}=\frac{1}{n}\sum_{i=1}^n X_i,
+\]
+其中 $\dfrac{S_n}{n}$ 表示事件 $A$ 在 $n$ 次试验中发生的频率。
+
+则对任意 $\varepsilon>0$，有
+\[
+\lim_{n\to\infty}
+P\!\left(
+\left|\frac{S_n}{n}-p\right|<\varepsilon
+\right)=1.
+\]
+即事件 $A$ 的发生频率依概率收敛到其发生概率 $p$。
+\end{theorem}
+\begin{note}[伯努利大数定律的含义]
+伯努利大数定律表明：当重复试验次数 $n$ 足够大时，
+事件 $A$ 发生的频率
+\[
+\frac{S_n}{n}
+\]
+与事件 $A$ 的概率 $p$ 之间出现较大偏差的概率非常小。
+
+因此，伯努利大数定律为
+\emph{通过大量重复试验来近似确定事件概率}
+提供了理论依据。
+\end{note}
+
+\[
+\text{切比雪夫大数定律}
+\;\Longrightarrow\;
+\text{伯努利大数定律}.
+\]
+\begin{theorem}[泊松大数定律]
+设 $\{X_i\}_{i\ge1}$ 为相互独立的随机变量序列，且
+\[
+X_i\sim B(1,p_i), \qquad i=1,2,\dots
+\]
+记
+\[
+\mu=\frac{1}{n}\sum_{i=1}^n E(X_i).
+\]
+则对任意 $\varepsilon>0$，有
+\[
+\lim_{n\to\infty}
+P\!\left(
+\left|
+\frac{1}{n}\sum_{i=1}^n X_i-\mu
+\right|<\varepsilon
+\right)=1.
+\]
+\end{theorem}
+\begin{theorem}[辛钦大数定律]
+设随机变量序列 $\{X_i\}_{i\ge1}$ 相互独立且同分布，
+并具有有限的数学期望
+\[
+E(X_i)=\mu,\qquad i=1,2,\dots
+\]
+则对任意 $\varepsilon>0$，有
+\[
+\lim_{n\to\infty}
+P\!\left(
+\left|
+\frac{1}{n}\sum_{i=1}^n X_i-\mu
+\right|<\varepsilon
+\right)=1.
+\]
+\end{theorem}
+\begin{theorem}[大数定律成立的条件]
+设 $\{X_i\}_{i\ge1}$ 为期望存在的随机变量序列。
+则下列命题等价：
+\begin{enumerate}
+  \item $\{X_n\}$ 服从大数定律，即
+  \[
+  \frac{1}{n}\sum_{i=1}^n X_i-\frac{1}{n}\sum_{i=1}^n E(X_i)
+  \xrightarrow{P} 0;
+  \]
+
+  \item 对任意有界连续函数 $g\in G$，都有
+  \[
+  E\!\left[
+  g\!\left(
+  \frac{1}{n}\sum_{i=1}^n (X_i-E X_i)
+  \right)
+  \right]
+  \longrightarrow 0,
+  \qquad n\to\infty;
+  \]
+
+  \item 存在某个有界连续函数 $g\in G$，使得
+  \[
+  E\!\left[
+  g\!\left(
+  \frac{1}{n}\sum_{i=1}^n (X_i-E X_i)
+  \right)
+  \right]
+  \longrightarrow 0,
+  \qquad n\to\infty.
+  \]
+\end{enumerate}
+\end{theorem}
+\begin{note}
+在上述定理中，取
+\[
+g(x)=\frac{x^{2}}{1+x^{2}},
+\]
+则 $g\in G$。
+
+因此，随机变量序列 $\{X_n\}$ 服从大数定律
+当且仅当
+\[
+\lim_{n\to\infty}
+E\!\left[
+\frac{\left|\sum_{i=1}^{n}(X_i-E X_i)\right|^{2}}
+{\left|\sum_{i=1}^{n}(X_i-E X_i)\right|^{2}+n^{2}}
+\right]
+=0.
+\]
+
+该结果称为\textbf{格涅坚科大数定理}。
+\end{note}
+\section{中心极限定理}
+观察表明，如果一个量是由大量相互独立的随机因素的影响所造成，而每一个别因素在总影响中所起的作用不大，则这种量一般都服从或近似服从正态分布。
+\begin{dxtips}
+    把抛n次硬币当做一次实验，做n次观察n次和的分布
+\end{dxtips}
+由于无穷个随机变量之和可能趋于 $\infty$，故我们不研究 $n$ 个随机变量之和本身而考虑它的标准化的随机变量
+\[
+Z_n=\frac{\sum_{k=1}^n X_k - E\!\left(\sum_{k=1}^n X_k\right)}
+{\sqrt{D\!\left(\sum_{k=1}^n X_k\right)}},
+\]
+的分布函数的极限。
+\begin{theorem}[Lindeberg--L\'evy 中心极限定理]
+设随机变量 $X_1,X_2,\ldots,X_n,\ldots$ 相互独立，且服从同一分布，并具有数学期望和方差
+\[
+E(X_i)=\mu,\qquad D(X_i)=\sigma^2<\infty,\qquad (i=1,2,\ldots).
+\]
+则对于任意实数 $x$，有
+\[
+\lim_{n\to+\infty}
+P\!\left(
+\frac{\sum_{i=1}^n X_i-n\mu}{\sqrt{n}\,\sigma}
+\le x
+\right)
+=
+\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{x} e^{-t^2/2}\,dt.
+\]
+\end{theorem}
+\begin{theorem}[De Moivre--Laplace 中心极限定理]
+设随机变量 $X\sim B(n,p)$，记 $q=1-p$，则对任意实数 $x$，有
+\[
+\lim_{n\to+\infty}
+P\!\left\{
+\frac{X-np}{\sqrt{npq}}\le x
+\right\}
+=
+\frac{1}{\sqrt{2\pi}}
+\int_{-\infty}^{x} e^{-t^{2}/2}\,dt .
+\]
+\end{theorem}
+
+\subsection*{中心极限定理的应用}
+
+\paragraph{Lindeberg--L\'evy 中心极限定理应用}
+对于独立同分布随机变量序列 $\{X_i\}$，不论它们服从何种分布，只要存在有限的数学期望 $\mu$ 和方差 $\sigma^2$，当 $n$ 充分大时，有近似关系
+\[
+\sum_{i=1}^{n} X_i \sim N(n\mu,n\sigma^2).
+\]
+因此，$\sum_{i=1}^{n} X_i$ 的有关概率问题可以利用正态分布求解。
+
+\paragraph{De Moivre--Laplace 中心极限定理应用}
+对于随机变量 $X\sim B(n,p)$，当 $n\to+\infty$ 时，总有近似
+\[
+X \sim N(np,npq).
+\]
+因此，当 $n$ 充分大时，二项分布的概率问题可以利用正态分布近似解决。
+一般在实际中，当 $n\ge 50$ 且 $0.1<p<0.9$ 时，应用效果较为理想。

@@ -1,0 +1,641 @@
+\chapter{特征函数}
+\section{特征函数定义及性质}
+\begin{definition}[复随机变量 $Z=X+jY$ 的期望是 $E(Z)=E(X)+jE(Y)$]
+设 $X$ 和 $Y$ 是概率空间 $(\Omega,\mathcal F,P)$ 上的两个实值随机变量，
+令 $j=\sqrt{-1}$，$Z=X+jY$，称 $Z$ 为 $(\Omega,\mathcal F,P)$ 上的
+\emph{复值随机变量}（complex random variable）。
+如果 $E(X)$ 和 $E(Y)$ 都存在，称
+\[
+E(Z) = E(X) + j\,E(Y)
+\]
+为 $Z$ 的数学期望（简称期望）。
+\end{definition}
+\begin{definition}[随机变量 $X$ 的特征函数，就是取其指数形式 $e^{jtX}$ 的数学期望]
+设 $X$ 是概率空间 $(\Omega,\mathcal F,P)$ 上的实值随机变量，$j=\sqrt{-1}$。
+对任意 $t\in(-\infty,\infty)$，定义
+\[
+\varphi_X(t)=E\bigl[e^{jtX}\bigr],
+\]
+称 $\varphi_X(t)$ 为 $X$ 或其分布函数 $F(x)$ 的特征函数。
+若不致混淆，简记为 $\varphi(t)$。
+
+\end{definition}
+\begin{example}[伯努利分布的特征函数]
+设随机变量 $X$ 服从伯努利分布
+\[
+P(X=1)=p,\qquad P(X=0)=1-p,\qquad 0<p<1.
+\]
+它的特征函数定义为
+\[
+\varphi_X(t)=E\!\left[e^{itX}\right].
+\]
+因为 $X$ 只有两个取值 $0$ 和 $1$，所以
+\[
+\begin{aligned}
+\varphi_X(t)
+&= e^{it\cdot 0}P(X=0)+e^{it\cdot 1}P(X=1)\\
+&= e^{0}(1-p)+e^{it}p\\
+&= (1-p)+p\,e^{it}.
+\end{aligned}
+\]
+因此，伯努利随机变量 $X$ 的特征函数为
+\[
+\boxed{\varphi_X(t)=(1-p)+p\,e^{it}.}
+\]
+\end{example}
+\begin{note}
+    由定理 3.1.1，有
+\[
+\varphi(t)=\int_{-\infty}^{\infty} e^{jtx}\, dF(x). \tag{4.1.1}
+\]
+
+如果 $X$ 是离散型随机变量，概率分布 $\{P(X=x_k)=p_k\}$，则
+\[
+\varphi(t)=\sum_k p_k e^{jt x_k}. \tag{4.1.2}
+\]
+
+如果 $X$ 是连续型随机变量，概率密度为 $f(x)$，则
+\[
+\varphi(t)=\int_{-\infty}^{\infty} f(x)e^{jtx}\,dx. \tag{4.1.3}
+\]
+\end{note}
+\begin{proposition}[随机变量特征函数的性质]
+设 $X$ 为随机变量，其特征函数为 
+\[
+\varphi(t)=E(e^{jtX}),\qquad t\in\mathbb R,
+\]
+则有以下性质：
+
+\begin{enumerate}
+  \item \textbf{界限：}
+  \[
+  |\varphi(t)|\le \varphi(0)=1 .
+  \]
+
+  \item \textbf{共轭对称：}
+  \[
+  \varphi(-t)=\overline{\varphi(t)} .
+  \]
+
+  \item \textbf{线性变换：} 若 $Y=aX+b$，其中 $a,b$ 为常数，则
+  \[
+  \varphi_Y(t)=e^{jbt}\,\varphi_X(at).
+  \]
+
+  \item \textbf{独立性：} 若 $X$ 与 $Y$ 独立，则
+  \[
+  \varphi_{X+Y}(t)=\varphi_X(t)\,\varphi_Y(t).
+  \]
+
+  \item \textbf{可导性与矩：} 若 $E(|X|^l)<\infty$，则 $\varphi(t)$ 在 $t=0$ 处 $l$ 次可导，且对 $1\le k\le l$，
+  \[
+  \varphi^{(k)}(0)=i^k E(X^k).
+  \]
+
+  特别地，
+  \[
+  E(X)=\frac{\varphi'(0)}{i},\qquad 
+  D(X)=-\varphi''(0)+(\varphi'(0))^2 .
+  \]
+
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\textbf{1.} 
+\[
+|\varphi(t)|
+=\left|\int_{-\infty}^{+\infty} e^{itx} f(x)\,dx\right|
+\le \int_{-\infty}^{+\infty} |e^{itx}|\,|f(x)|\,dx
+= \int_{-\infty}^{+\infty} f(x)\,dx
+=\varphi(0)=1.
+\]
+
+\textbf{2.}
+\[
+\varphi(-t)
+=\int_{-\infty}^{+\infty} e^{-itx} f(x)\,dx
+=\overline{\int_{-\infty}^{+\infty} e^{itx} f(x)\,dx}
+=\overline{\varphi(t)}.
+\]
+
+\textbf{3.} 若 $Y=aX+b$，则
+\[
+\varphi_Y(t)
+=E(e^{itY})
+=E(e^{it(aX+b)})
+=e^{ibt}E(e^{iatX})
+=e^{ibt}\varphi_X(at).
+\]
+
+\textbf{4.} 若 $X$ 与 $Y$ 独立，则 $e^{itX}$ 与 $e^{itY}$ 独立：
+\[
+\varphi_{X+Y}(t)
+=E(e^{it(X+Y)})
+=E(e^{itX}e^{itY})
+=E(e^{itX})\,E(e^{itY})
+=\varphi_X(t)\varphi_Y(t).
+\]
+
+\textbf{5.} 若 $E(|X|^l)<\infty$，则由含参变量积分可导性
+\[
+\varphi^{(k)}(t)
+=\left(\int_{-\infty}^{+\infty} e^{itx} f(x)\,dx\right)^{(k)}
+=\int_{-\infty}^{+\infty} (ix)^k e^{itx} f(x)\,dx
+= i^k E(X^k e^{itX}).
+\]
+令 $t=0$ 得
+\[
+\varphi^{(k)}(0)= i^k E(X^k).
+\]
+
+特别地，当 $k=1,2$：
+\[
+E(X)=\frac{\varphi'(0)}{i}, 
+\qquad
+D(X)= -\varphi''(0)+(\varphi'(0))^2.
+\]
+\end{proof}
+\begin{lemma}[特征函数的性质]
+设随机变量 $X$ 的特征函数为 
+\[
+\varphi_X(t)=E\!\left(e^{itX}\right),\qquad t\in\mathbb R.
+\]
+则有以下性质：
+
+\begin{enumerate}
+  \item $\varphi_X(t)$ 在 $(-\infty,+\infty)$ 上一致连续；
+
+  \item $\varphi_X(t)$ 是一个非负定函数；
+
+  \item （Bochner–Khintchine 定理）
+  
+  一个复函数 $\varphi(t)$ 是某随机变量的特征函数的充要条件是：
+  \[
+  \varphi(t)\ \text{连续、非负定，且}\ \varphi(0)=1 .
+  \]
+\end{enumerate}
+\end{lemma}
+\subsubsection{傅立叶的意义}
+% 3. 作为“在指数基底下看分布”的 Fourier 视角
+
+把 $\{e^{ikt}\}_{k\in\mathbb Z}$ 看成在周期函数空间里的一个“正交基底”，
+那么
+\[
+\varphi_X(t)=\sum_{k=-\infty}^{\infty} P(X=k)e^{ikt}
+\]
+就可以看成：概率质量函数 $p(k)=P(X=k)$ 的离散 Fourier 变换。
+
+而且确实有反变换公式（Fourier 反演）：
+\[
+P(X=k)=\frac{1}{2\pi}\int_{-\pi}^{\pi} \varphi_X(t)\,e^{-ikt}\,dt.
+\]
+
+也就是说：
+\begin{itemize}
+  \item 在“时域”里，你看到的是 $P(X=k)$；
+  \item 在“频域”里，你看到的是 $\varphi_X(t)$；
+  \item 两者是一对 Fourier 变换／反变换。
+\end{itemize}
+
+你学过复变／傅里叶以后，可以这样记：
+
+\[
+\text{特征函数} = \text{概率分布在“指数基底 } e^{itx} \text{ 下的傅里叶系数”。}
+\]
+每个 $e^{itx}$ 是一根单位圆上的旋转向量，期望就是“平均旋转”。
+
+\bigskip
+
+% 4. 用一句“旋转版母式”总结
+
+对离散 $X$ 来说：
+\[
+\boxed{\ \varphi_X(t)=E(e^{itX})
+      =\text{单位圆上随机向量 } e^{itX} \text{ 的平均向量}\ }
+\]
+
+\begin{itemize}
+  \item 指向方向：和“取值在哪些点集中”有关；
+  \item 长度大小：反映这些取值在这个频率 $t$ 下是“齐刷刷”还是“互相抵消”。
+\end{itemize}
+
+这样你就可以把它和复平面里的“旋转 + 向量求和”直觉连起来，
+而不是单纯把它当成一个抽象公式。
+\begin{remark}[概率论与数学物理中的傅里叶变换之联系与区别]
+在数学物理方程中，傅里叶变换通常定义为
+\[
+F[f](\lambda)=\int_{-\infty}^{\infty} f(x)e^{-i\lambda x}\,dx,\qquad
+f(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F[f](\lambda)e^{i\lambda x}\,d\lambda,
+\]
+用来把“空间函数” $f(x)$ 分解到指数基底 $e^{i\lambda x}$ 上，得到其频率表示。
+
+在概率论中，随机变量 $X$（有密度 $f_X$）的特征函数为
+\[
+\varphi_X(t)=E(e^{itX})
+=\int_{-\infty}^{\infty} e^{itx} f_X(x)\,dx,
+\]
+本质上就是密度 $f_X$ 的傅里叶变换：
+\[
+\varphi_X(t)=F[f_X](-t).
+\]
+
+因此，两者的\emph{联系}是：特征函数就是把概率密度当作一般函数做傅里叶变换得到的结果；
+\emph{区别}在于：数学物理中关心的是物理量 $f(x)$ 的频谱结构，
+而概率论中关心的是概率分布（密度或分布列）在频域中的表现及其反演。
+\end{remark}
+\section{逆转公式与唯一性定理}
+\begin{lemma}[随机变量的分布函数可以由其特征函数通过一个反演积分公式唯一恢复]
+设随机变量 $X$ 的分布函数为 $F(x)$，特征函数为 $\varphi(t)$，则对 $F(x)$ 的任意连续点 $x_1,x_2$，当 $x_1<x_2$ 时，有
+\[
+F(x_2)-F(x_1)
+=
+\lim_{T\to\infty}
+\frac{1}{2\pi}
+\int_{-T}^{T}
+(jt)^{-1}
+\bigl[
+\exp(-jtx_1)-\exp(-jtx_2)
+\bigr]
+\varphi(t)\,dt.
+\tag{4.2.1}
+\]
+\end{lemma}
+\begin{theorem}[分布函数相同的前提是特征函数恒等]
+设随机变量的分布函数为 $F_1(x)$ 和 $F_2(x)$。则
+\[
+F_1(x) \equiv F_2(x)
+\]
+的充要条件是：它们对应的特征函数
+\[
+\varphi_1(t) \equiv \varphi_2(t)
+\]
+恒相等。
+\end{theorem}
+\begin{theorem}[特征函数绝对课积，有连续密度函数且该密度函数可由特征函数的反傅里叶变换给出。]
+如果随机变量 $X$ 的特征函数 $\varphi(t)$ 满足
+\[
+\int_{-\infty}^{\infty} |\varphi(t)|\,dt < \infty,
+\]
+则 $X$ 是连续型随机变量，有概率密度函数
+\[
+f(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty} \varphi(t)\exp(-jtx)\,dt,
+\]
+并且 $f(x)$ 是连续的。
+\end{theorem}
+\begin{theorem}[\text{离散随机变量的概率质量函数可以由特征函数通过傅里叶反演公式唯一恢复。}]
+设 $k$ 为整数，离散型随机变量 $X$ 的概率分布为
+\[
+P(X = k) = p_k ,
+\]
+其特征函数为 $\varphi(t)$。则
+\[
+p_k = \frac{1}{2\pi} \int_{-\pi}^{\pi} \varphi(t)\, e^{-jkt}\, dt.
+\tag{4.2.3}
+\]
+\end{theorem}
+
+
+
+
+\newpage
+\section{独立随机变量和的特征函数}
+
+\begin{theorem}[ 独立实值随机变量的和的特征函数等于各随机变量特征函数的乘积。]
+设 $(\Omega,\mathcal F,P)$ 为一个概率空间，$X$ 与 $Y$ 是其上两个独立的实值随机变量，则
+\[
+\varphi_{X+Y}(t)=\varphi_X(t)\,\varphi_Y(t).
+\]
+若 $X_1,\ldots,X_n$ 是 $n$ 个独立的实值随机变量，则
+\[
+\varphi_{X_1+\cdots+X_n}(t)=\varphi_{X_1}(t)\cdots\varphi_{X_n}(t).
+\]
+但其逆不真。
+\end{theorem}
+\begin{example}
+设 $X,Y$ 独立且同分布，都是抛一枚公平硬币得到的
+\[
+P(X=0)=P(X=1)=\tfrac12,\qquad P(Y=0)=P(Y=1)=\tfrac12.
+\]
+则
+\[
+\varphi_X(t)=E\big(e^{itX}\big)
+           =\tfrac12 e^{it\cdot0}+\tfrac12 e^{it\cdot1}
+           =\tfrac12(1+e^{it}),
+\]
+同理 $\varphi_Y(t)=\tfrac12(1+e^{it})$。
+
+再看和 $S=X+Y$，它只可能取 $0,1,2$，且
+\[
+P(S=0)=\tfrac14,\quad P(S=1)=\tfrac12,\quad P(S=2)=\tfrac14,
+\]
+所以
+\[
+\varphi_{X+Y}(t)
+=E\big(e^{itS}\big)
+=\tfrac14 e^{it\cdot0}+\tfrac12 e^{it\cdot1}+\tfrac14 e^{it\cdot2}
+=\tfrac14(1+2e^{it}+e^{2it})
+=\Big(\tfrac12(1+e^{it})\Big)^2.
+\]
+因此
+\[
+\varphi_{X+Y}(t)=\varphi_X(t)\,\varphi_Y(t),
+\]
+验证了定理。
+\end{example}
+\section{多维随机变量的特征函数}
+\begin{definition}[二维随机向量的特征函数]
+设 $(\Omega,\mathcal F,P)$ 为一个概率空间，$(X,Y)$ 是其上的二维实值随机向量，
+则称
+\[
+\varphi(s,t)=E\!\left[e^{\,i sX + i tY}\right]
+\]
+为 $(X,Y)$ 的特征函数。
+\end{definition}
+不难计算：若 $X,Y$ 分别服从参数为 $\lambda$ 和 $\mu$ 的指数分布，且相互独立，则
+\[
+\varphi(s,t)
+=E\!\left[e^{i(sX+tY)}\right]
+=\left(1-\frac{i s}{\lambda}\right)^{-1}
+  \left(1-\frac{i t}{\mu}\right)^{-1}.
+\]
+
+\begin{proposition}[特征函数性质]
+ \begin{enumerate}[1]
+  \item 二维特征函数的模不超过 $1$，并且关于原点共轭对称：
+  \[
+    |\varphi(s,t)| \le \varphi(0,0) = 1,\qquad 
+    \varphi(-s,-t) = \overline{\varphi(s,t)} .
+  \]
+
+  \item 特征函数在整个实平面 $\mathbb{R}^2$ 上一致连续：
+  \[
+    \varphi(s,t)\ \text{在实平面 } \mathbb{R}^2 \text{ 上一致连续。}
+  \]
+
+  \item 在坐标轴上的截面给出各分量的特征函数：
+  \[
+    \varphi_X(s) = \varphi(s,0),\qquad 
+    \varphi_Y(t) = \varphi(0,t).
+  \]
+
+  \item 二元分布函数与其联合特征函数一一对应、互相唯一确定：
+  \[
+    F_1(x_1,x_2) \equiv F_2(x_1,x_2)
+    \quad\Longleftrightarrow\quad
+    \varphi_1(t_1,t_2) \equiv \varphi_2(t_1,t_2).
+  \]
+\end{enumerate}
+\end{proposition}
+\begin{enumerate}
+  \setcounter{enumi}{4}  % 让第一项从 5 开始（因为内部计数是 0 起的）
+
+  \item 
+  设 $a_1,a_2,b_1,b_2$ 是实常数，令 $Y_1=a_1X_1+b_1,\;Y_2=a_2X_2+b_2$，则
+  \[
+    \varphi_{Y_1,Y_2}(t_1,t_2)
+    =\varphi_{X_1,X_2}(a_1t_1,a_2t_2)\exp\{i(t_1b_1+t_2b_2)\}.
+  \]
+
+  \item 
+  设 $X_1,X_2$ 的特征函数分别为 $\varphi_1(t_1)$ 和 $\varphi_2(t_2)$，$(X_1,X_2)$ 的联合特征函数为 $\varphi(t_1,t_2)$，则
+  \[
+    X_1,X_2 \text{ 相互独立}
+    \quad\Longleftrightarrow\quad
+    \varphi(t_1,t_2)=\varphi_1(t_1)\varphi_2(t_2),\ \forall\,t_1,t_2\in\mathbb{R}.
+  \]
+
+  \item 
+  设 $\varphi(t_1,t_2)$ 为 $(X,Y)$ 的联合特征函数，则
+  \[
+    \varphi_{X+Y}(t)=\varphi(t,t).
+  \]
+
+  \item 
+  对任意实数 $a,b,c$，有
+  \[
+    \varphi_{aX+bY+c}(t)=\varphi(at,bt)\,e^{ict},
+  \]
+  其中 $\varphi$ 为 $(X,Y)$ 的联合特征函数。
+
+  \item 
+  随机向量 $(X,Y)$ 服从二维非退化正态分布当且仅当对于一切实数 $a,b,c$（其中 $a,b$ 不全为 $0$），
+  \[
+    aX+bY+c \text{ 服从一维非退化正态分布}.
+  \]
+\end{enumerate}
+\section{母函数}
+\begin{definition}[母函数]
+设 $X$ 是取非负整数值的随机变量，其分布列为
+\[
+p_k = P(X = k), \qquad k = 0,1,2,\dots.
+\]
+定义函数
+\[
+\Psi_X(s) = E[s^{X}]
+= \sum_{k=0}^{\infty} p_k s^{k}, \qquad s\in[-1,1],
+\]
+称为随机变量 $X$ 的\emph{母函数}（或\emph{概率母函数}，probability generating function）。
+\end{definition}
+\begin{dxtips}
+    我理解一下母函数中 $s$ 是新的变量，然后把 $P(X=k)$ 的概率当作权重每一个 $s$ 在乘 $k$ 次方然后求和对吧所以母函数就是：把随机变量 $X$ 变换成 $s^X$，然后对它求期望。
+\end{dxtips}
+
+\begin{note}
+母函数就是“把分布列装进一条幂级数里”的工具。
+
+更具体一点、方便你记的理由是：
+
+\end{note}
+\begin{note}
+    
+
+\begin{enumerate}
+  \item 写成
+  \[ 
+    \Psi_X(s)=\sum_{k=0}^\infty p_k s^k
+  \]
+  相当于：系数就是概率 $p_k$，幂次就是取值 $k$。
+
+  \item 这样一来：
+  \begin{itemize}
+    \item 系数 $\Rightarrow$ 概率：展开幂级数就能把 $p_k$ 读回来；
+    \item 求导 $\Rightarrow$ 矩：在 $s=1$ 处求导、再求高阶导，可以直接算 $E(X), E(X^2), \dots$；
+    \item 乘积 $\Rightarrow$ 和的分布：独立和的母函数是母函数的乘积，方便处理 $X_1+X_2+\cdots$ 的分布。
+  \end{itemize}
+
+  \item 所以：用幂级数把 $\{p_k\}$ 打包成一个函数，可以用“微积分 + 代数运算”来干原来要对分布列做的事。
+\end{enumerate}
+\end{note}
+\begin{itemize}
+  \item 若 $X$ 服从参数为 $\lambda$ 的泊松分布，则
+  \[
+    \psi_X(s)=e^{\lambda(s-1)} .
+  \]
+
+  \item 若 $X$ 服从参数为 $n,p$ 的二项分布（记 $q=1-p$），则
+  \[
+    \psi_X(s)=(q+ps)^n .
+  \]
+\end{itemize}
+
+\begin{theorem}[母函数性质]
+    \begin{enumerate}
+  \item 母函数的有界与可导性：对一切 $s\in[-1,1]$，
+  \[
+    |\Psi_X(s)| \le \Psi_X(1) = 1,
+  \]
+  且 $\Psi_X(s)$ 在区间 $(-1,1)$ 内无穷次可导。
+
+  \item 线性变换：若 $a,b$ 为非负整数，则
+  \[
+    \Psi_{aX+b}(s) = s^{b}\,\Psi_X(s^{a}).
+  \]
+
+  \item 独立和：若 $X,Y$ 独立，则
+  \[
+    \Psi_{X+Y}(s) = \Psi_X(s)\,\Psi_Y(s).
+  \]
+
+  \item 系数恢复分布列：设 $p_k=P(X=k)$，则
+  \[
+    p_k = \frac{\Psi_X^{(k)}(0)}{k!},\qquad k=0,1,2,\dots .
+  \]
+
+  \item 矩与导数的关系：若 $X$ 的 $n$ 阶矩存在，则对任意自然数 $k\le n$，
+  $\Psi_X^{(k)}(1)$ 存在，且
+  \[
+    EX^{k}
+  \]
+  是 $\Psi_X^{(m)}(1)$（$m=1,\dots,k$）的线性组合。
+
+  \item 唯一性：$X$ 的分布列 $\{p_k\}$ 与其母函数 $\Psi_X(s)$ 互相唯一确定。
+\end{enumerate}
+\end{theorem}
+\begin{definition}[二维整数值随机向量的母函数]
+设 $(X,Y)$ 是整数值随机向量，其分布列为
+\[
+p_{ij}=P(X=i,Y=j),\qquad i,j\in\mathbb{Z}.
+\]
+定义函数
+\[
+\Psi_{XY}(s,t)
+=E\bigl[s^{X}t^{Y}\bigr]
+=\sum_{i=-\infty}^{\infty}\sum_{j=-\infty}^{\infty}
+p_{ij}s^{i}t^{j},\qquad s,t\in[-1,1],
+\]
+称为随机向量 $(X,Y)$ 的母函数（概率母函数）。
+\end{definition}
+\section{习题}
+\begin{homework}[4.1]
+设随机变量 $X$ 服从几何分布，有概率分布
+\[
+P(X=k)=pq^{k},\qquad k=0,1,2,\ldots,
+\]
+其中 $0<p<1,\; q=1-p$. 求 $X$ 的特征函数、$E(X)$ 和 $\operatorname{Var}(X)$。
+\end{homework}
+
+\begin{homework}[4.2]
+设随机变量 $X$ 服从帕斯卡分布，有概率分布
+\[
+P(X=k)=C_{k-1}^{\,r-1} p^{\,r} q^{\,k-r},\qquad k=r,r+1,r+2,\ldots,
+\]
+其中 $0<p<1,\; q=1-p,\; r$ 为正整数。求 $X$ 的特征函数。
+\end{homework}
+
+\begin{homework}[4.3]
+验证 $\varphi(t)=(1+t^2)^{-1}$ 为某连续型随机变量的特征函数，并求其概率密度函数。
+\end{homework}
+
+\begin{homework}[4.4]
+设随机变量 $X$ 的特征函数是
+\[
+\varphi(t)=\frac{e^{jt}(1-e^{jnt})}{n(1-e^{jt})},\qquad j=\sqrt{-1},
+\]
+证明：$X$ 是离散型随机变量，有概率分布
+\[
+P(X=k)=\frac{1}{n},\qquad k=1,2,\ldots,n.
+\]
+\end{homework}
+
+\begin{homework}[4.5]
+设 $a_k\ge 0,\ \sum_{k=0}^\infty a_k=1$，证明
+\[
+\varphi_1(t)=\sum_{k=0}^\infty a_k \cos(kt), 
+\qquad 
+\varphi_2(t)=\sum_{k=0}^\infty a_k e^{jkt}
+\]
+均为特征函数，并求相应的离散型随机变量的概率分布（傅里叶逆变换）。
+\end{homework}
+
+\begin{homework}[4.6]
+设特征函数分别为 $\cos t$ 和 $\cos^2 t$，求相应的离散型随机变量的概率分布（傅里叶逆变换）。
+\end{homework}
+\begin{homework}[4.7]
+设 $a,b$ 是实常数，$a\neq 0$，随机变量 $X$ 的分布函数 $F(x)$ 连续且严格单调递增，分别求 $aF(X)+b$ 及 $\ln F(X)$ 的特征函数。
+\end{homework}
+
+\begin{homework}[4.8]
+设随机变量 $X$ 的分布函数为 $F(x)$，特征函数是 $\varphi(t)$，$h$ 为正常数，令
+\[
+G(x)=\frac{1}{2h}\int_{x-h}^{\,x+h}F(y)\,dy.
+\]
+证明：$G(x)$ 是分布函数，并求其特征函数。
+\end{homework}
+
+\begin{homework}[4.9]
+证明特征函数是实值函数的充要条件是：相应的分布函数 $F(x)$ 是对称的，即  
+\[
+F(x)=1-F(-x+0), \qquad -\infty < x < \infty.
+\]
+\end{homework}
+
+\begin{homework}[4.10]
+设特征函数 $\varphi(t)$ 是实值函数，证明  
+(1) \(\displaystyle 1-\varphi(2t)\le 4[1-\varphi(t)]\);  
+(2) \(\displaystyle 1+\varphi(2t)\ge 2[\varphi(t)]^2\).
+\end{homework}
+
+\begin{homework}[4.11]
+设随机变量 $X_1,X_2,\ldots,X_n$ 独立同分布，且均服从标准正态分布，证明  
+\[
+n^{-1/2}\sum_{i=1}^n X_i
+\]
+服从标准正态分布。
+\end{homework}
+
+\begin{homework}[4.12]
+设 $(X_1,X_2)$ 服从非退化的二维正态分布  
+\[
+N\!\left(0,\sigma_1^2; \; 0,\sigma_2^2;\; \frac{\sigma_{12}}{\sigma_1\sigma_2}\right),
+\]
+其中 $\sigma_{12}=\operatorname{Cov}(X_1,X_2)$。求  
+\[
+E\bigl[(X_1^2-\sigma_1^2)(X_2^2-\sigma_2^2)\bigr].
+\]
+\end{homework}
+\begin{homework}[4.13]
+设二维连续型随机变量 $(X,Y)$ 有概率密度函数
+\[
+f(x,y)=c \exp\{-\,[4(x-5)^2 + 2(x-5)(y-3) + 5(y-3)^3]\},\qquad -\infty < x,y < \infty,
+\]
+求待定常数 $c$ 及特征函数 $\varphi(t_1,t_2)$。
+\end{homework}
+
+\begin{homework}[4.14]
+设随机变量 $X$ 的母函数如下，求 $X$ 的概率分布：  
+(1)\ $0.25(1+s)^2$；  
+(2)\ $\displaystyle \frac{1}{2-s}$；  
+(3)\ $e^{\,s-1}$。
+\end{homework}
+
+\begin{homework}[4.15]
+在伯努利试验中，假设每次试验成功的概率为 $p$，如果记 $X$ 为第 $r$ 次失败之前成功出现的总次数，求 $X$ 的概率分布、母函数、期望和方差。
+\end{homework}
+
+\begin{homework}[4.16]
+设 $\{X_k,\,k\ge 1\}$ 是独立随机变量序列，且
+\[
+P(X_k=i)=\frac{1}{m},\qquad i=0,1,2,\ldots,m-1,\quad k=1,2,\ldots,
+\]
+令 $S_n=\sum_{k=1}^{n} X_k$，求 $S_n$ 的母函数。
+\end{homework}

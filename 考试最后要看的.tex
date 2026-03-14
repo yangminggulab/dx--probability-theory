@@ -1,0 +1,895 @@
+\chapter{第一章秘籍}
+\section*{1.0基础知识}
+\begin{itemize}
+  \item 互斥
+  \begin{itemize}
+    \item 定义：$A\cap B=\varnothing$。
+    \item 性质：$P(A\cap B)=0$，$P(A\cup B)=P(A)+P(B)$。
+    \item 说明：若 $P(A),P(B)>0$，则不可能独立。
+  \end{itemize}
+
+  \item 对立
+  \begin{itemize}
+    \item 定义：$B=A^c=\Omega\setminus A$。
+    \item 性质：$A\cap A^c=\varnothing$，$A\cup A^c=\Omega$。
+    \item 关系：对立是互斥的特殊情形。
+  \end{itemize}
+
+  \item 独立
+  \begin{itemize}
+    \item 定义：$P(A\cap B)=P(A)P(B)$。
+    \item 等价：$P(A\mid B)=P(A)$（$P(B)>0$）。
+    \item 说明：独立不要求互斥，互斥（非零概率）必不独立。
+  \end{itemize}
+\end{itemize}
+\begin{dxtips}
+    互斥不一定独立因为P（AB）=0只要P（A）P（B）都不等于0这个等式就不成立。
+    独立是A和B可以同时发生但是不影响，互斥是A和B不拿同时发生，对立是A发生和A不发生总有一个发生。
+\end{dxtips}
+
+\begin{itemize}
+  \item 德摩根定律（事件形式）
+  \begin{itemize}
+    \item $(A\cup B)^c=A^c\cap B^c$
+    \item $(A\cap B)^c=A^c\cup B^c$
+  \end{itemize}
+
+  \item 骰子例子（一次掷公平骰子，样本空间 $\Omega=\{1,2,3,4,5,6\}$）
+  \begin{itemize}
+    \item 设 $A=\{1,2,3,4\}$（掷出 $1,2,3,4$）
+    \item 设 $B=\{1,3,5\}$（掷出奇数）
+    \item 则
+    \[
+    A\cup B=\{1,2,3,4,5\},\quad (A\cup B)^c=\{6\}
+    \]
+    \[
+    A^c=\{5,6\},\quad B^c=\{2,4,6\},\quad A^c\cap B^c=\{6\}
+    \]
+    \item 验证：$(A\cup B)^c=A^c\cap B^c$
+  \end{itemize}
+\end{itemize}
+
+\begin{dxtips}
+    可以用骰子验证反正就是整体的补给等于把补给每一个元素，然后交变并，并变交
+\end{dxtips}
+\begin{itemize}
+  \item 事件运算的直观记号与含义（事件 $A,B\subset\Omega$）：
+  \[
+  A\cap B=AB\ (\text{交视作“乘”}),\qquad
+  A\cup B=A+B\ (\text{并视作“加”}),
+  \]
+  \[
+  A^c=\overline A,\qquad
+  A\setminus B=A\overline B,\qquad
+  \Omega=1,\qquad
+  \varnothing=0.
+  \]
+  其中交表示“同时发生”，条件越多越难发生，概率越乘越小；并表示“至少一个发生”，事件越多越容易发生，概率越加越大（需注意重叠部分会被重复计算）。
+\end{itemize}
+零概率不是不可能发生事件
+\begin{itemize}
+  \item 德摩根定律（任意族 $\{A_k\}$）：
+  \[
+  \Big(\bigcup_{k=1}^\infty A_k\Big)^c=\bigcap_{k=1}^\infty A_k^c,
+  \qquad
+  \Big(\bigcap_{k=1}^\infty A_k\Big)^c=\bigcup_{k=1}^\infty A_k^c.
+  \]
+
+  \item 骰子例子（$\Omega=\{1,2,3,4,5,6\}$）：
+  设 $A_1=\{1\},A_2=\{2\},A_3=\{3\},A_4=\{4\}$，则
+  \[
+  \bigcup_{k=1}^4 A_k=\{1,2,3,4\},\quad
+  \Big(\bigcup_{k=1}^4 A_k\Big)^c=\{5,6\},
+  \]
+  \[
+  \bigcap_{k=1}^4 A_k^c=\{5,6\},
+  \]
+  从而
+  \[
+  \Big(\bigcup_{k=1}^4 A_k\Big)^c=\bigcap_{k=1}^4 A_k^c.
+  \]
+\end{itemize}
+\begin{itemize}
+  \item 全概率公式  
+  设 $\{A_k\}_{k=1}^n$ 为样本空间 $\Omega$ 的一个划分，且 $P(A_k)>0$，则对任一事件 $B$，
+  \[
+  P(B)=\sum_{k=1}^n P(B\mid A_k)\,P(A_k).
+  \]
+
+  \item 贝叶斯公式  
+  在上述条件下，对任一 $j$，
+  \[
+  P(A_j\mid B)=\frac{P(B\mid A_j)\,P(A_j)}
+  {\sum_{k=1}^n P(B\mid A_k)\,P(A_k)}.
+  \]
+  上面乘完事P（BAj）
+  下面加完是P（B）
+\end{itemize}
+\section*{1.1指数分布}
+
+\begin{note}
+    指数分布（Exponential）最常见的写法是：若 $X\sim \mathrm{Exp}(\lambda)$（$\lambda>0$），则
+
+\begin{itemize}
+  \item 密度函数
+  \[
+  f(x)=
+  \begin{cases}
+  \lambda e^{-\lambda x}, & x\ge 0,\\
+  0, & x<0.
+  \end{cases}
+  \]
+
+  \item 分布函数
+  \[
+  F(x)=P(X\le x)=
+  \begin{cases}
+  1-e^{-\lambda x}, & x\ge 0,\\
+  0, & x<0.
+  \end{cases}
+  \]
+\end{itemize}
+
+直觉长相：从 $x=0$ 处取最大值 $f(0)=\lambda$，然后随着 $x$ 增大按 $e^{-\lambda x}$ 单调指数下降，永远贴着 $0$ 不会变负。
+$\lambda$ 越大，下降越快、越“陡”；$\lambda$ 越小，尾巴越长。
+\end{note}
+\begin{itemize}
+  \item 给期望（平均等待时间）：
+  $E[X]=\dfrac{1}{\lambda}\Rightarrow \lambda=\dfrac{1}{E[X]}$。
+  例如平均等待 $5$ 分钟，则 $\lambda=\dfrac{1}{5}$（每分钟）。
+
+  \item 给方差：
+  $\operatorname{Var}(X)=\dfrac{1}{\lambda^2}\Rightarrow
+  \lambda=\dfrac{1}{\sqrt{\operatorname{Var}(X)}}$。
+
+  \item 给尾概率：
+  $P(X>t)=e^{-\lambda t}$。
+  若 $P(X>t_0)=p_0$，则
+  $e^{-\lambda t_0}=p_0\Rightarrow
+  \lambda=-\dfrac{\ln p_0}{t_0}$。
+\end{itemize}
+\chapter{第二章秘籍}
+\section*{2.1 泊松}
+\begin{enumerate}
+    \item 离散型一般问的是概率分布也就是每一个
+    $P(Y=a)$ 的概率，有时候也问分布函数也就是
+    $P(Y\le a)$，也就是离散的加和罢了。
+    \item 连续型 $P(X=a)=0$ 恒成立。
+    所以要问密度函数 $f_X(x)$，这个函数的积分恒等于 $1$，
+    密度函数积分完了是分布函数
+    $F(a)=P(X\le a)$。这个a也就是$f_X(x)$的积分上界。
+\end{enumerate}
+\begin{note}
+泊松分布
+$X\sim B(n,p)$ 是二项分布的极限情形，其中
+$n$ 必须是很多次试验，$p$ 必须是很小的成功概率，\\
+概率密度函数 $\lambda=np,p=\lambda/n$
+\[
+P(X=k)=\frac{\lambda^k}{k!}\,e^{-\lambda},
+\qquad k=0,1,2,\dots
+\] 
+$k!$ 是来自于二项系数 $C_n^k$ 中的分母；  
+上面 $\lambda^k$ 是由 $p^k$ 演化而来的。  
+其中分母里的 $n^k$ 与
+$
+n(n-1)\cdots(n-k+1)
+$
+这 $k$ 个数相乘后相互消掉了。  
+
+而
+$
+\left(1-\frac{\lambda}{n}\right)^{n}
+$
+这一项（也就是失败项的贡献）在 $n\to\infty$ 时趋于
+$
+e^{-\lambda}.
+$
+\end{note}
+\begin{dxtips}[都给x都分布函数然后也知道该求x小于谁都概率带入就行了别积分了]
+    \[
+f_Y(y)
+=\frac{d}{dy}F_Y(y)
+=\frac{d}{dy}F_X(y^2)
+= f_X(y^2)\cdot 2y,
+\]
+（链式法则）
+\end{dxtips}
+\section*{2.2 正态}
+\begin{note}
+$X\sim N(3,4)$, normal 是正态分布，均值 $\mu=3$，方差 $\sigma^2=4$，$\sigma=2$。
+标准差就是 $2$，因为正态分布都是连续的，所以它的密度函数很重要。
+$$
+f_X(x)
+=\frac{1}{\sqrt{2\pi}\,\sigma}
+\exp\!\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),
+.
+$$
+$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx=\sqrt{\pi}
+$柯西是基础，$N(0,1)$ 可以看作基础的$x/\sqrt{2}$ 的 $^2$，为了积分最后是 $1$ 补的分母的 $\sqrt{2\pi}$，
+$
+f_X(x)=\frac{1}{\sqrt{2\pi}}\,e^{-x^2/2},
+$\\
+$x-\mu$ 是平移不影响前面的系数，但是多除以一个 $\sigma^2$，$x/\sqrt{2}$ 就变成了 $x/\sqrt{2\sigma}$，
+所以之前多 $\sqrt{2\pi}$ 前面要加一个 $\sigma$。
+永远需减去均值，均值才能变成 $0$，除以标准差，标准方差才能变成 $1$。
+\end{note}
+\begin{itemize}
+  \item $\dfrac{d}{dx}\arcsin x=\dfrac{1}{\sqrt{1-x^2}},\quad |x|<1.$
+  \item $\dfrac{d}{dx}\arccos x=-\dfrac{1}{\sqrt{1-x^2}},\quad |x|<1.$
+  \item $\dfrac{d}{dx}\arctan x=\dfrac{1}{1+x^2},\quad x\in\mathbb R.$
+\end{itemize}
+\subsection*{二维分布函数和随机变量}
+\begin{note}
+    分布函数的定义是
+\[
+F_X(x)=P(X\le x),
+\]
+它是一个关于阈值 $x$ 的函数（$x$ 越大，事件 $X\le x$ 越容易发生）。
+
+如果 $X$ 是连续型随机变量并且 $F_X$ 可导，那么其概率密度函数为
+\[
+f_X(x)=\frac{d}{dx}F_X(x).
+\]
+
+直觉上看，把区间从 $(-\infty,x]$ 往右挪一点到 $(-\infty,x+dx]$，
+新增的那一小段概率大约是
+$f_X(x)\,dx$。
+\end{note}
+\begin{note}
+二维变量(X,Y)就是X，Y得同时发生。
+离散的概率分布P（x=a，y=b）
+分布函数就是P（x小于等于a，y小于等于b）一般写成F（x，y）也就累加。
+连续的分布函数是F（x小于a，y小于b）=F（a，b）=F（x，y）,分别对x和y求偏导得到概率密度函数
+\end{note}
+\begin{note}
+   边缘密度。
+
+离散的情形：已知 $P(X=a,Y=b)$，要求 $P(X=a)$，就是把所有满足 $X=a$ 的情形下，
+$Y$ 从头到尾取值加一遍。
+
+连续的情形：已知联合密度 $f(x,y)$，要求边缘密度 $f_X(x)$，
+就先假设 $x$ 已知并固定，然后确定 $y$ 的取值范围，
+再对 $y$ 在其全范围上积分，
+也就是
+$f_X(x)=\int f(x,y)\,dy$。
+
+比如要求 $xy<4$ 且 $xy>0$。
+固定 $x$ 后，$y$ 只能大于 $0$ 且小于 $\frac{4}{x}$。
+具体来说，如果 $x=2$，那么 $y$ 的取值范围就是 $0$ 到 $2$。
+\end{note}
+\section*{2.3相关性问题}
+\begin{note}
+    解决X+Y和X/Y的相关性问题也就是解决
+    U=X+Y， V=X/Y的问题。也就是f（uv）和f（u）和f（v）的关系问题。因为有了f（uv）就能用边缘密度轻松求出f（u）和f（v），而且由于可以用雅各比矩阵轻松算出f（u，v）事情一下变得很简单。
+\end{note}
+\subsection*{条件分布}
+\begin{note}
+    离散情形：
+
+\[
+P(X=x_i\mid Y=y_i)
+= \frac{P(X=x_i,Y=y_i)}{P(Y=y_i)}.
+\]
+
+对不同的 $x_i$ 都取一遍再加和，这就是离散的条件概率分布。
+
+$Y\mid X$ 读作“$Y$ 在 $X$ 的条件下”，
+其中竖线“$\mid$”表示条件，除法用的是斜线“$/ $”，
+竖线后面的条件写在下面。
+
+连续情形：
+
+条件概率密度定义为
+\[
+f_{X\mid Y}(x\mid a)=\frac{f(x,a)}{f_Y(a)},
+\]
+考试中通常把 $a$ 直接写成 $y$。
+
+现在给定了 $x$ 的取值范围为 $x\in A$。
+对这个条件概率密度在 $A$ 上积分，因为是关于 $x$ 积分，
+分母 $f_Y(a)$ 早已把 $x$ 积没了，所以可以直接提出作为分母，
+于是
+$\int_A f_{X\mid Y}(x\mid a)\,dx
+=\frac{1}{f_Y(a)}\int_A f(x,a)\,dx$。
+而分子积分完以后正好就是联合概率（或联合密度对应的概率），
+即
+$\int_A f(x,a)\,dx=P(X\in A,\,Y=a)$，
+因此整体得到
+$\int_A f_{X\mid Y}(x\mid a)\,dx
+=\dfrac{P(X\in A,\,Y=a)}{f_Y(a)}$。当然了如果是连续型不会让我们求P（Y=a）的因为恒等于0都会再给Y一个具体范围以上只是方便理解
+\end{note}
+
+\section{2.4 z=x+y问题}
+
+\begin{dxtips}
+先明白离散型的。因为z=x+y，直接求概率密度没法求只能先求概率分布。比如要求P（z=5）都是骰子点数。那么先确定第一次投多少，第一次投1第二次就得投4然后他们的概率得相乘，列举所有可能性的概率再相加。
+\end{dxtips}
+\begin{note}
+    从离散情形开始，设 $X,Y$ 为独立离散随机变量，$Z=X+Y$。由离散卷积公式
+\[
+P(Z=b)=\sum_a P(X=a)\,P(Y=b-a),
+\]
+其分布函数为
+\[
+P(Z<b)=\sum_{t<b}P(Z=t)
+      =\sum_a P(X=a)\sum_{t<b}P(Y=t-a)
+      =\sum_a P(X=a)\,P(Y<b-a).
+\]
+最后一步把等于变成小于吃掉了一个求和符号还是先固定x，再考虑y的取值。
+现在过渡到连续情形。设 $X,Y$ 为连续随机变量，密度分别为 $f_X,f_Y$。
+将离散求和替换为积分 $\sum_a\to\int da$，并将点概率替换为
+$P(X=a)\to f_X(a)\,da$，得到
+\[
+P(Z<b)=\int_{-\infty}^{\infty} f_X(a)
+       \left(\int_{-\infty}^{\,b-a} f_Y(y)\,dy\right) da.
+\]
+对 $b$ 求导，由微积分基本定理可得
+\[
+f_Z(b)=\frac{d}{db}P(Z<b)
+      =\int_{-\infty}^{\infty} f_X(a)\,f_Y(b-a)\,da.
+\]
+这一步求导的时候只有内层有b所以收影响。
+\end{note}
+\begin{note}
+    \paragraph{分段从哪里来？——$\max$ 与 $\min$ 会换表达式}
+
+关键在于积分上下限
+\[
+\max(0,z-2),\ \min(2,z),
+\]
+它们在不同的 $z$ 取值下大小关系不同。
+
+\medskip
+\noindent
+当 $0<z<2$：
+\[
+z-2<0 \;\Rightarrow\; \max(0,z-2)=0,\qquad
+z<2 \;\Rightarrow\; \min(2,z)=z,
+\]
+因此
+\[
+X\in[0,z].
+\]
+
+\medskip
+\noindent
+当 $2\le z\le 4$：
+\[
+z-2\ge 0 \;\Rightarrow\; \max(0,z-2)=z-2,\qquad
+z\ge 2 \;\Rightarrow\; \min(2,z)=2,
+\]
+因此
+\[
+X\in[z-2,2].
+\]
+
+\medskip
+这就是必须分段的原因：同一个卷积积分，其上下限在 $z<2$ 与 $z\ge 2$ 时形式不同。
+\end{note}
+\chapter{第三章秘籍}
+\section*{3.1 期望与几何分布}
+\begin{definition}[期望的存在性]
+    期望要求E（｜x｜）小于无穷，也就是求和｜xi｜p小于无穷。期望是一个长期的平均值如果不是绝对收敛不同的排序期望算出来不同就不对了。
+\end{definition}
+\begin{note}[几何分布]\\
+\[
+P(X=k)=(1-q)q^{k-1}         
+E[X]=\frac{1}{1-q}.
+\]
+ 先用条件概率加和为 $1$，第一项是 $a$，也就是 $a\cdot 1$，先把 $a$ 提出来，剩下的用等比数列求和公式
+$\dfrac{\text{首项}-\text{末项}\cdot\text{公比}}{1-\text{公比}}$，参考 $1,2,4,8$ 的等比数列，也就是
+$\dfrac{1-q^n}{1-q}$。因为它们的加和是 $1$，所以 $q$ 一定小于 $1$，当 $k\to\infty$ 时 $q^k=0$，就求出
+$a=1-q$。
+
+然后先把 $a$ 提出来，考虑 $\sum_{k=1}^{\infty} k q^{k-1}$。该和式可以看成是对
+$\sum_{k=0}^{\infty} q^k=\dfrac{1}{1-q}$ 求导，因此得到
+$\sum_{k=1}^{\infty} k q^{k-1}=\dfrac{1}{(1-q)^2}$。由于 $a=1-q$，所以
+$E=\dfrac{1}{1-q}$。
+\end{note}
+\begin{enumerate}
+  \item 期望只要知道用谁的概率，其他都是确定的。  
+  $E(X)=p(X)\,X$，其中 $p(X)$ 是不会变的，变的只能是 $X$，可能变成 $X^2$ 什么的。
+
+ \item  离散情形：若 $X$ 取值为 $x_k$，且 $P(X=x_k)=p_k$，则
+  $E(X)=\sum_{k} x_k\,p_k$。
+ xk可看作骰子点数。
+ \item 连续情形：若 $X$ 的密度为 $f_X(x)$，则
+  $E(X)=\int_{-\infty}^{\infty} x\,f_X(x)\,dx$。
+\end{enumerate}
+
+\section*{3.2方差与协方差}
+\begin{definition}[马尔可夫不等式]
+设随机变量 $X\ge 0$ 且 $E[X]<\infty$。则对任意 $a>0$，
+\[
+\mathbb P(X\ge a)\le \frac{E[X]}{a}.
+\]
+更一般地，若 $g:\mathbb R\to[0,\infty)$ 且 $E[g(X)]<\infty$，则对任意 $a>0$，
+\[
+\mathbb P\!\big(g(X)\ge a\big)\le \frac{E[g(X)]}{a}.
+\]
+\end{definition}
+\begin{note}
+   马尔可夫不等式把概率分布和期望联系起来，其原理如下。
+
+设 $X\ge 0$，且 $k>0$，$\varepsilon>0$。当 $X\ge \varepsilon$ 时，自然有
+$X^{k}\ge \varepsilon^{k}$。
+因此
+\[
+\{X\ge \varepsilon\}\subset \{X^{k}\ge \varepsilon^{k}\}.
+\]
+
+在概率的加权平均意义下，左边这部分事件的概率，其对应的“权重”可以统一用
+$\varepsilon^{k}$ 作为下界；而在右边，$X^{k}$ 在每一次取值时的权重都不小于
+$\varepsilon^{k}$。于是有
+\[
+\mathbb P(X\ge \varepsilon)
+=\mathbb P(X^{k}\ge \varepsilon^{k})
+\le \frac{E[X^{k}]}{\varepsilon^{k}}.
+\]
+
+这说明可以用 $X$ 的 $k$ 阶矩来控制 $X$ 偏离 $\varepsilon$ 的概率。
+\end{note}
+\begin{example}
+$
+\mathbb P(X\ge \varepsilon)
+=\mathbb P(X^{k}\ge \varepsilon^{k})
+
+$
+取 $\varepsilon=2,\ k=3$。
+\begin{itemize}
+  \item $X\ge 2$ 就是 “$X$ 落在区间 $[2,\infty)$”；
+  \item $X^3\ge 8$ 也是 “$X$ 落在区间 $[2,\infty)$”
+  （因为当 $X\ge 0$ 时，$X^3\ge 8 \Longleftrightarrow X\ge 2$）。
+\end{itemize}
+\end{example}
+\begin{definition}[切比雪夫]
+    设随机变量 $X$ 满足 $E\!\left[|X-E[X]|^{k}\right]<\infty$，其中 $k>0$。则对任意 $\varepsilon>0$，
+\[
+\mathbb P\!\left(|X-E[X]|\ge \varepsilon\right)
+=\mathbb P\!\left(|X-E[X]|^{k}\ge \varepsilon^{k}\right)
+\le \frac{E\!\left[|X-E[X]|^{k}\right]}{\varepsilon^{k}}.
+\]
+\end{definition}
+\begin{note}[方差与协方差]
+\[
+\operatorname{Var}(X)=E\!\big[(X-E[X])^2\big],
+\qquad
+\operatorname{Var}(X)=E[X^2]-\big(E[X]\big)^2.
+\]
+方差的权重是 $X-E[X]$（广义平均值），然后再平方。
+
+\[
+\operatorname{Cov}(X,Y)=E\!\big[(X-E[X])(Y-E[Y])\big],
+\qquad
+\operatorname{Cov}(X,Y)=E[XY]-E[X]E[Y].
+\]
+协方差的权重是 $X-E[X]$ 乘 $Y-E[Y]$。
+衡量的就是 $X$ 和 $Y$ 的相关性。如果独立的话，
+$E[XY]=E[X]E[Y]$，本质来说相同的 $XY$ 结果是一样的，
+只是这个结果的概率可能不一样；如果一样就说明
+$P(XY)=P(X)\cdot P(Y)$。
+\end{note}
+\section*{3.3相关系数}
+\begin{note}
+相关系数 $\rho$ 的作用是把协方差 $\operatorname{Cov}(X,Y)$ 规范到区间 $(-1,1)$ 内，因此需要除以
+$\sigma_X$ 和 $\sigma_Y$，即
+\[
+\rho_{XY}=\frac{\operatorname{Cov}(X,Y)}{\sigma_X\sigma_Y}.
+\]
+
+其依据是柯西--施瓦茨不等式：
+\[
+\bigl|\operatorname{Cov}(X,Y)\bigr|
+=\bigl|E\!\big[(X-E[X])(Y-E[Y])\big]\bigr|
+\le \sqrt{E\!\big[(X-E[X])^2\big]}\,
+      \sqrt{E\!\big[(Y-E[Y])^2\big]}
+=\sigma_X\sigma_Y,
+\]
+从而得到 $|\rho_{XY}|\le 1$。
+
+需要注意的是，$\rho$ 只用于刻画随机变量之间的\emph{线性相关性}。
+因此 $\rho=0$ 只能说明 $X$ 与 $Y$ 不存在线性相关关系，并不能说明二者相互独立。
+\end{note}
+\chapter{第四章秘籍}
+\begin{itemize}
+  \item 期望  
+  只要 $E|X|<\infty$，有
+  $\varphi_X'(t)=E\!\big(iX e^{itX}\big)$，
+  因而在 $t=0$，
+  $\varphi_X'(0)=iE[X]$，即
+  $E[X]=\frac{\varphi_X'(0)}{i}=-i\,\varphi_X'(0)$。
+
+  \item 二阶矩与方差  
+  只要 $E[X^2]<\infty$，有
+  $\varphi_X''(t)=E\!\big((iX)^2 e^{itX}\big)
+  =E\!\big(-X^2 e^{itX}\big)$，
+  因此
+  $\varphi_X''(0)=-E[X^2]$，即
+  $E[X^2]=-\,\varphi_X''(0)$。
+  从而
+  $\operatorname{Var}(X)
+  =E[X^2]-\big(E[X]\big)^2
+  =-\varphi_X''(0)-\big(-i\varphi_X'(0)\big)^2
+  =-\varphi_X''(0)-\big(\varphi_X'(0)\big)^2$，
+  因为 $(-i)^2=-1$。
+\end{itemize}
+\begin{itemize}
+  \item 版本 A（从 $1$ 开始：第一次成功所需试验次数）
+  \[
+  P(X=k)=(1-q)q^{k-1},\quad k=1,2,\dots
+  \]
+  此时
+  \[
+  E[X]=\frac{1}{1-q}.
+  \]
+  该定义对应 $k\ge 1$ 的几何分布。
+
+  \item 版本 B（从 $0$ 开始：第一次成功前失败次数）
+  \[
+  P(X=k)=p q^{k},\quad k=0,1,2,\dots,\qquad q=1-p,
+  \]
+  此时
+  \[
+  E[X]=\frac{q}{p}.
+  \]
+  该定义对应 $k\ge 0$ 的几何分布。
+\end{itemize}
+\section{4.1}
+\begin{itemize}
+  \item 定义：$\varphi_X(t)=E(e^{itX}),\ t\in\mathbb R$。
+  \item 有界性：$|\varphi_X(t)|\le 1$，且 $\varphi_X(0)=1$。
+  \item 共轭对称：$\varphi_X(-t)=\overline{\varphi_X(t)}$（若 $X$ 为实值）。
+  \item 一致连续：$\varphi_X(t)$ 在 $\mathbb R$ 上一致连续（因此连续）。
+  \item 平移与线性变换：若 $Y=aX+b$，则 $\varphi_Y(t)=e^{itb}\varphi_X(at)$。
+  \item 独立和：若 $X,Y$ 独立，则 $\varphi_{X+Y}(t)=\varphi_X(t)\varphi_Y(t)$。
+  \item 分布唯一性：若对一切 $t$ 有 $\varphi_X(t)=\varphi_Y(t)$，则 $X$ 与 $Y$ 同分布。
+  \item 收敛判别（L\'evy 连续性定理）：$X_n\Rightarrow X \iff \varphi_{X_n}(t)\to \varphi_X(t)$（对每个 $t$，且极限函数在 $0$ 处连续）。
+  \item 矩与导数（若矩存在）：若 $E|X|^k<\infty$，则 $\varphi_X^{(k)}(0)=i^k E[X^k]$。
+\end{itemize}
+设随机变量 $X$，其特征函数定义为
+\[
+\varphi_X(t)=E\!\big(e^{itX}\big),\qquad t\in\mathbb{R}.
+\]
+注意自变量是t，导一下就把ix拿下来了，t=0直接削掉有e的项，而且相同的分布，特征函数都长得很像。方便人判断。
+\begin{itemize}
+  \item 二项分布  
+  若 $X\sim \mathrm{Bin}(n,p)$，则其特征函数为
+  \[
+  \varphi_X(t)=E\!\big(e^{itX}\big)
+  =(pe^{it}+1-p)^n.
+  \]
+
+  \item 泊松分布  
+  若 $X\sim \mathrm{Poisson}(\lambda)$，则其特征函数为
+  \[
+  \varphi_X(t)=E\!\big(e^{itX}\big)
+  =\exp\!\big(\lambda(e^{it}-1)\big).
+  \]
+
+  \item 几何分布（从 $0$ 开始计数）  
+  若 $P(X=k)=p q^{k}$，$k=0,1,2,\dots$，其中 $q=1-p$，则其特征函数为
+  \[
+  \varphi_X(t)=E\!\big(e^{itX}\big)
+  =\frac{p}{1-qe^{it}},\qquad t\in\mathbb{R}.
+  \]
+
+  \item 正态分布  
+  若 $X\sim N(\mu,\sigma^2)$，则其特征函数为
+  \[
+  \varphi_X(t)=E\!\big(e^{itX}\big)
+  =\exp\!\left(i\mu t-\frac12\sigma^2 t^2\right),\qquad t\in\mathbb{R}.
+  \]
+\end{itemize}
+\section{4.5}
+\begin{note}
+把母函数展开。s的
+k次方等于几，几就是P（x=k）的概率
+\end{note}
+\begin{definition}[母函数与期望、方差的关系]
+设随机变量 $X$ 取非负整数值，其母函数为
+\[
+\Psi_X(s)=E[s^X]=\sum_{k=0}^{\infty}P(X=k)s^k,\qquad s\in[-1,1].
+\]
+若各式导数在 $s=1$ 处存在，则有
+\[
+E[X]=\Psi_X'(1),
+\qquad
+\operatorname{Var}(X)=\Psi_X''(1)+\Psi_X'(1)-\big(\Psi_X'(1)\big)^2.
+\]
+\end{definition}
+\begin{note}
+    母函数的好处就是导一次，他头上的k就会下来，也就是求E（X）里面概率要乘的X(骰子数)s=1 含s的项就没有了。二阶导前面是k（k-1）求期望也就是求x（x-1）的期望加一个E（X）就是E（X²）了再减去E（x）的²就是方差
+\end{note}
+\begin{itemize}
+  \item 二项分布  
+  若 $X\sim \mathrm{Bin}(n,p)$，则其母函数为
+  \[
+  \Psi_X(s)=E[s^X]=(ps+1-p)^n.
+  \]
+
+  \item 泊松分布  
+  若 $X\sim \mathrm{Poisson}(\lambda)$，则其母函数为
+  \[
+  \Psi_X(s)=E[s^X]=\exp\!\big(\lambda(s-1)\big).
+  \]
+由
+$e^{x}=\sum_{k=0}^{\infty}\dfrac{x^{k}}{k!}$，
+有
+\[
+\Psi_X(s)=E[s^X]
+=\sum_{k=0}^{\infty}s^kP(X=k)
+=\sum_{k=0}^{\infty}s^k e^{-\lambda}\frac{\lambda^k}{k!}
+=e^{-\lambda}\sum_{k=0}^{\infty}\frac{(\lambda s)^k}{k!}
+=e^{-\lambda}e^{\lambda s}
+=e^{\lambda(s-1)}.
+\]
+  \item 几何分布（从 $0$ 开始计数）  
+  若 $P(X=k)=p q^{k}$，$k=0,1,2,\dots$，其中 $q=1-p$，则其母函数为
+  \[
+  \Psi_X(s)=E[s^X]=\frac{p}{1-q s},\qquad |s|<\frac{1}{q}.
+  \]
+  公比从q变成了qs\[
+\Psi_X(s)
+=\sum_{k=0}^{\infty} s^k\,p q^k
+=p\sum_{k=0}^{\infty}(qs)^k.
+\]
+\end{itemize}
+\chapter{第五章秘籍}
+\section*{5.1}
+\begin{note}
+    大数定律要证明的是
+    平均值等于期望
+    设 $\{X_n\}$ 为独立同分布随机变量序列，且 设随机变量 $X$ 的期望为 $E[X]=\mu$，并定义样本平均
+\[
+\overline X_n=\frac{1}{n}\sum_{k=1}^n X_k,
+\]
+则当 $n\to\infty$ 时，有
+\[
+\overline X_n \longrightarrow \mu.
+\]
+xk就是骰子点数可能是1，2，1，2，4，2，6，5等等等但是只要摔无数次他的值就趋紧于他的期望值。
+用数学语言表达收敛，即对任意 $\varepsilon>0$，存在 $N>0$，当 $n>N$ 时，有
+$|\overline X_n-\mu|<\varepsilon$。
+其中
+$\overline X_n=\frac1n\sum_{k=1}^n X_k$，而 $\mu=E[X]=E[X_1]=\cdots=E[X_n]$，
+因此
+$\overline X_n-\mu=\frac1n\sum_{k=1}^n(X_k-E[X_k])$，
+从而条件可写为
+$\left|\frac1n\sum_{k=1}^n(X_k-E[X_k])\right|<\varepsilon$。
+\end{note}
+ 更精确地说（两步）：
+
+\begin{itemize}
+  \item 因为对每个 $k$，都有 $E[X_k]=\mu$，所以
+  $n\mu=\sum_{k=1}^n \mu=\sum_{k=1}^n E[X_k]$。
+
+  \item 把它并进求和：
+  \[
+  \overline X_n-\mu=\frac1n\sum_{k=1}^n X_k-\mu
+  =\frac1n\left(\sum_{k=1}^n X_k-n\mu\right)
+  =\frac1n\left(\sum_{k=1}^n X_k-\sum_{k=1}^n E[X_k]\right)
+  =\frac1n\sum_{k=1}^n\bigl(X_k-E[X_k]\bigr).
+  \]
+\end{itemize}
+\begin{dxtips}
+   我们一般用 $S_n$ 代表求和号后面的一切，
+那就转化为了
+$\dfrac{S_n}{n}$ 必须小于 $\varepsilon$，
+也就是“大于 $\varepsilon$ 的概率得无穷小”，
+即
+$P\!\left(\dfrac{S_n}{n}>\varepsilon\right)\le n^2\varepsilon^2$。
+\end{dxtips}
+\begin{itemize}
+  \item $r$ 阶收敛（$L^r$ 收敛）  
+  若 $r>0$，称 $X_n$ 以 $r$ 阶收敛到 $X$，记为 $X_n\xrightarrow{L^r}X$，若
+  \[
+  E\!\left(|X_n-X|^r\right)\to 0 \qquad (n\to\infty).
+  \]
+
+  \item 几乎处处收敛（a.s. 收敛）  
+  称 $X_n$ 几乎处处收敛到 $X$，记为 $X_n\xrightarrow{\mathrm{a.s.}}X$，若
+  \[
+  P\!\left(\lim_{n\to\infty}X_n=X\right)=1.
+  \]
+   几乎处处收敛允许一个概率为0的固定集合不收敛。
+  \item 依分布收敛（弱收敛）  
+  称 $X_n$ 依分布收敛到 $X$，记为 $X_n\xrightarrow{d}X$，若对一切 $x$（使 $F_X$ 在 $x$ 处连续），有
+  \[
+  F_{X_n}(x)\to F_X(x)\qquad (n\to\infty),
+  \]
+  其中 $F_{X_n}$ 与 $F_X$ 分别为 $X_n$ 与 $X$ 的分布函数。
+  \item 依概率收敛
+  依概率收敛是不收敛的集合逐渐趋向概率等于0，但是集合中的元素可以不固定
+\end{itemize}
+\begin{itemize}
+  \item $L^r$ 收敛 $\Rightarrow$ 依概率收敛：若 $r>0$ 且 $X_n\xrightarrow{L^r}X$，则 $X_n\xrightarrow{P}X$。
+  
+  \item 依概率收敛 $\Rightarrow$ 依分布收敛：若 $X_n\xrightarrow{P}X$，则 $X_n\xrightarrow{d}X$。
+  
+  \item 几乎处处收敛 $\Rightarrow$ 依概率收敛：若 $X_n\xrightarrow{\mathrm{a.s.}}X$，则 $X_n\xrightarrow{P}X$。
+  
+  \item 因而可串起来：$X_n\xrightarrow{L^r}X \Rightarrow X_n\xrightarrow{P}X \Rightarrow X_n\xrightarrow{d}X$，
+  且 $X_n\xrightarrow{\mathrm{a.s.}}X \Rightarrow X_n\xrightarrow{P}X \Rightarrow X_n\xrightarrow{d}X$。
+\end{itemize}
+对，用切比雪夫不等式推出来的通常就是弱大数定律（依概率收敛）。
+
+典型套路是：对任意 $\varepsilon>0$，
+\[
+P\!\left(\left|\overline X_n-\mu\right|\ge \varepsilon\right)
+\le \frac{\operatorname{Var}(\overline X_n)}{\varepsilon^2}.
+\]
+如果 $X_k$ 独立同分布，且 $\operatorname{Var}(X_1)=\sigma^2<\infty$，则
+\[
+\operatorname{Var}(\overline X_n)
+=\frac{1}{n^2}\operatorname{Var}\!\left(\sum_{k=1}^n X_k\right)
+=\frac{1}{n^2}\sum_{k=1}^n \sigma^2
+=\frac{\sigma^2}{n}.
+\]
+因此
+\[
+P\!\left(\left|\overline X_n-\mu\right|\ge \varepsilon\right)
+\le \frac{\sigma^2}{n\varepsilon^2}
+\xrightarrow[n\to\infty]{}0,
+\]
+这正是
+\[
+\overline X_n\xrightarrow{P}\mu,
+\]
+也就是弱大数定律。
+\section{5.2}
+\begin{example}[掷骰子说明 Lindeberg--L\'evy 中心极限定理]
+独立掷一枚公平骰子 $n$ 次，令 $X_i$ 为第 $i$ 次掷出的点数，则
+\[
+P(X_i=k)=\frac16,\quad k=1,2,3,4,5,6,
+\]
+且 $\{X_i\}$ 独立同分布。
+
+\begin{itemize}
+  \item 计算单次的均值与方差：
+  \[
+  \mu=E[X_i]=\frac{1+2+3+4+5+6}{6}=\frac{21}{6}=\frac{7}{2},
+  \]
+  \[
+  E[X_i^2]=\frac{1^2+2^2+3^2+4^2+5^2+6^2}{6}=\frac{91}{6},
+  \]
+  \[
+  \sigma^2=\Var(X_i)=E[X_i^2]-\mu^2=\frac{91}{6}-\Big(\frac{7}{2}\Big)^2=\frac{35}{12}.
+  \]
+
+  \item 设总点数 $S_n=\sum_{i=1}^n X_i$。由 Lindeberg--L\'evy 中心极限定理，
+  \[
+  \frac{S_n-n\mu}{\sigma\sqrt{n}}
+  =
+  \frac{\sum_{i=1}^n X_i-\frac{7}{2}n}{\sqrt{\frac{35}{12}n}}
+  \ \Rightarrow\ N(0,1),
+  \]
+  从而当 $n$ 充分大时有近似
+  \[
+  S_n \approx N\!\left(n\mu,\;n\sigma^2\right)
+  =
+  N\!\left(\frac{7}{2}n,\;\frac{35}{12}n\right).
+  \]
+\begin{dxtips}
+    投n次，每一次的期望值都是μ所以平均数就是是期望。这里是要求的是和的期望。这里写的 $n\mu$ 本来就是 $E[S_n]$。
+
+因为
+\[
+S_n=\sum_{i=1}^n X_i,\qquad E[X_i]=\mu,
+\]
+由期望的线性性（不需要独立），有
+\[
+E[S_n]
+=E\!\left[\sum_{i=1}^n X_i\right]
+=\sum_{i=1}^n E[X_i]
+=\sum_{i=1}^n \mu
+=n\mu.
+\]
+然后将这个正态归一化也就是减去均值也就是nμ和除以标准差也就是\sqrt{n\sigma^{2}}
+\end{dxtips}
+  \item 典型概率近似（举例）：
+  \[
+  P(S_n\ge 4n)\approx
+  1-\Phi\!\left(\frac{4n-\frac{7}{2}n}{\sqrt{\frac{35}{12}n}}\right)
+  =
+  1-\Phi\!\left(\frac{\frac12\sqrt{n}}{\sqrt{35/12}}\right).
+  \]
+\end{itemize}
+\end{example}
+\chapter{特别要背的}
+\begin{itemize}
+
+ \item 二项分布 $X\sim \mathrm{Bin}(n,p)$（$n\in\mathbb N,\ 0<p<1$）
+\begin{itemize}
+  \item 概率质量函数：
+  \[
+  P(X=k)=C_n^k\,p^k(1-p)^{\,n-k},\quad k=0,1,\dots,n
+  \]
+  \item 分布函数：
+  \[
+  F(k)=P(X\le k)=\sum_{j=0}^{k} C_n^j\,p^j(1-p)^{\,n-j},\quad k=0,1,\dots,n
+  \]
+  \item 特征函数：$\varphi_X(t)=\big((1-p)+pe^{it}\big)^n$
+  \item 母函数：$M_X(s)=\big((1-p)+pe^{s}\big)^n$
+  \item 期望：$E[X]=np$
+  \item 方差：$\operatorname{Var}(X)=np(1-p)$
+\end{itemize}
+\begin{dxtips}
+   在实际问题中，指数分布和泊松分布中的参数 $\lambda$ 往往并不是直接给出，
+而是通过\textbf{平均值（数学期望）}的方式间接确定的。
+
+\begin{itemize}
+  \item 若随机变量 $X$ 服从参数为 $\lambda>0$ 的指数分布 $X\sim \mathrm{Exp}(\lambda)$，
+  则其数学期望为
+  \[
+  E[X]=\frac{1}{\lambda}.
+  \]
+  因此，当题目给出“平均等待时间”为 $\mu$ 时，可由
+  \[
+  \lambda=\frac{1}{\mu}
+  \]
+  确定指数分布的参数。
+
+  \item 若随机变量 $N$ 服从参数为 $\lambda>0$ 的泊松分布 $N\sim \mathrm{Pois}(\lambda)$，
+  则其数学期望为
+  \[
+  E[N]=\lambda.
+  \]
+  因此，当题目给出“单位时间（或单位区域）内的平均发生次数”为 $\mu$ 时，
+  可直接取
+  \[
+  \lambda=\mu
+  \]
+  作为泊松分布的参数。
+\end{itemize}
+\end{dxtips}
+  \item 指数分布 $X\sim \mathrm{Exp}(\lambda)$（$\lambda>0$）
+  \begin{itemize}
+    \item 概率密度函数：$f(x)=\lambda e^{-\lambda x},\ x\ge 0$（否则 $0$）
+    \item 分布函数：$F(x)=0\ (x<0),\quad F(x)=1-e^{-\lambda x}\ (x\ge 0)$
+    \item 特征函数：$\varphi_X(t)=E(e^{itX})=\dfrac{\lambda}{\lambda-it}$
+    \item 母函数：$M_X(s)=E(e^{sX})=\dfrac{\lambda}{\lambda-s}\ (s<\lambda)$
+    \item 期望：$E[X]=\dfrac{1}{\lambda}$
+    \item 方差：$\operatorname{Var}(X)=\dfrac{1}{\lambda^2}$
+  \end{itemize}
+
+  \item 泊松分布 $X\sim \mathrm{Pois}(\lambda)$（$\lambda>0$）
+  \begin{itemize}
+    \item 概率质量函数：$P(X=k)=e^{-\lambda}\dfrac{\lambda^k}{k!},\ k=0,1,2,\dots$
+    \item 分布函数：$F(k)=P(X\le k)=e^{-\lambda}\sum_{j=0}^k\dfrac{\lambda^j}{j!}\ (k=0,1,2,\dots)$
+    \item 特征函数：$\varphi_X(t)=\exp\{\lambda(e^{it}-1)\}$
+    \item 母函数：$M_X(s)=\exp\{\lambda(e^{s}-1)\}$
+    \item 期望：$E[X]=\lambda$
+    \item 方差：$\operatorname{Var}(X)=\lambda$
+  \end{itemize}
+
+  \item 正态分布 $X\sim N(\mu,\sigma^2)$（$\sigma>0$）
+  \begin{itemize}
+    \item 概率密度函数：$f(x)=\dfrac{1}{\sqrt{2\pi}\sigma}\exp\!\Big(-\dfrac{(x-\mu)^2}{2\sigma^2}\Big),\ x\in\mathbb R$
+    \item 分布函数：$F(x)=\Phi\!\Big(\dfrac{x-\mu}{\sigma}\Big)$（$\Phi$ 为标准正态分布函数）
+    \item 特征函数：$\varphi_X(t)=\exp\!\Big(it\mu-\dfrac{1}{2}\sigma^2 t^2\Big)$
+    \item 母函数：$M_X(s)=\exp\!\Big(\mu s+\dfrac{1}{2}\sigma^2 s^2\Big)$
+    \item 期望：$E[X]=\mu$
+    \item 方差：$\operatorname{Var}(X)=\sigma^2$
+  \end{itemize}
+\item 几何分布 $X\sim \mathrm{Geom}(p)$（$0<p<1$，记 $q=1-p$，取值 $1,2,\dots$，表示“直到首次成功的试验次数”）
+\begin{itemize}
+  \item 概率质量函数：$P(X=k)=q^{k-1}p,\ k=1,2,\dots$
+  \item 分布函数：$F(k)=P(X\le k)=1-q^{k},\ k=1,2,\dots$
+  \item 特征函数：$\varphi_X(t)=E(e^{itX})=\dfrac{pe^{it}}{1-qe^{it}}$
+  \item 母函数：$M_X(s)=E(e^{sX})=\dfrac{pe^{s}}{1-qe^{s}}\ (s<-\ln q)$
+  \item 期望：$E[X]=\dfrac{1}{p}$
+  \item 方差：$\operatorname{Var}(X)=\dfrac{q}{p^2}$
+\end{itemize}
+ 
+
+  \item 均匀分布 $X\sim U(a,b)$（$a<b$）
+  \begin{itemize}
+    \item 概率密度函数：$f(x)=\dfrac{1}{b-a},\ a\le x\le b$（否则 $0$）
+    \item 分布函数：$F(x)=0\ (x<a),\quad F(x)=\dfrac{x-a}{b-a}\ (a\le x\le b),\quad F(x)=1\ (x>b)$
+    \item 特征函数：$\varphi_X(t)=E(e^{itX})=\dfrac{e^{itb}-e^{ita}}{it(b-a)}\ (t\ne 0),\ \varphi_X(0)=1$
+    \item 母函数：$M_X(s)=E(e^{sX})=\dfrac{e^{sb}-e^{sa}}{s(b-a)}\ (s\ne 0),\ M_X(0)=1$
+    \item 期望：$E[X]=\dfrac{a+b}{2}$
+    \item 方差：$\operatorname{Var}(X)=\dfrac{(b-a)^2}{12}$
+  \end{itemize}
+\end{itemize}

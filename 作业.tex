@@ -1,0 +1,5218 @@
+\chapter{作业}
+\section{习题}
+\begin{proposition}[本章作业]1，2，12，13，14，15，16，17，18，19，20，21，22，25，24，27，28，32，33，36
+    
+\end{proposition}
+\subsection{1,2,12,13,14，15,16}
+\begin{exercise}
+写出下列随机试验的样本空间：
+\begin{enumerate}
+  \item 掷三颗骰子，观察所得点数之和；
+  \item 抽检产品，直到抽到 10 件正品为止，记录抽检产品的数量；
+  \item 从编号分别为 $1,2,3,4,5$ 的 5 件产品中任取两件，观察取出哪两件；
+  \item 观察某地一天内的最高气温和最低气温（假设最低气温不低于 $T_1$，最高气温不高于 $T_2$）；
+  \item 将长为 $l$ 的线段分成三段，观察各段长度。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+设 $A,B,C$ 为事件，用 $A,B,C$ 的运算关系表示下列事件：
+\begin{enumerate}
+  \item $A$ 与 $B$ 出现，但 $C$ 不出现；
+  \item $A$ 出现，且 $B$ 与 $C$ 至少一个出现；
+  \item $A,B,C$ 中至少一个出现；
+  \item $A,B,C$ 中恰有一个出现；
+  \item $A,B,C$ 中至少两个出现；
+  \item $A,B,C$ 中恰有两个出现；
+  \item $A,B,C$ 中至多一个出现；
+  \item $A,B,C$ 中至多两个出现。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+设 $A,B,C$ 为事件，试说明下列关系式的含义，并画出相应的 Venn 图：
+\begin{enumerate}
+  \item $A \cap B \cap C = A$；
+  \item $A \cup B \cup C = A$；
+  \item $A \cap B \subset C$；
+  \item $\overline{C} \subset \overline{A} \cap \overline{B}$。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+任取一五位正整数，求其后四位各不相同的概率。
+\end{exercise}
+
+\begin{exercise}
+袋中有 $r+b$ 个同型号小球，其中 $r$ 个红，$b$ 个黑。作不返回抽取，每次取一个，取 $k$ 次，$k \le r+b$，求最后取出的小球是红球的概率。
+\end{exercise}
+\begin{exercise}
+袋中有同型号黑、白球若干。现随机不放回地相继抽取两球，假定抽到两个白球的概率为 $1/3$，问：
+\begin{enumerate}
+  \item 袋中球的最小数目是多少？
+  \item 如果黑球数目是偶数，袋中球的最小数目是多少？
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+甲抛硬币 $k+1$ 次，乙抛 $k$ 次。求抛出正面次数甲比乙多的概率。
+\end{exercise}
+
+\begin{exercise}
+库房中有油漆 17 桶，其中白漆 10 桶，黑漆 4 桶，红漆 3 桶。在这 17 桶油漆中任取 9 桶，求正好 4 桶白漆、3 桶黑漆和 2 桶红漆的概率。
+\end{exercise}
+
+\begin{exercise}
+将 3 个球放入编号 1 至 4 的 4 个盒，每球入各盒等可能。求下列事件的概率：
+\begin{enumerate}
+  \item 恰有两个空盒；
+  \item 有球盒的最小编号为 2。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+50 只铆钉中有 3 只强度太弱。随机地取铆钉用于 10 个部件，每个部件用 3 只。若将 3 只强度太弱的铆钉都装在同一部件上，则此部件不能使用，求出现部件不能使用的概率。
+\end{exercise}
+
+\begin{exercise}
+将 $k$ 个不同的球任意放入编号为 $1$ 至 $n$ 的 $n$ 个盒 ($k \leq n$)，每球入各盒等可能。求下列事件的概率：
+\begin{enumerate}
+  \item 指定的 $k$ 个盒恰各有一球；
+  \item 每盒至多 1 球；
+  \item 某指定的盒恰有 $m$ 个球。
+\end{enumerate}
+\end{exercise}
+\begin{proposition}
+    \begin{solution}
+设 $k$ 个球和 $n$ 个盒均为有标号。每个球独立地选择一个盒，样本空间大小为
+\[
+|S| = n^k.
+\]
+
+\noindent (1) 指定的 $k$ 个盒恰各有一球。  
+这是把 $k$ 个有标号的球与 $k$ 个指定的盒建立一一对应，第一个球有k种选择方式，第二个球只有k-1种。方式数为排列数
+\[
+A(k,k) = k!.
+\]
+故所求概率为
+\[
+P_1 = \frac{k!}{n^k}.
+\]
+
+\noindent (2) 每盒至多 $1$ 球。  
+要求 $k$ 个球落入互不相同的盒，方式数为
+\[
+A(n,k) = n(n-1)\cdots(n-k+1) = \frac{n!}{(n-k)!}.
+\]
+故所求概率为
+\[
+P_2 = \frac{A(n,k)}{n^k} = \frac{n!}{(n-k)!\,n^k}.
+\]
+
+\noindent (3) 某指定的盒恰有 $m$ 个球。  
+先从 $k$ 个球中选出 $m$ 个放入该盒，共有
+\[
+C(k,m)
+\]
+种方式。其余 $k-m$ 个球可任意放入其余 $n-1$ 个盒，共
+\[
+(n-1)^{k-m}
+\]
+种方式。  
+故所求概率为
+\[
+P_3 = \frac{C(k,m)\,(n-1)^{k-m}}{n^k}, \qquad 0 \le m \le k.
+\]
+\end{solution}
+\end{proposition}
+
+\begin{exercise}
+甲、乙两货轮驶向一个不能供它们同时使用的码头。假设两货轮在一昼夜内各时刻到达码头都是等可能的，且甲货轮使用码头的时间是 1 小时，乙货轮使用码头的时间是 2 小时，求两货轮到达码头后能直接使用码头的概率。
+\end{exercise}
+\begin{exercise}
+将长为 $l$ 的线段折成三段，求下列事件的概率：
+\begin{enumerate}
+  \item 三段可构成一个三角形；
+  \item 最长一段不超过 $2l/3$。
+\end{enumerate}
+\end{exercise}
+\begin{dxtips}
+    由于有总长度的限制三维变二维，例1.2.9
+\end{dxtips}
+
+\begin{exercise}
+在区间 $(0,1)$ 内任取两数，求下列事件的概率：
+\begin{enumerate}
+  \item 两数之差大于 0.2；
+  \item 两数之和小于 1.2；
+  \item 前两个事件同时出现。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+设 $A,B$ 是事件，$P(A)=x, P(B)=y, P(AB)=z$。求：
+\begin{enumerate}
+  \item $P(A \cup B)$；
+  \item $P(AB)$；
+  \item $P(\overline{A} \cup B)$；
+  \item $P(\overline{AB})$。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+设 $A,B,C$ 是事件，$P(A)=P(B)=P(C)=0.25,\; P(AB)=P(BC)=0,\; P(AC)=0.125$。求 $A,B,C$ 中至少一个出现的概率。
+\begin{dxtips}
+    
+
+\[
+P(A \cup B \cup C) 
+= P(A) + P(B) + P(C) 
+- P(AB) - P(BC) - P(AC) 
++ P(ABC).
+\]
+\end{dxtips}
+
+\end{exercise}
+\subsection{17,18,19,20,21,}
+\begin{exercise}
+一辆载有 25 名乘客的巴士从机场开出，沿途经 9 个站点。假设每位乘客在任一站点下车是等可能的，且只有在有乘客下车时巴士才停车。求下列事件的概率：
+\begin{enumerate}
+  \item 巴士在第 $i$ 站停车，$i=1,2,\dots,9$；
+  \item 巴士在第 $i$ 站和第 $j$ 站均停车，$1 \leq i < j \leq 9$；
+  \item 巴士在第 $i$ 站和第 $j$ 站至少停 1 次，$1 \leq i < j \leq 9$；
+  \item 在第 $i$ 站有 3 人下车，$i=1,2,\dots,9$。
+\end{enumerate}
+\end{exercise}
+\begin{dxtips}[谁做选择谁做指数]
+  $
+9^{25}$
+
+为什么不是 $25^9$？
+
+\begin{itemize}
+  \item $25^9$ 的含义是：9 个站，每个站要决定“从 25 人里选谁下车”；
+  \item 那样理解是“站点来挑人”，而不是“人来挑站”；
+  \item 这和题意不同。
+\end{itemize}
+
+---
+
+\textbf{总结：}
+\begin{itemize}
+  \item $9^{25}$ $\;\Rightarrow\;$ 25 个“人”各自从 9 个“站”里挑；
+  \item $25^9$ $\;\Rightarrow\;$ 9 个“站”各自从 25 个“人”里挑（本题不是这个设定）。
+\end{itemize}
+
+\end{dxtips}
+\begin{exercise}
+设 $A,B$ 是事件，$P(A)=0.3,\; P(B)=0.4,\; P(\overline{A}B)=0.5$，求 $P(B \mid A \cup B)$。
+\end{exercise}
+
+\begin{exercise}
+设 $A,B$ 是事件，$P(A)=\tfrac{1}{4},\; P(B \mid A)=\tfrac{1}{3},\; P(A \mid B)=\tfrac{1}{2}$，求 $P(A \cup B)$。
+\end{exercise}
+
+\begin{exercise}
+设 $A,B$ 是事件，$P(A)=a,\; P(B)=b>0$，试证：
+\[
+P(A \mid B) \geq \frac{a+b-1}{b}.
+\]
+\end{exercise}
+
+\begin{exercise}
+以往数据显示，某家庭患感冒规律如下：孩子感冒的概率为 $0.6$；孩子感冒的条件下，母亲感冒的概率为 $0.5$；孩子与母亲均感冒的条件下，父亲感冒的概率为 $0.4$。求孩子和母亲感冒，但父亲未感冒的概率。
+\end{exercise}
+
+\begin{exercise}
+10 件产品中有 2 件次品，8 件正品。作不返回抽取，每次任取 1 件，取 2 次，求下列事件的概率：
+\begin{enumerate}
+  \item 取 2 件正品；
+  \item 取 2 件次品；
+  \item 第二次取到次品。
+\end{enumerate}
+\end{exercise}
+\subsection{24,25,27,28 32,33,36}
+\begin{exercise}
+一等小麦种子中混有 5\% 的二等和 3\% 的三等籽粒。已知一、二、三等籽粒将来长出的穗有 50 粒以上麦粒的概率分别为 50\%、15\% 和 10\%。假设 3 种籽粒发芽率相同，求用上述小麦种子播种后，该批种子所结的穗有 50 粒以上麦粒的概率。
+\end{exercise}
+
+\begin{exercise}
+某仪器有三个指示灯，其工作相互独立，烧坏第一、第二、第三个指示灯的概率分别为 $0.1,0.2,0.3$。当烧坏 1 个灯时，仪器出现故障的概率为 $0.25$；当烧坏 2 个灯时，仪器出现故障的概率为 $0.6$；当烧坏 3 个灯时，仪器出现故障的概率为 $0.9$。求仪器出现故障的概率。
+\end{exercise}
+\begin{solution}
+设事件 $A_k$ 表示“恰有 $k$ 个指示灯烧坏”（$k=0,1,2,3$），$F$ 表示“仪器出现故障”。
+
+三指示灯相互独立，且烧坏概率分别为 $0.1,0.2,0.3$，因此
+\[
+\begin{aligned}
+P(A_0)&=(0.9)(0.8)(0.7)=0.504,\\
+P(A_1)&=0.1\cdot0.8\cdot0.7+0.9\cdot0.2\cdot0.7+0.9\cdot0.8\cdot0.3=0.398,\\
+P(A_2)&=0.1\cdot0.2\cdot0.7+0.1\cdot0.8\cdot0.3+0.9\cdot0.2\cdot0.3=0.092,\\
+P(A_3)&=0.1\cdot0.2\cdot0.3=0.006.
+\end{aligned}
+\]
+
+已知
+\[
+P(F\mid A_1)=0.25,\quad P(F\mid A_2)=0.6,\quad P(F\mid A_3)=0.9,
+\]
+且 $P(F\mid A_0)=0$。
+
+由全概率公式，
+\[
+\begin{aligned}
+P(F)
+&=\sum_{k=0}^3 P(F\mid A_k)P(A_k) \\
+&=0.25\times 0.398 + 0.6\times 0.092 + 0.9\times 0.006 \\
+&=0.0995+0.0552+0.0054 \\
+&=0.1601.
+\end{aligned}
+\]
+
+因此，仪器出现故障的概率为 $0.1601$。
+\end{solution}
+\begin{exercise}
+某地区男女总人口比例为 $51:49$。男性中的 $5\%$ 是色盲患者，女性中的 $2.5\%$ 是色盲患者。今从人群中随机抽取一人，恰好是色盲患者，求此人为男性的概率。
+\end{exercise}
+\begin{solution}
+设 $M$ 表示“抽到男性”，$F$ 表示“抽到女性”，$C$ 表示“抽到色盲患者”。则
+\[
+P(M)=\frac{51}{100},\quad P(F)=\frac{49}{100},\quad
+P(C\mid M)=0.05,\quad P(C\mid F)=0.025.
+\]
+由全概率公式，
+\[
+P(C)=P(C\mid M)P(M)+P(C\mid F)P(F)
+=0.05\cdot\frac{51}{100}+0.025\cdot\frac{49}{100}
+=\frac{151}{4000}.
+\]
+由贝叶斯公式，
+\[
+P(M\mid C)=\frac{P(C\mid M)P(M)}{P(C)}
+=\frac{0.05\cdot\frac{51}{100}}{\frac{151}{4000}}
+=\frac{102}{151}\approx 0.6755.
+\]
+\end{solution}
+\begin{exercise}
+有两批同型号产品，第一批 14 件，其中有 2 件次品，装在第一箱中；
+第二批 10 件，其中有 1 件次品，装在第二箱中。
+现从第一箱中任意取出两件混入第二箱中，然后再从第二箱中任意取出 1 件。
+\begin{enumerate}
+  \item 求从第二箱中取到的是次品的概率；
+  \item 若已知从第二箱中取到的是次品，求从第一箱中取到过次品的概率。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+设一架坠毁的飞机坠在 3 个可能区域中的任何一个是等可能的；
+如果飞机坠毁在区域 $A_i \;(i=1,2,3)$，经快速搜寻后能发现其残骸的概率为 $\alpha_i \;(i=1,2,3)$。
+现已快速搜寻了区域 $A_1$，但未发现飞机残骸。求飞机坠落在 3 个区域内的条件概率。
+\end{exercise}
+\begin{dxtips}
+    发生什么就设什么
+\end{dxtips}
+\begin{exercise}
+设某种昆虫产 $n$ 个卵的概率为 $e^{-\lambda}\lambda^n/n!,\; n=0,1,2,\dots,\; \lambda>0$ 为常数。
+每个卵能孵化成幼虫的概率均为 $p\;(0<p<1)$，且各卵能否孵化成幼虫相互独立。
+\begin{enumerate}
+  \item 求每只昆虫有 $k$ 个后代 (幼虫) 的概率，$k=0,1,2,\dots$；
+  \item 若已知某只昆虫有 $k$ 个后代，求它产了 $m$ 个卵的概率，$m=k,k+1,\dots$。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+设 $A,B$ 是事件，$0<P(A)<1$ 且 $P(B|A)=P(B|\overline{A})$。
+试证：$A$ 与 $B$ 独立。
+\end{exercise}
+
+\begin{exercise}
+如果事件 $A,B,C$ 满足 $P(ABC)=P(A|C)\cdot P(B|C)\cdot P(C),\; P(C)>0$，
+则称事件 $A,B$ 关于事件 $C$ 条件独立。试证：
+\begin{enumerate}
+  \item 当 $P(BC)>0$ 时，上述条件独立的充分必要条件是 $P(A|BC)=P(A|C)$；
+  \item 举例说明“独立”与“条件独立”没有蕴涵关系。
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+在 4 次独立试验中，事件 $A$ 至少出现 1 次的概率为 $0.5904$。
+求在 3 次独立试验中，事件 $A$ 出现 1 次的概率。
+\end{exercise}
+\begin{definition}[多项分布]
+设一次试验有 $k$ 种可能的结果，第 $i$ 类结果出现的概率为 $p_i$，满足
+\[
+p_1 + p_2 + \cdots + p_k = 1, \quad p_i \geq 0.
+\]
+独立重复试验 $n$ 次，令 $X_i$ 表示第 $i$ 类结果出现的次数，则随机向量
+\[
+(X_1, X_2, \dots, X_k), \quad \sum_{i=1}^k X_i = n,
+\]
+服从参数为 $n$ 与 $(p_1,\dots,p_k)$ 的多项式分布，记作
+\[
+(X_1,\dots,X_k) \sim \mathrm{Multinomial}(n; p_1,\dots,p_k).
+\]
+
+其分布律为
+\[
+P(X_1=x_1, \dots, X_k=x_k)
+= \frac{n!}{x_1!x_2!\cdots x_k!} \; p_1^{x_1} p_2^{x_2}\cdots p_k^{x_k},
+\]
+其中 $x_1+x_2+\cdots+x_k = n$。
+\end{definition}
+
+\begin{remark}
+\begin{itemize}
+  \item 当 $k=2$ 时，多项式分布退化为二项分布。
+  \item 边缘分布：若只取某一类 $X_i$，则 $X_i \sim B(n,p_i)$。
+  \item 应用：掷骰子、词袋模型（Bag-of-Words）、遗传学中的多等位基因分布等。
+\end{itemize}
+\end{remark}
+\begin{dxtips}
+    推广二项分布，c几几都是同一种只要是两个是A一个是B两个是C都是一种情况
+\end{dxtips}
+\begin{proposition}[排列和组合的区别]
+设从 $n$ 个不同元素中取出 $k$ 个元素，则有以下两种计数方式：
+\begin{itemize}
+  \item \textbf{排列数（Permutation）}：若考虑取出元素的\emph{顺序}，则不同顺序算作不同情况。  
+  记为
+  \[
+  A_n^k = n (n-1) \cdots (n-k+1) = \frac{n!}{(n-k)!}.
+  \]
+
+  \item \textbf{组合数（Combination）}：若\emph{不考虑顺序}，只关心选出的元素集合本身，则不同顺序算作同一种情况。  
+  记为
+  \[
+  C_n^k = \frac{A_n^k}{k!} = \frac{n!}{k!(n-k)!}.
+  \]
+\end{itemize}
+
+特别地，在概率模型中：
+\begin{itemize}
+  \item 若问题关心“事件发生的次数”，而不关心其具体顺序（如二项分布、多项分布），应使用组合数；
+  \item 若问题关心“事件的排列方式”或顺序，则需使用排列数。
+\end{itemize}
+\end{proposition}
+\begin{example}
+从集合 $\{1,2,3\}$ 中取出 $2$ 个元素：
+
+\begin{itemize}
+  \item 若考虑顺序（排列），则可能结果为  
+  \((1,2),(2,1),(1,3),(3,1),(2,3),(3,2)\)，共 $A_3^2 = 6$ 种。  
+  在等可能情形下，任一结果的概率为 $\tfrac{1}{6}$。
+
+  \item 若不考虑顺序（组合），则可能结果为  
+  \(\{1,2\}, \{1,3\}, \{2,3\}\)，共 $C_3^2 = 3$ 种。  
+  由于每个组合由两个排列合并而成，因此每个组合的概率为
+  \[
+  P(\{i,j\}) = \frac{2}{6} = \frac{1}{3}.
+  \]
+\end{itemize}
+
+\textbf{非等可能情形：}  
+假设每次抽取时，三个元素出现的概率分别为
+\[
+p_1=0.5,\quad p_2=0.3,\quad p_3=0.2,
+\]
+且抽取独立、允许重复。
+
+例如，事件“恰好抽到一个 $1$ 和一个 $2$”可以写作 \(\{1,2\}\)。  
+它包含两种排列：(1,2) 和 (2,1)，概率之和为
+\[
+P(\{1,2\}) = C_2^1 \, p_1^1 p_2^1.
+\]
+
+同理，事件“一个 $1$ 和一个 $3$”概率为
+\[
+P(\{1,3\}) = C_2^1 \, p_1^1 p_3^1.
+\]
+
+事件“两次都是 $1$”的概率为
+\[
+P(\{1,1\}) = C_2^2 \, p_1^2 = 1 \cdot p_1^2.
+\]
+\end{example}
+
+
+\begin{exercise}
+某国家的统计数据显示，该国人 O、A、B 和 AB 四种血型的人口比例分别为 46\%、40\%、11\% 和 3\%。
+先从该国任选 5 人，求下列事件的概率：
+\begin{enumerate}
+  \item 两人为 O 型，其余三人分别为 A 型、B 型和 AB 型；
+  \item 三人为 O 型，其余两人为 A 型；
+  \item 没有人为 AB 型。
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+设一次独立抽取中血型为 O、A、B、AB 的概率分别为
+\[
+p_O=0.46,\qquad p_A=0.40,\qquad p_B=0.11,\qquad p_{AB}=0.03,
+\]
+共取 $5$ 人，视为多项分布模型。
+
+\textbf{(1) 两人为 O 型，另外三人分别为 A、B、AB：}
+\[
+P=\bigl(C_{5}^{\,2} C_{3}^{\,1} C_{2}^{\,1}\bigr)\,p_O^{2}\,p_A\,p_B\,p_{AB}
+=60\times 0.46^{2}\times 0.40\times 0.11\times 0.03
+\approx 0.01676.
+\]
+
+\textbf{(2) 三人为 O 型，其余两人为 A 型：}
+\[
+P=C_{5}^{\,3}\,p_O^{3}\,p_A^{2}
+=10\times 0.46^{3}\times 0.40^{2}
+\approx 0.15574.
+\]
+
+\textbf{(3) 没有人为 AB 型：}
+\[
+P=(1-p_{AB})^{5}=0.97^{5}\approx 0.85873.
+\]
+\end{solution}
+\begin{exercise}
+甲、乙二人进行围棋比赛，直至一方先多胜两盘为止。
+如果每盘比赛甲胜的概率为 $0.65$，乙胜的概率为 $0.35$。
+求比赛结果甲获胜的概率。
+\end{exercise}
+\begin{solution}
+设甲单局胜率为 $p=0.65$、乙为 $q=0.35$。要求“先领先两盘”的概率。
+
+\textbf{分组思想：}把 \emph{相邻两盘} 看成一组。每组有三类结果  
+\[
+\text{AA（甲甲）}:p^2,\qquad
+\text{BB（乙乙）}:q^2,\qquad
+\text{AB 或 BA}:2pq.
+\]
+其中 AB/BA 使比分差回到 $0$（等价于“这一组白玩”）。
+
+\textbf{独立与几何模型：}各组相互独立；比赛会经历若干个“和局组”（AB/BA），直到第一次出现“决定组”（AA 或 BB）为止。  
+设 $R$ 为和局组的个数，则
+\[
+P(R=r)=(2pq)^r\,(p^2+q^2),\qquad r=0,1,2,\dots
+\]
+即 $R$ 服从以 $p^2+q^2$ 为“成功概率”的几何分布。
+
+\textbf{决定组是谁？}在出现“决定组”的那一组中，甲获胜当且仅当该组为 AA。条件概率
+\[
+P(\text{AA}\mid \text{决定组})=\frac{p^2}{p^2+q^2}.
+\]
+于是（也可直接对 $r$ 求和）
+\[
+P(\text{甲胜})
+=\sum_{r=0}^{\infty} (2pq)^r\,p^2
+=\frac{p^2}{1-2pq}
+=\frac{p^2}{p^2+q^2}.
+\]
+
+\textbf{代入数值：} $p=\tfrac{13}{20}$、$q=\tfrac{7}{20}$，
+\[
+P(\text{甲胜})=\frac{(13/20)^2}{(13/20)^2+(7/20)^2}
+=\frac{169}{169+49}=\frac{169}{218}\approx 0.77523.
+\]
+
+\textbf{合理性校验：}若 $p=q=\tfrac12$，上式给出 $P(\text{甲胜})=\tfrac12$（对称性）；当 $p\to1$ 时 $P(\text{甲胜})\to1$，与直觉一致。
+\end{solution}
+
+\begin{exercise}
+甲、乙二人玩摸球游戏，两个小柜流从装有 $r$ 个红球和 $b$ 个黑球的盒中摸球（摸到的球取出后不放回）。
+若规定先摸到红球者为胜方，求先摸球者为胜方的概率。
+\end{exercise}
+
+\begin{exercise}
+设在 $n$ 次试验中，事件 $A$ 出现的概率为 $p\;(0<p<1)$。
+求在 $n$ 次重复试验中，事件 $A$ 出现偶数次的概率。
+\end{exercise}
+
+\begin{exercise}
+连续抛一枚匀质硬币，直到出现两次正面为止，求恰抛币 $n$ 次的概率。
+\end{exercise}\begin{solution}[解答 1.36]
+设硬币均匀，正面概率 $p=\tfrac12$、反面概率 $q=\tfrac12$。直到出现两次正面为止，恰好抛 $n$ 次等价于：前 $n-1$ 次中恰有 $1$ 次正面，第 $n$ 次为正面。故
+\[
+P(N=n)=C_{\,n-1}^{\,1}\,p^{2}\,q^{\,n-2},\qquad n=2,3,4,\dots
+\]
+代入 $p=q=\tfrac12$ 得
+\[
+P(N=n)=C_{\,n-1}^{\,1}\left(\tfrac12\right)^{n}
+=\frac{n-1}{2^{n}},\qquad n\ge 2.
+\]
+\end{solution}
+\subsection*{2.1}
+\begin{homework}[2.3]
+$15$ 件同型号零件中恰有 $2$ 件次品。作不放回抽取，取 $3$ 次，每次取 $1$ 件，以 $X$ 表示 $3$ 次中取出次品的件数，求 $X$ 的概率分布。
+\end{homework}
+
+\begin{homework}[2.4]
+进行重复独立试验，每次试验成功的概率为 $p \ (0 < p < 1)$，失败的概率为 $q = 1 - p$。  
+(1) 试验进行到出现 $1$ 次成功为止，$X$ 表示所需的试验次数，求 $X$ 的概率分布；  
+(2) 试验进行到出现 $r$ 次成功为止，$Y$ 表示所需的试验次数，求 $Y$ 的概率分布。
+\end{homework}
+\begin{dxtips}[指定成功次数，未知总次数]
+    对于完成r次成功再算概率分布，我们拆分成r-1次成功需要尝试多少次再乘最后一次是成功概率问题
+\end{dxtips}
+\begin{solution}
+设每次试验成功的概率为 $p\ (0<p<1)$，失败概率为 $q=1-p$。
+
+\begin{enumerate}[(1)]
+  \item 令 $X$ 为出现第 $1$ 次成功所需的试验次数，则
+  \[
+    P(X=k)=q^{\,k-1}p,\qquad k=1,2,\dots
+  \]
+
+  \item 令 $Y$ 为出现第 $r$ 次成功所需的试验次数，则
+ \[
+P(Y=n)=C_{n-1}^{\,r-1} p^{\,r} q^{\,n-r},\qquad n=r,r+1,r+2,\dots
+\]
+\end{enumerate}
+\end{solution}
+\begin{homework}[2.5]
+甲、乙轮流掷投篮，直至某人投中为止。甲的命中率为 $0.4$，乙的命中率为 $0.6$，甲先投。分别求甲、乙投篮次数的概率分布。
+\end{homework}
+
+\begin{homework}[2.9]
+甲、乙投篮的命中率分别为 $0.6$ 与 $0.7$，各投 $3$ 次。求下列事件的概率：  
+(1) 甲、乙投中次数相等；  
+(2) 甲投中次数多于乙投中次数。
+\end{homework}
+\begin{dxtips}
+    分开求然后再求同时发生的概率
+\end{dxtips}
+\begin{homework}[2.12]
+为保证公司设备的有效运行，需要配备一定数量的设备维修人员。假设公司有同类设备 $180$ 台，且各台设备的工作相互独立，任一时刻设备发生故障的概率都是 $0.01$。假设一台设备的故障需由一人进行修理，问至少应配备多少名维修人员，才能保证设备发生故障后能够得到及时修理的概率不小于 $0.99$？
+\end{homework}
+\begin{definition}[泊松分布]
+若离散型随机变量 $X$ 的概率分布为
+\[
+P(X=k)=\frac{\lambda^{\,k}}{k!}e^{-\lambda},\qquad k=0,1,2,\dots,
+\]
+其中参数 $\lambda>0$，则称 $X$ 服从参数为 $\lambda$ 的泊松分布，
+记为
+\[
+X\sim \operatorname{Pois}(\lambda).
+\]
+\end{definition}
+\begin{dxtips}[泊松分布是二项分布取极限]
+所以下面 \(k!\) 是 \(C_n^k\) 里面来的，同样我们设的成功概率里面有 \(\lambda\) 所以 \(\lambda\) 自然是 \(k\) 次发最后
+\[
+\left(1-\frac{\lambda}{n}\right)^n \to e^{-\lambda},
+\qquad
+\left(1-\frac{\lambda}{n}\right)^{-k} \to 1.
+\]
+来源于 (1-1/n) 的 n 次方趋紧于 \(e^{-1}\)。$\lambda$=np先算$\lambda$是多少，离散的时候要算小于等于一个的概率要一个一个加。
+\end{dxtips}
+\begin{note}
+    由二项分布
+\[
+P(X=k)=C_n^k\,p^{\,k}(1-p)^{\,n-k},\qquad k=0,1,2,\ldots
+\]
+令
+\[
+p=\frac{\lambda}{n},\qquad np=\lambda.
+\]
+代入得
+\[
+P(X=k)
+= C_n^k\left(\frac{\lambda}{n}\right)^k
+\left(1-\frac{\lambda}{n}\right)^{\,n-k}.
+\]
+
+对于组合数，有
+\[
+C_n^k=\frac{n(n-1)\cdots(n-k+1)}{k!},
+\]
+故
+\[
+C_n^k\left(\frac{1}{n}\right)^k
+=\frac{n(n-1)\cdots(n-k+1)}{k!n^k}
+=\frac{1}{k!}
+\left(1-\frac{1}{n}\right)
+\left(1-\frac{2}{n}\right)
+\cdots
+\left(1-\frac{k-1}{n}\right).
+\]
+当 \(n\to\infty\) 时，
+\[
+C_n^k\left(\frac{1}{n}\right)^k\to\frac{1}{k!},
+\qquad
+C_n^k\left(\frac{\lambda}{n}\right)^k\to\frac{\lambda^k}{k!}.
+\]
+
+再看尾项，
+\[
+\left(1-\frac{\lambda}{n}\right)^{\,n-k}
+=\left(1-\frac{\lambda}{n}\right)^n
+\left(1-\frac{\lambda}{n}\right)^{-k},
+\]
+且
+\[
+\left(1-\frac{\lambda}{n}\right)^n\to e^{-\lambda},
+\qquad
+\left(1-\frac{\lambda}{n}\right)^{-k}\to 1.
+\]
+因此
+\[
+\left(1-\frac{\lambda}{n}\right)^{\,n-k}\to e^{-\lambda}.
+\]
+
+综上，当 \(n\to\infty\) 时，
+\[
+P(X=k)\to 
+\frac{\lambda^k}{k!}e^{-\lambda},
+\qquad k=0,1,2,\ldots
+\]
+这称为参数为 \(\lambda\) 的泊松分布。
+\end{note}
+\begin{solution}
+记 $X$ 为在任一时刻发生故障的设备数。题中说明各设备独立且每台设备故障概率为 $p=0.01$，共有 $n=180$ 台设备，因此
+\[
+X\sim B(180,0.01).
+\]
+
+要求配备的维修人员数为 $k$，使得
+\[
+P(X\le k)\ge 0.99.
+\]
+
+由于 $n$ 较大且 $p$ 较小，可用泊松分布作近似：
+\[
+X \approx \operatorname{Pois}(\lambda),\qquad \lambda=np=1.8.
+\]
+
+计算累积概率：
+\[
+P(X\le k)=\sum_{i=0}^{k}e^{-1.8}\frac{1.8^{\,i}}{i!}.
+\]
+
+逐项计算：
+\[
+\begin{aligned}
+P(X\le 3)&=e^{-1.8}(1+1.8+1.8^2/2+1.8^3/6)\approx 0.916,\\[2mm]
+P(X\le 4)&=P(X\le3)+e^{-1.8}\frac{1.8^4}{24}\approx 0.966,\\[2mm]
+P(X\le 5)&=P(X\le4)+e^{-1.8}\frac{1.8^5}{120}\approx 0.989,\\[2mm]
+P(X\le 6)&\approx 0.997.
+\end{aligned}
+\]
+
+要满足 $P(X\le k)\ge 0.99$，最小的 $k$ 为 $6$。
+
+因此至少应配备
+\[
+\boxed{6\text{ 名维修人员}}
+\]
+才能使设备得到及时修理的概率不小于 $0.99$。
+\end{solution}
+\begin{homework}[2.13]
+某小学校有 $730$ 名学生，假设学生的生日等可能地出现在一年的每一天，求该校恰有 $4$ 名学生生日在同一天的概率。
+\end{homework}
+\section{第四次2.3}
+\begin{dxtips}
+\textbf{高斯积分的核心思想：平方 $\to$ 二维 $\to$ 极坐标}
+
+直接计算
+\[
+\int_{-\infty}^{\infty} e^{-x^2/2}\,dx
+\]
+是不可行的，因为该函数不存在初等原函数。高斯的关键想法不是“硬算”，
+而是先设
+\[
+I=\int_{-\infty}^{\infty} e^{-x^2/2}\,dx,
+\]
+转而计算其平方
+\[
+I^2
+=
+\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+e^{-(x^2+y^2)/2}\,dx\,dy,
+\]
+从而将一维分析问题提升为二维积分问题，实现一次“维度跃迁”。
+
+注意到被积函数仅依赖于
+\[
+x^2+y^2=r^2,
+\]
+在平面上具有以原点为中心的圆对称性，因此采用极坐标
+\(
+x=r\cos\theta,\ y=r\sin\theta
+\)
+是最自然的选择。此时面积元满足
+\[
+dx\,dy=r\,dr\,d\theta,
+\]
+积分化为
+\[
+I^2=\int_0^{2\pi}\int_0^{\infty} e^{-r^2/2}\,r\,dr\,d\theta,
+\]
+其中径向积分
+\(
+\int_0^{\infty} r e^{-r^2/2}\,dr
+\)
+为初等积分，从而使原本难以处理的问题转化为可直接计算的形式。
+\end{dxtips}
+正态分布密度函数的记忆可以分为两个步骤：
+
+\begin{itemize}
+    \item \textbf{第一步：先记住指数部分。}
+
+    由于正态分布具有钟形曲线的形状，其密度函数应具有形式
+    \[
+        f(x) \propto 
+        \exp\!\left[-\frac{(x-\mu)^2}{2\sigma^2}\right].
+    \]
+
+    指数部分的结构来源于以下考虑：
+    \begin{itemize}
+        \item 对称性决定出现平方项 $(x-\mu)^2$；
+        \item 曲线两端应衰减，因此指数前必须带负号；
+        \item 方差 $\sigma^2$ 控制曲线宽度，所以出现在分母 $2\sigma^2$ 中。
+    \end{itemize}
+
+    \item \textbf{第二步：利用“积分等于 1”确定前面的常数。}
+
+    密度函数需要满足
+    \[
+        \int_{-\infty}^{\infty} f(x)\,dx = 1.
+    \]
+
+    因此写成
+    \[
+        f(x) = C \exp\!\left[-\frac{(x-\mu)^2}{2\sigma^2}\right],
+    \]
+    其中常数 $C$ 由高斯积分确定：
+    \[
+        C = \frac{1}{\sqrt{2\pi\sigma^2}}.
+    \]
+
+\end{itemize}
+
+最终得到正态分布的完整密度函数：
+\[
+    f(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}
+    \exp\!\left[-\frac{(x-\mu)^{2}}{2\sigma^{2}}\right].
+\]
+23-25
+\begin{homework}[2.23]
+设连续型随机变量 $X$ 有概率密度函数
+\[
+f(x) =
+\begin{cases}
+a \cos x, & -0.5\pi < x < 0.5\pi, \\[6pt]
+0, & \text{其他},
+\end{cases}
+\]
+其中 $a$ 是待定常数。  
+(1) 求 $a$ 及 $X$ 的分布函数 $F(x)$；  
+(2) 画出 $f(x)$ 和 $F(x)$ 的图形。
+\end{homework}
+
+\begin{homework}[2.24]
+设
+\[
+F(x) =
+\begin{cases}
+a \exp(-x), & x > 0, \\
+0, & x < 0.
+\end{cases}
+\]
+问 $a$ 取何值，可使 $F(x)$ 是一个分布函数？
+\end{homework}
+
+\begin{homework}[2.25]
+设连续型随机变量 $X$ 的分布函数
+\[
+F(x) =
+\begin{cases}
+0, & x < -1, \\[6pt]
+a + b \arcsin x, & -1 \leq x \leq 1, \\[6pt]
+1, & x > 1,
+\end{cases}
+\]
+其中 $a$ 和 $b$ 是待定常数。求 $a$ 和 $b$。
+\end{homework}
+\begin{dxtips}
+随机变量 \( X \) 服从\textbf{正态分布（Normal Distribution）}，  
+记号 \( X \sim N(\mu, \sigma^2) \) 表示：
+\begin{itemize}
+  \item \(\mu\)：均值（mean）；
+  \item \(\sigma^2\)：方差（variance）。
+\end{itemize}
+
+\medskip
+因此：
+\[
+X \sim N(3, 2^2)
+\]
+
+表示：
+\begin{itemize}
+  \item 均值 \(\mu = 3\)；
+  \item 方差 \(\sigma^2 = 2^2 = 4\)；
+  \item 标准差 \(\sigma = 2\)。
+\end{itemize}
+
+\medskip
+由此，随机变量 \(X\) 的概率密度函数为：
+\[
+f(x) = \frac{1}{2\sqrt{2\pi}} 
+\exp\!\left(-\frac{(x-3)^2}{8}\right), 
+\qquad x \in \mathbb{R}.
+\]
+\end{dxtips}
+\begin{solution}
+已知随机变量 \( X \sim N(3,2^2) \)，即均值 \(\mu=3\)、标准差 \(\sigma=2\)。
+
+(1) 求 \(P(-2<X<10)\)：  
+标准化得
+\[
+P(-2<X<10)=P\!\left(\tfrac{-2-3}{2}<Z<\tfrac{10-3}{2}\right)
+=P(-2.5<Z<3.5).
+\]
+查表：
+\[
+\Phi(3.5)\approx0.99977,\quad \Phi(-2.5)\approx0.0062,
+\]
+故
+\[
+P(-2<X<10)=0.99977-0.0062=0.9936.
+\]
+
+(2) 求 \(P(|X|>2)\)：  
+\[
+P(|X|>2)=P(X>2)+P(X<-2)
+=\Phi(0.5)+\Phi(-2.5).
+\]
+查表：
+\[
+\Phi(0.5)\approx0.6915,\quad \Phi(-2.5)\approx0.0062,
+\]
+故
+\[
+P(|X|>2)=0.6915+0.0062=0.6977.
+\]
+
+\[
+\boxed{
+P(-2<X<10)\approx0.9936,\quad
+P(|X|>2)\approx0.6977.}
+\]
+\end{solution}
+\\22
+\begin{solution}
+设同时工作的设备数为 $N$，则 $N\sim\mathrm{Bin}(n=200,p=0.6)$，每台工作时耗电为 $W$。要使
+\[
+\Pr\{N\,W\le C\}\ge 0.999\qquad (\text{供电不不足})
+\]
+等价于找最小整数 $k$ 使得 $\Pr\{N\le k\}\ge 0.999$，并取 $C=kW$。
+
+用正态近似（含连续性修正）：
+\[
+\mu=np=120,\qquad \sigma^2=np(1-p)=48,\ \sigma\approx6.928.
+\]
+99.9\% 分位的 $z_{0.999}\approx 3.0902$，故
+\[
+\frac{k+0.5-\mu}{\sigma}\approx z_{0.999}
+\ \Rightarrow\
+k+0.5\approx \mu+z_{0.999}\sigma
+=120+3.0902\times6.928\approx141.4,
+\]
+于是最小整数 $k=141$（$k=140$ 时累计概率仍不足 0.999）。
+
+因此所需供电容量为
+\[
+\boxed{C=141\,W.}
+\]
+\end{solution}
+\section{第五次作业}
+26--30
+
+\begin{homework}[26]
+袋中有同型号小球 $12$ 只，其中 $10$ 只红色，$2$ 只黑色。从袋中取球两次，每次任取一球。令
+\[
+X_i =
+\begin{cases}
+1, & 第 i 次取到红球, \\
+0, & 第 i 次取到黑球,
+\end{cases}
+\quad i=1,2.
+\]
+试分别在放回抽取和不放回抽取情况下，求 $(X_1, X_2)$ 的概率分布和边缘概率分布。
+\end{homework}
+
+\begin{solution}
+设袋中红球 $R=10$、黑球 $B=2$，总数 $N=12$。记
+\[
+X_i=\mathbf{1}_{\{\text{第 $i$ 次取到红球}\}},\quad i=1,2,
+\]
+故 $(X_1,X_2)\in\{0,1\}^2$。
+
+\paragraph{(A) 放回抽取}
+两次独立，同分布：$\;\mathbb{P}(X_i=1)=\frac{10}{12}=\frac56,\ \mathbb{P}(X_i=0)=\frac{2}{12}=\frac16$。
+因此
+\[
+\begin{aligned}
+\mathbb{P}(X_1=1,X_2=1)&=\Big(\frac56\Big)^2=\frac{25}{36},\\
+\mathbb{P}(X_1=1,X_2=0)&=\frac56\cdot\frac16=\frac{5}{36},\\
+\mathbb{P}(X_1=0,X_2=1)&=\frac16\cdot\frac56=\frac{5}{36},\\
+\mathbb{P}(X_1=0,X_2=0)&=\Big(\frac16\Big)^2=\frac{1}{36}.
+\end{aligned}
+\]
+边缘分布（对任一 $i$）：
+\[
+\mathbb{P}(X_i=1)=\frac56,\qquad \mathbb{P}(X_i=0)=\frac16.
+\]
+P(x1=1)的概率就是把所有含着x1=1的概率相加
+\paragraph{(B) 不放回抽取}
+两次不独立。逐步计算：
+\[
+\begin{aligned}
+\mathbb{P}(X_1=1,X_2=1)&=\frac{10}{12}\cdot\frac{9}{11}=\frac56\cdot\frac{9}{11}=\frac{15}{22},\\
+\mathbb{P}(X_1=1,X_2=0)&=\frac{10}{12}\cdot\frac{2}{11}=\frac56\cdot\frac{2}{11}=\frac{5}{33},\\
+\mathbb{P}(X_1=0,X_2=1)&=\frac{2}{12}\cdot\frac{10}{11}=\frac16\cdot\frac{10}{11}=\frac{5}{33},\\
+\mathbb{P}(X_1=0,X_2=0)&=\frac{2}{12}\cdot\frac{1}{11}=\frac16\cdot\frac{1}{11}=\frac{1}{66}.
+\end{aligned}
+\]
+边缘分布（对任一 $i$，由对称性或求和得）：
+\[
+\mathbb{P}(X_i=1)=\frac{10}{12}=\frac56,\qquad \mathbb{P}(X_i=0)=\frac{2}{12}=\frac16.
+\]
+
+\paragraph{备注}
+放回情形中 $(X_1,X_2)$ 独立；不放回时不独立，但各自边缘分布相同。
+\end{solution}
+
+\begin{homework}[27]
+设二维连续型随机变量 $(X,Y)$ 有概率密度函数
+\[
+f(x,y) =
+\begin{cases}
+a(6 - x - y), & 0 < x < 2,\; 2 < y < 4, \\[6pt]
+0, & \text{其他},
+\end{cases}
+\]
+其中 $a$ 是待定常数。求 $a$ 及 $P(X < 1, Y < 3)$。
+\end{homework}
+\begin{dxtips}
+    \[
+\text{令 } a\in(0,1),\qquad a=\sin\theta
+\ \Longleftrightarrow\
+\theta=\arcsin a\in\Big(0,\frac{\pi}{2}\Big).
+\]
+
+\[
+F_Y(a)=\mathbb P(Y\le a)=\mathbb P(\sin X\le a).
+\]
+
+在区间 $0<X<\pi$ 上，
+\[
+\sin x\le a
+\quad\Longleftrightarrow\quad
+x\in(0,\arcsin a]\ \cup\ [\pi-\arcsin a,\pi).
+\]
+
+因此
+\[
+\begin{aligned}
+F_Y(a)
+&=\int_{0}^{\arcsin a}\frac{2x}{\pi^2}\,dx
++\int_{\pi-\arcsin a}^{\pi}\frac{2x}{\pi^2}\,dx\\[6pt]
+&=\frac{(\arcsin a)^2}{\pi^2}
++\frac{\pi^2-(\pi-\arcsin a)^2}{\pi^2}\\[6pt]
+&=\frac{2}{\pi}\arcsin a,
+\qquad 0<a<1.
+\end{aligned}
+\]
+
+因此 $Y$ 的分布函数为
+\[
+F_Y(a)=
+\begin{cases}
+0, & a\le 0,\\[4pt]
+\dfrac{2}{\pi}\arcsin a, & 0<a<1,\\[8pt]
+1, & a\ge 1.
+\end{cases}
+\]
+
+对 $a$ 求导得密度函数
+\[
+f_Y(a)=F_Y'(a)
+=\frac{2}{\pi\sqrt{1-a^2}},
+\qquad 0<a<1,
+\]
+其余情形 $f_Y(a)=0$。
+\end{dxtips}
+\begin{homework}[28]
+设二维连续型随机变量 $(X,Y)$ 在以原点为中心、$r$ 为半径的圆内服从均匀分布，求 $(X,Y)$ 的联合概率密度函数和边缘概率密度函数。
+\end{homework}
+
+\begin{solution}
+\textbf{联合概率密度：}
+因 $(X,Y)$ 在圆盘 $x^2+y^2\le r^2$ 上均匀分布，故
+\[
+f_{X,Y}(x,y)=
+\begin{cases}
+\dfrac{1}{\pi r^2}, & x^2+y^2\le r^2,\\[6pt]
+0, & \text{其他}.
+\end{cases}
+\]
+
+\textbf{边缘密度：}
+对 $X$：
+\[
+f_X(x)=\int_{-\sqrt{r^2-x^2}}^{\sqrt{r^2-x^2}} \frac{1}{\pi r^2}\,dy
+=\frac{2\sqrt{r^2-x^2}}{\pi r^2},\qquad |x|\le r,
+\]
+其余 $x$ 处为 $0$。
+
+对 $Y$：
+\[
+f_Y(y)=\int_{-\sqrt{r^2-y^2}}^{\sqrt{r^2-y^2}} \frac{1}{\pi r^2}\,dx
+=\frac{2\sqrt{r^2-y^2}}{\pi r^2},\qquad |y|\le r,
+\]
+其余 $y$ 处为 $0$。
+
+\textbf{说明：} $X$ 与 $Y$ 不独立（因为 $f_{X,Y}\ne f_X f_Y$）。
+\end{solution}
+
+\begin{homework}[29]
+设二维连续型随机变量 $(X,Y)$ 有概率密度函数
+\[
+f(x,y) =
+\begin{cases}
+a \exp(-y), & 0 < x < y, \\[6pt]
+0, & \text{其他},
+\end{cases}
+\]
+其中 $a$ 是待定常数。求 $a$ 及边缘概率密度函数。
+\end{homework}
+
+\begin{solution}
+支持集：$0<x<y$（且 $y>0$）。
+
+\textbf{(1) 求常数 $a$：}
+由归一化条件，
+\[
+1=\int_{0}^{\infty}\!\!\int_{0}^{y} a e^{-y}\,dx\,dy
+   =\int_{0}^{\infty} a\,y e^{-y}\,dy
+   =a \int_{0}^{\infty} y e^{-y}\,dy.
+\]
+注意积分 $\displaystyle\int_{0}^{\infty} y e^{-y}\,dy$ 是 Gamma 函数：
+\[
+\Gamma(n)=\int_0^{\infty} t^{n-1} e^{-t}\,dt,
+\]
+取 $n=2$，得 $\Gamma(2)=1! = 1$。
+于是
+\[
+a\,\Gamma(2)=a\cdot 1=1\quad\Rightarrow\quad a=1.
+\]
+
+\textbf{(2) 求边缘密度：}
+\[
+f_X(x)=\int_{x}^{\infty} e^{-y}\,dy
+= e^{-x}\,\mathbf 1_{\{x>0\}},\qquad
+f_Y(y)=\int_{0}^{y} e^{-y}\,dx
+= y e^{-y}\,\mathbf 1_{\{y>0\}}.
+\]
+
+因此
+\[
+\boxed{a=1,\quad f_X(x)=e^{-x}(x>0),\quad f_Y(y)=y e^{-y}(y>0).}
+\]
+\end{solution}
+\begin{dxtips}
+    设二维连续型随机变量 $(X,Y)$ 的联合概率密度函数为 $f(u,v)$。
+定义其联合分布函数为
+\[
+F(a,b)
+=
+\mathbb P(X\le a,\; Y\le b).
+\]
+
+根据定义，有
+\[
+F(a,b)
+=
+\int_{-\infty}^{a}\int_{-\infty}^{b}
+f(u,v)\,dv\,du.
+\]
+
+其中：
+\begin{itemize}
+  \item $a,b$ 为给定的实数，表示随机变量 $X,Y$ 的取值阈值；
+  \item $u,v$ 为积分变量，表示在平面上对密度函数 $f$ 进行累加的坐标。
+\end{itemize}
+
+在 $f(u,v)$ 连续的点处，联合概率密度函数可由联合分布函数通过偏导数恢复：
+\[
+f(a,b)
+=
+\frac{\partial^2 F(a,b)}{\partial a\,\partial b}.
+\]
+
+该关系表明：
+\begin{itemize}
+  \item 大写 $F(a,b)$ 表示到点 $(a,b)$ 为止“一共累积了多少概率”，
+  即随机向量 $(X,Y)$ 落入区域
+  $(-\infty,a]\times(-\infty,b]$ 内的总概率；
+  \item 小写 $f(a,b)$ 则刻画在点 $(a,b)$ 附近“概率有多密”，
+  描述概率在该点附近的局部集中程度。
+\end{itemize}
+\end{dxtips}
+\begin{homework}[30]
+设二维连续型随机变量 $(X,Y)$ 有概率密度函数
+\[
+f(x,y) =
+\begin{cases}
+a y (2 - x), & 0 \leq y \leq x \leq 1, \\[6pt]
+0, & \text{其他},
+\end{cases}
+\]
+其中 $a$ 是待定常数。求 $a$ 及边缘概率密度函数。
+\end{homework}
+
+\begin{solution}
+已知
+\[
+f_{X,Y}(x,y)=
+\begin{cases}
+a\,y(2-x),& 0\le y\le x\le 1,\\
+0,& \text{其他},
+\end{cases}
+\]
+其支持集为三角形区域 $\{(x,y):0\le y\le x\le 1\}$。
+
+\textbf{(1) 求 $a$.} 由归一化
+\[
+1=\iint f_{X,Y}(x,y)\,dx\,dy
+=\int_{0}^{1}\!\!\int_{0}^{x} a\,y(2-x)\,dy\,dx
+= a\int_{0}^{1}\frac{x^2(2-x)}{2}\,dx
+= a\cdot\frac{5}{24},
+\]
+故
+\[
+\boxed{\,a=\dfrac{24}{5}\, }.
+\]
+
+\textbf{(2) 边缘密度.}
+\[
+f_X(x)=\int_{0}^{x} a\,y(2-x)\,dy
+=\frac{a}{2}\,x^2(2-x)
+=\boxed{\,\frac{12}{5}\,x^2(2-x)\,},\quad 0\le x\le 1,
+\]
+其余 $x$ 处 $f_X(x)=0$。
+
+\[
+f_Y(y)=\int_{y}^{1} a\,y(2-x)\,dx
+=a\,y\!\left[2x-\frac{x^2}{2}\right]_{x=y}^{1}
+=\frac{a}{2}\,y\,(3-4y+y^2)
+=\boxed{\,\frac{12}{5}\,y\,(3-4y+y^2)\,},\quad 0\le y\le 1,
+\]
+其余 $y$ 处 $f_Y(y)=0$。
+
+\smallskip
+可检验 $\int_0^1 f_X(x)\,dx=\int_0^1 f_Y(y)\,dy=1$。
+\end{solution}
+\begin{dxtips}
+
+\noindent
+条件概率按定义可写为两个概率之比：
+\[
+\mathbb P(X\in A\mid Y=a)
+=
+\frac{\mathbb P(X\in A,\; Y=a)}{\mathbb P(Y=a)}.
+\]
+
+\noindent
+由于连续型随机变量中 $\mathbb P(Y=a)=0$，上述比值需理解为密度意义下的极限形式。
+具体地，对 $Y\in[a,a+\mathrm da]$ 取极限，有
+\[
+\mathbb P(X\in A\mid Y=a)
+=
+\frac{\displaystyle
+\lim_{\mathrm da\to 0}\mathbb P(X\in A,\; a\le Y<a+\mathrm da)
+}
+{\displaystyle
+\lim_{\mathrm da\to 0}\mathbb P(a\le Y<a+\mathrm da)
+}.
+\]
+
+\noindent
+利用联合密度函数 $f(x,y)$，分子与分母分别为
+\[
+\mathbb P(X\in A,\; a\le Y<a+\mathrm da)
+=
+\int_A\int_a^{a+\mathrm da} f(x,y)\,dy\,dx,
+\]
+\[
+\mathbb P(a\le Y<a+\mathrm da)
+=
+\int_{-\infty}^{\infty}\int_a^{a+\mathrm da} f(x,y)\,dy\,dx.
+\]
+
+\noindent
+两式同时除以 $\mathrm da$ 并令 $\mathrm da\to 0$，得到
+\[
+\mathbb P(X\in A\mid Y=a)
+=
+\frac{\displaystyle\int_A f(x,a)\,dx}
+{\displaystyle\int_{-\infty}^{\infty} f(x,a)\,dx}.
+\]
+
+\noindent
+注意分母正是 $Y$ 的边缘概率密度：
+\[
+f_Y(a)=\int_{-\infty}^{\infty} f(x,a)\,dx,
+\]
+从而条件密度函数为
+\[
+f_{X\mid Y}(x\mid a)=\frac{f(x,a)}{f_Y(a)},\qquad f_Y(a)>0,
+\]
+并有
+\[
+\mathbb P(X\in A\mid Y=a)
+=
+\int_A f_{X\mid Y}(x\mid a)\,dx.
+\]
+
+\noindent
+\textbf{直观解释：}
+\begin{itemize}
+  \item 分子：在 $Y=a$ 这一“横切线”上，只累计 $x\in A$ 的那一段联合密度；
+  \item 分母：在同一条 $Y=a$ 横线上，对所有 $x$ 的联合密度做归一化；
+  \item 比值：表示在“已知 $Y=a$”的前提下，$X$ 落入集合 $A$ 的概率。
+\end{itemize}
+
+\end{dxtips}
+\section{第六次作业}
+\begin{dxtips}
+    其实就是把Y小于等于y的问题先把Y用X表示，然后转化为X小于等于arcsiny的问题，然后就可以用f的分布概率函数
+\end{dxtips}
+\begin{homework}[42]
+设连续型随机变量 $X \sim U(0,\pi)$，求 $Y=\sin X$ 的分布函数及概率密度函数。
+\end{homework}
+\begin{solution}
+\textcolor{dxgreen}{解}\quad 由 $X\sim U(0,\pi)$，知其密度为
+\[
+f_X(x)=
+\begin{cases}
+\dfrac{1}{\pi}, & 0<x<\pi,\\[3pt]
+0, & \text{其他}.
+\end{cases}
+\]
+
+由于 $\sin x$ 在 $(0,\tfrac{\pi}{2})$ 单调增、在 $(\tfrac{\pi}{2},\pi)$ 单调减，
+可得 $Y=\sin X\in(0,1)$。
+\textbf{（1）分布函数：}
+
+当 $0<y<1$ 时，$\sin X=y$ 有两个解
+\[
+x_1=\arcsin y,\qquad x_2=\pi-\arcsin y.
+\]
+于是
+\[
+\{\sin X\le y\}=(0,\arcsin y]\cup[\pi-\arcsin y,\pi),
+\]
+其概率为
+\[
+F_Y(y)=P(Y\le y)
+=\frac{\arcsin y}{\pi}+\frac{\arcsin y}{\pi}
+=\frac{2\,\arcsin y}{\pi}.
+\]
+因此
+\[
+F_Y(y)=
+\begin{cases}
+0, & y\le 0,\\[4pt]
+\dfrac{2}{\pi}\arcsin y, & 0<y<1,\\[6pt]
+1, & y\ge 1.
+\end{cases}
+\]
+
+\textbf{（2）概率密度函数：}
+
+由 $f_Y(y)=F_Y'(y)$，
+\[
+f_Y(y)
+=\frac{2}{\pi\sqrt{1-y^2}},\qquad 0<y<1,
+\]
+其余处为 $0$。
+\end{solution}
+
+
+
+
+
+
+
+
+\begin{homework}[45]
+设连续型随机变量 $X \sim N(0,1)$，求 $Y=|X|$ 的概率密度函数。
+\end{homework}
+\begin{solution}
+由 $X\sim N(0,1)$，其密度为
+\[
+f_X(x)=\frac{1}{\sqrt{2\pi}}e^{-x^2/2},\qquad x\in\mathbb{R}.
+\]
+
+因为 $Y=|X|$，当 $y>0$ 时，对应 $X=\pm y$，且这两点的密度贡献相加。
+
+于是
+\[
+f_Y(y)=f_X(y)+f_X(-y)
+=\frac{1}{\sqrt{2\pi}}\big(e^{-y^2/2}+e^{-y^2/2}\big)
+=\sqrt{\frac{2}{\pi}}\,e^{-y^2/2},\qquad y>0.
+\]
+
+当 $y\le0$ 时，$Y=|X|$ 不可能取负值，故 $f_Y(y)=0$。
+
+因此
+\[
+f_Y(y)=
+\begin{cases}
+\sqrt{\dfrac{2}{\pi}}\,e^{-y^2/2}, & y>0,\\[6pt]
+0, & y\le0.
+\end{cases}
+\]
+\end{solution}
+\begin{homework}[50]
+设二维连续型随机变量 $(X,Y)$ 有概率密度函数
+\[
+f(x,y)=\frac{1}{2\pi ab}\exp\!\left[-\frac{1}{2}\left(\frac{x^2}{a^2}+\frac{y^2}{b^2}\right)\right],
+\]
+求 $(X,Y)$ 取值于椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=r^2$ 内的概率。
+\end{homework}
+
+\begin{homework}[53]
+
+设二维连续型随机变量 $(X,Y)$ 有习题 2.39 中的概率密度函数，求
+\[
+P(X+Y>1),\quad P(Y<X),\quad P(Y<0.5\,|\,X<0.5)。
+\]
+\end{homework}
+\begin{solution}
+\[
+P(X+Y>1)=\int_{0}^{1}\int_{1-x}^{2}\!\left(x^2+\frac{xy}{3}\right)dy\,dx
+=\int_{0}^{1}\!\Big(x^2(1+x)+\frac{x}{6}(3+2x-x^2)\Big)\,dx=\frac{65}{72}.
+\]
+
+\[
+P(Y<X)=\int_{0}^{1}\int_{0}^{x}\!\left(x^2+\frac{xy}{3}\right)dy\,dx
+=\int_{0}^{1}\!\left(x^3+\frac{x^3}{6}\right)dx=\frac{7}{24}.
+\]
+
+\[
+P(Y<0.5\,|\,X<0.5)
+=\frac{\displaystyle\int_{0}^{1/2}\int_{0}^{1/2}\!\left(x^2+\frac{xy}{3}\right)dy\,dx}
+{\displaystyle\int_{0}^{1/2}\int_{0}^{2}\!\left(x^2+\frac{xy}{3}\right)dy\,dx}
+=\frac{\displaystyle\int_{0}^{1/2}\!\left(\frac{x^2}{2}+\frac{x}{24}\right)dx}{\displaystyle\int_{0}^{1/2}\!\left(2x^2+\frac{2x}{3}\right)dx}
+=\frac{5/192}{1/6}=\frac{5}{32}.
+\]
+\end{solution}
+\begin{homework}[56]
+设随机变量 $X$ 与 $Y$ 相互独立，分别服从参数为 $\lambda_1,\lambda_2$ 的泊松分布，
+证明 $X+Y$ 也服从泊松分布，且
+\[
+P(X=k\,|\,X+Y=N)=b\!\left(k;N,\frac{\lambda_1}{\lambda_1+\lambda_2}\right),\qquad k=0,1,\dots,N.
+\]
+\end{homework}
+\begin{solution}
+因为 $X,Y$ 独立，且
+\[
+P(X=k)=e^{-\lambda_1}\frac{\lambda_1^k}{k!},\qquad
+P(Y=m)=e^{-\lambda_2}\frac{\lambda_2^m}{m!},
+\]
+故其联合分布为
+\[
+P(X=k,Y=m)=e^{-(\lambda_1+\lambda_2)}\frac{\lambda_1^k\lambda_2^m}{k!\,m!}.
+\]
+
+对 $S=X+Y$，有
+\[
+P(S=n)
+=\sum_{k=0}^{n}P(X=k,Y=n-k)
+=e^{-(\lambda_1+\lambda_2)}
+\sum_{k=0}^{n}\frac{\lambda_1^k\lambda_2^{n-k}}{k!\,(n-k)!}
+=e^{-(\lambda_1+\lambda_2)}\frac{(\lambda_1+\lambda_2)^n}{n!}.
+\]
+因此
+\[
+S=X+Y\sim\mathrm{Poisson}(\lambda_1+\lambda_2).
+\]
+
+再求条件分布：
+\[
+P(X=k\,|\,S=n)
+=\frac{P(X=k,Y=n-k)}{P(S=n)}
+=\frac{e^{-(\lambda_1+\lambda_2)}\dfrac{\lambda_1^k\lambda_2^{n-k}}{k!\,(n-k)!}}
+{e^{-(\lambda_1+\lambda_2)}\dfrac{(\lambda_1+\lambda_2)^n}{n!}}
+=\frac{n!}{k!\,(n-k)!}
+\left(\frac{\lambda_1}{\lambda_1+\lambda_2}\right)^k
+\left(\frac{\lambda_2}{\lambda_1+\lambda_2}\right)^{n-k}.
+\]
+因此
+\[
+\boxed{P(X=k\,|\,X+Y=N)
+=b\!\left(k;N,\frac{\lambda_1}{\lambda_1+\lambda_2}\right)}.
+\]
+b是二项分布
+\end{solution}
+\section{第七次作业}
+\begin{homework}[52]
+设随机变量 $X_1$ 与 $X_2$ 相互独立，分别有概率密度函数
+\[
+f_{X_i}(x_i)=
+\begin{cases}
+\lambda_i e^{-\lambda_i x_i}, & x_i>0,\\[4pt]
+0, & x_i\le 0,
+\end{cases}
+\qquad i=1,2,
+\]
+其中 $\lambda_1$ 和 $\lambda_2$ 是正数常数。令
+\[
+Y=
+\begin{cases}
+1, & X_1\le X_2,\\[4pt]
+0, & X_1>X_2.
+\end{cases}
+\]
+求 $Y$ 的概率分布。
+\end{homework}
+\begin{note}
+    其实就是转化成二重积分了而已。
+\end{note}
+\begin{solution}
+由定义可知 $Y\in\{0,1\}$，只需求出 $P(Y=1)=P(X_1\le X_2)$。
+
+\medskip
+\noindent\textbf{解法一（分层积分/条件概率法）}：
+由全概率公式在连续情形的积分形式（并用独立性）可写为
+\[
+P(X_1\le X_2)
+=\int_{0}^{\infty} P(X_2\ge x_1)\, f_{X_1}(x_1)\,dx_1.
+\]
+其中 $P(X_2\ge x)=\exp(-\lambda_2 x)$，$f_{X_1}(x_1)=\lambda_1 e^{-\lambda_1 x_1}$，于是
+\[
+\begin{aligned}
+P(X_1\le X_2)
+&= \int_{0}^{\infty} e^{-\lambda_2 x_1}\,\lambda_1 e^{-\lambda_1 x_1}\,dx_1
+= \lambda_1 \int_{0}^{\infty} e^{-(\lambda_1+\lambda_2)x_1}\,dx_1 \\
+&= \lambda_1\cdot \frac{1}{\lambda_1+\lambda_2}
+= \frac{\lambda_1}{\lambda_1+\lambda_2}.
+\end{aligned}
+\]
+因此
+\[
+P(Y=1)=\frac{\lambda_1}{\lambda_1+\lambda_2},\qquad
+P(Y=0)=1-P(Y=1)=\frac{\lambda_2}{\lambda_1+\lambda_2}.
+\]
+
+\medskip
+\noindent\textbf{（积分变量为何是 $dx_1$ 的说明）}：
+若从二维积分起步，
+\[
+P(X_1\le X_2)=\iint_{x_1\le x_2} f_{X_1,X_2}(x_1,x_2)\,dx_2\,dx_1
+=\int_{0}^{\infty}\!\!\left(\int_{x_1}^{\infty} f_{X_2}(x_2)\,dx_2\right) f_{X_1}(x_1)\,dx_1,
+\]
+内层对 $x_2$ 积分得到 $P(X_2\ge x_1)$，外层自然是对 $x_1$ 积分，即 $dx_1$。
+当然也可交换顺序写成
+\[
+P(X_1\le X_2)=\int_{0}^{\infty} P(X_1\le x_2)\, f_{X_2}(x_2)\,dx_2,
+\]
+结果一致。
+
+\medskip
+\noindent\textbf{解法二（竞争风险直观）}：
+指数分布描述“等待时间”，两个独立的指数等待时间 $X_1\sim \mathrm{Exp}(\lambda_1)$、
+$X_2\sim \mathrm{Exp}(\lambda_2)$ 竞争“谁先发生”。先发生者为 $X_1$ 的概率等于
+$\lambda_1/(\lambda_1+\lambda_2)$，即 $P(X_1\le X_2)=\lambda_1/(\lambda_1+\lambda_2)$。
+
+\medskip
+\noindent\textbf{结论}：
+$Y$ 服从参数
+\[
+p=\frac{\lambda_1}{\lambda_1+\lambda_2}
+\]
+的伯努利分布：
+\[
+P(Y=1)=\frac{\lambda_1}{\lambda_1+\lambda_2},\qquad
+P(Y=0)=\frac{\lambda_2}{\lambda_1+\lambda_2}.
+\]
+\end{solution}
+\begin{homework}[57]
+设随机变量 $X_1$ 与 $X_2$ 相互独立，有概率分布
+\[
+P(X_i = k) = p(1-p)^k, \quad k=0,1,2,\dots,\ 0<p<1,\ i=1,2.
+\]
+\begin{enumerate}[(1)]
+  \item 证明 
+  \[
+  P(X_1 = k \mid X_1 + X_2 = n) = \frac{1}{n+1}, \quad k=0,1,\dots,n;
+  \]
+  \item 求 $Y = \max(X_1, X_2)$ 的概率分布；
+  \item 求 $(X_1, Y)$ 的概率分布。
+\end{enumerate}
+\end{homework}
+\begin{solution}
+已知 $X_1,X_2$ 相互独立，且
+\[
+P(X_i=k)=p(1-p)^k,\quad k=0,1,2,\ldots,\ \ 0<p<1,\ \ i=1,2.
+\]
+记 $q=1-p$ 以简化记号。
+
+\begin{itemize}
+  \item[(1)] 证明：
+  \[
+  P(X_1=k\mid X_1+X_2=n)=\frac{1}{n+1},\qquad k=0,1,\ldots,n.
+  \]
+  对 $0\le k\le n$，有
+  \[
+  P(X_1=k,\ X_2=n-k)=\bigl[pq^k\bigr]\bigl[pq^{\,n-k}\bigr]=p^2 q^{\,n}.
+  \]
+  因此
+  \[
+  P(X_1+X_2=n)=\sum_{j=0}^{n}p^2 q^{\,n}=(n+1)p^2 q^{\,n},
+  \]
+  从而
+  \[
+  P(X_1=k\mid X_1+X_2=n)=\frac{p^2 q^{\,n}}{(n+1)p^2 q^{\,n}}
+  =\boxed{\frac{1}{n+1}}.
+  \]
+
+  \item[(2)] 求 $Y=\max(X_1,X_2)$ 的概率分布。
+
+  几何分布（从 0 开始）的分布函数为
+  \[
+  F_X(m)=P(X\le m)=1-q^{\,m+1},\quad m=0,1,2,\ldots
+  \]
+  于是
+  \[
+  P(Y\le m)=P(X_1\le m,\ X_2\le m)=[F_X(m)]^2
+  =\bigl(1-q^{\,m+1}\bigr)^2,
+  \]
+  所以
+  \[
+  \begin{aligned}
+  P(Y=m)
+  &=\bigl(1-q^{\,m+1}\bigr)^2-\bigl(1-q^{\,m}\bigr)^2\\
+  &=2p\,q^{\,m}-p(2-p)\,q^{\,2m}.
+  \end{aligned}
+  \]
+  即
+  \[
+  \boxed{P(Y=m)=2p\,q^{\,m}-p(2-p)\,q^{\,2m},\quad m=0,1,2,\ldots.}
+  \]
+
+  \item[(3)] 求 $(X_1,Y)$ 的联合分布。
+
+  因 $Y=\max(X_1,X_2)$，对整数 $k,y\ge0$，有
+  \[
+  P(X_1=k,Y=y)=
+  \begin{cases}
+  0, & y<k,\\[4pt]
+  p\,q^{\,k}\bigl(1-q^{\,k+1}\bigr), & y=k,\\[4pt]
+  p^2 q^{\,k+y}, & y>k.
+  \end{cases}
+  \]
+  可验证 $\sum_{y=k}^\infty P(X_1=k,Y=y)=p q^{\,k}=P(X_1=k)$。
+\end{itemize}
+\end{solution}
+\begin{dxtips}
+    若 \( X \sim \mathrm{Geom}(p) \)，则其概率质量函数为
+\[
+P(X=k)=p(1-p)^k=pq^k,\qquad k=0,1,2,\ldots
+\]
+其中 \( q=1-p \)。
+
+于是它的分布函数（CDF）为
+\[
+F_X(m)=P(X\le m)=\sum_{k=0}^{m} p q^k.
+\]
+
+利用几何级数求和公式：
+\[
+\sum_{k=0}^{m} q^k=\frac{1-q^{m+1}}{1-q},
+\]
+代入得
+\[
+F_X(m)=p\cdot\frac{1-q^{m+1}}{1-q}.
+\]
+又因为 \(p=1-q\)，于是
+\[
+\boxed{F_X(m)=1-q^{m+1}}.
+\]
+
+\textbf{记忆口诀：} 几何分布从 0 起，累积概率减 \(q^{m+1}\)，
+简单明了易背记：
+\[
+F_X(m)=1-q^{m+1}.
+\]
+\end{dxtips}
+\begin{dxtips}
+    概率分布是Y=几的概率，概率密度是概率分布的导数
+\end{dxtips}
+\begin{homework}[60]
+设随机变量 $X_1, X_2, X_3$ 相互独立，概率密度函数均为
+\[
+f(x)=
+\begin{cases}
+\dfrac{x}{\sigma^2}\exp\!\left(-\dfrac{x^2}{2\sigma^2}\right), & x>0,\\[6pt]
+0, & x\le 0,
+\end{cases}
+\]
+求下列随机变量函数的概率密度函数：
+\begin{enumerate}[(1)]
+  \item $Y=\max(X_1,X_2,X_3)$；
+  \item $Z=\min(X_1,X_2,X_3)$；
+  \item $P(Y\ge\sigma)$。
+\end{enumerate}
+\end{homework}
+\begin{solution}
+给定 $X_1,X_2,X_3$ 相互独立同分布，且
+\[
+f(x)=\frac{x}{\sigma^2}\exp\!\left(-\frac{x^2}{2\sigma^2}\right),\quad x>0,
+\]
+这是参数为 $\sigma$ 的 Rayleigh 分布，其分布函数为
+\[
+F(x)=P(X_i\le x)=
+\begin{cases}
+1-\exp\!\left(-\dfrac{x^2}{2\sigma^2}\right), & x>0,\\[6pt]
+0,& x\le0.
+\end{cases}
+\]
+
+\medskip
+\noindent\textbf{(1) }$Y=\max(X_1,X_2,X_3)$ 的密度。由次序统计量公式
+\[
+f_Y(y)=3\,[F(y)]^{2}\,f(y),\qquad y>0,
+\]
+代入 $F,f$ 得
+\[
+f_Y(y)=3\Bigl(1-e^{-\frac{y^2}{2\sigma^2}}\Bigr)^{\!2}
+\cdot \frac{y}{\sigma^2}\,e^{-\frac{y^2}{2\sigma^2}},\qquad y>0,
+\]
+且 $f_Y(y)=0$ 当 $y\le0$。
+
+\medskip
+\noindent\textbf{(2) }$Z=\min(X_1,X_2,X_3)$ 的密度。由
+\[
+f_Z(z)=3\,[1-F(z)]^{2}\,f(z),\qquad z>0,
+\]
+并用 $1-F(z)=e^{-z^2/(2\sigma^2)}$ 得
+\[
+f_Z(z)=3\left(e^{-\frac{z^2}{2\sigma^2}}\right)^{\!2}
+\cdot \frac{z}{\sigma^2}\,e^{-\frac{z^2}{2\sigma^2}}
+=3\,\frac{z}{\sigma^2}\,e^{-\frac{3z^2}{2\sigma^2}},\qquad z>0,
+\]
+且 $f_Z(z)=0$ 当 $z\le0$。
+
+\medskip
+\noindent\textbf{(3) }$P(Y\ge \sigma)$。因为
+\[
+P(Y<\sigma)=P(X_1<\sigma,\ X_2<\sigma,\ X_3<\sigma)=[F(\sigma)]^3,
+\]
+而 $F(\sigma)=1-e^{-\sigma^2/(2\sigma^2)}=1-e^{-1/2}$，故
+\[
+P(Y\ge \sigma)=1-[F(\sigma)]^3
+=1-\bigl(1-e^{-1/2}\bigr)^{3}.
+\]
+\end{solution}
+\begin{homework}[61]
+设随机变量 $X$ 与 $Y$ 相互独立，概率密度函数均为
+\[
+f(x)=
+\begin{cases}
+e^{-x}, & x>0,\\[4pt]
+0, & x\le 0.
+\end{cases}
+\]
+\begin{enumerate}[(1)]
+  \item 证明 $X+Y$ 与 $X/Y$ 相互独立；
+  \item 证明 $X+Y$ 与 $X/(X+Y)$ 也相互独立。
+\end{enumerate}
+\end{homework}
+\begin{solution}
+设
+\[
+U=X+Y,\qquad V=\frac{X}{Y}.
+\]
+给出变换
+\[
+(x,y)\ \longleftrightarrow\ (u,v),\qquad 
+\begin{cases}
+u=x+y,\\[2pt]
+v=x/y,
+\end{cases}
+\qquad\Longrightarrow\qquad
+\begin{cases}
+y=\dfrac{u}{1+v},\\[8pt]
+x=\dfrac{uv}{1+v}.
+\end{cases}
+\]
+由于 $x>0,y>0$，可知 $u>0,\ v>0$。
+
+\medskip
+\noindent\textbf{Jacobian.} 计算雅可比行列式
+\[
+J=\frac{\partial(x,y)}{\partial(u,v)}
+=\begin{vmatrix}
+\dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v}\\[8pt]
+\dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}
+\end{vmatrix}
+=\begin{vmatrix}
+\dfrac{v}{1+v} & \dfrac{u}{(1+v)^2}\\[10pt]
+\dfrac{1}{1+v} & -\dfrac{u}{(1+v)^2}
+\end{vmatrix}
+=-\,\frac{u}{(1+v)^2},
+\]
+故 $|J|=\dfrac{u}{(1+v)^2}$。
+
+\medskip
+\noindent\textbf{联合密度的变换.} 由独立性 $f_{X,Y}(x,y)=e^{-x}e^{-y}=e^{-(x+y)}$，于是
+\[
+f_{U,V}(u,v)
+=f_{X,Y}\!\bigl(x(u,v),y(u,v)\bigr)\,|J|
+=e^{-u}\,\frac{u}{(1+v)^2},\qquad u>0,\ v>0.
+\]
+将其拆分为
+\[
+f_{U,V}(u,v)=\underbrace{u e^{-u}}_{=:f_U(u)}\ \cdot\ 
+\underbrace{\frac{1}{(1+v)^2}}_{=:f_V(v)},\qquad u>0,\ v>0.
+\]
+容易验证 $\int_0^\infty u e^{-u}\,du=1$，$\int_0^\infty \dfrac{1}{(1+v)^2}\,dv=1$，故
+$f_U(u)$ 与 $f_V(v)$ 分别为 $U$ 与 $V$ 的边缘密度，从而
+\[
+f_{U,V}(u,v)=f_U(u)\,f_V(v)\qquad(u>0,\ v>0),
+\]
+即 $U=X+Y$ 与 $V=X/Y$ 相互独立。
+\end{solution}
+\begin{dxtips}
+    联合密度怎么都是要求的，求完联合密度以后再求边缘密度更简单。因为联合密度可以用带入新变量乘雅可比行列式也就是
+\end{dxtips}
+\begin{solution}
+令
+\[
+U = X + Y, \qquad V = \frac{X}{X + Y}.
+\]
+因为 $X,Y$ 相互独立且均服从参数为 $1$ 的指数分布，即
+\[
+f_{X,Y}(x,y) = e^{-(x+y)}, \quad x>0,\,y>0.
+\]
+
+由变换关系可得
+\[
+x = uv, \qquad y = u(1-v),
+\]
+其 Jacobian 行列式为
+\[
+J = 
+\begin{vmatrix}
+\frac{\partial x}{\partial u} & \frac{\partial x}{\partial v}\\[4pt]
+\frac{\partial y}{\partial u} & \frac{\partial y}{\partial v}
+\end{vmatrix}
+=
+\begin{vmatrix}
+v & u\\[4pt]
+1-v & -u
+\end{vmatrix}
+= -u.
+\]
+取绝对值得 $\lvert J\rvert = u$。
+
+于是 $(U,V)$ 的联合密度为
+\[
+f_{U,V}(u,v)
+= f_{X,Y}(uv,\,u(1-v)) \cdot |J|
+= e^{-u} \cdot u, \quad u>0,\,0<v<1.
+\]
+
+\textcolor{purple}{进一步求边缘密度}：
+\[
+f_U(u) = \int_0^1 u e^{-u} \,dv = u e^{-u}, \quad u>0,
+\]
+\[
+f_V(v) = \int_0^\infty u e^{-u} \,du = 1, \quad 0<v<1.
+\]
+
+因此有
+\[
+f_{U,V}(u,v) = f_U(u)\,f_V(v),
+\]
+即 $U=X+Y$ 与 $V=X/(X+Y)$ 相互独立。
+\end{solution}
+\begin{homework}[62]
+设二维连续型随机变量 $(X,Y)$ 服从非退化二维正态分布 
+\[
+N(0,\sigma_1^2;0,\sigma_2^2;0),
+\]
+求 $X-Y$ 的概率密度函数。
+\end{homework}
+\begin{solution}
+设 $(X,Y)\sim N(0,\sigma_1^2;0,\sigma_2^2;0)$，即
+\[
+f_{X,Y}(x,y)
+=\frac{1}{2\pi\sigma_1\sigma_2}
+\exp\!\left(-\frac{x^2}{2\sigma_1^2}-\frac{y^2}{2\sigma_2^2}\right),
+\qquad x,y\in\mathbb{R}.
+\]
+定义新变量
+\[
+Z = X - Y.
+\]
+由于 $X$ 与 $Y$ 相互独立，$Z$ 是它们的线性组合。
+
+由正态分布线性组合性质可知：
+\[
+Z = X - Y \sim N(0,\sigma_1^2+\sigma_2^2).
+\]
+因此 $Z$ 的概率密度函数为
+\[
+f_Z(z)
+= \frac{1}{\sqrt{2\pi(\sigma_1^2+\sigma_2^2)}}
+  \exp\!\left(-\frac{z^2}{2(\sigma_1^2+\sigma_2^2)}\right),
+\qquad z\in\mathbb{R}.
+\]
+\end{solution}
+
+\begin{homework}[63]
+设连续型随机变量 $X$ 与 $Y$ 相互独立，求下列两题中 $X-Y$ 与 $XY$ 的概率密度函数：
+\begin{enumerate}[(1)]
+  \item $X$ 与 $Y$ 均服从分布 $U(-a,a)$；
+  \item $X$ 与 $Y$ 均服从标准正态分布。
+\end{enumerate}
+\end{homework}
+\begin{solution}
+设 $X,Y$ 独立。
+
+\medskip
+\textbf{(1) 若 } $X,Y\sim U(-a,a)$。
+
+\emph{(i) $X-Y$：} 记 $Z=X-Y=X+(-Y)$，而 $-Y\sim U(-a,a)$ 且与 $X$ 独立，
+因此 $Z$ 为两独立均匀分布之和，密度为三角形分布
+\[
+f_{X-Y}(z)=
+\begin{cases}
+\dfrac{2a-|z|}{4a^{2}}, & |z|<2a,\\[6pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+\emph{(ii) $XY$：} 记 $W=XY$。用换元公式
+\[
+f_{W}(w)=\displaystyle\int_{-a}^{a} \frac{1}{4a^{2}}\,
+\mathbf{1}\!\left\{\left|\frac{w}{x}\right|<a\right\}\frac{dx}{|x|}
+= \frac{1}{2a^{2}}\!\int_{|w|/a}^{a}\frac{dx}{x}
+= \frac{1}{2a^{2}}\ln\!\frac{a^{2}}{|w|},
+\]
+故
+\[
+f_{XY}(w)=
+\begin{cases}
+\dfrac{1}{2a^{2}}\ln\!\dfrac{a^{2}}{|w|}, & |w|<a^{2},\\[8pt]
+0, & \text{otherwise.}
+\end{cases}
+\]
+
+\medskip
+\textbf{(2) 若 } $X,Y\sim N(0,1)$。
+
+\emph{(i) $X-Y$：} 线性组合仍为正态，且
+\[
+X-Y\sim N\!\left(0,\,\mathrm{Var}(X)+\mathrm{Var}(Y)\right)=N(0,2),
+\]
+\[
+f_{X-Y}(z)=\frac{1}{\sqrt{4\pi}}\exp\!\left(-\frac{z^{2}}{4}\right),\quad z\in\mathbb{R}.
+\]
+
+\emph{(ii) $XY$：} 记 $W=XY$。利用积分表示（或已知结论），
+\[
+f_{XY}(w)=\frac{1}{\pi}K_{0}(|w|),\qquad w\in\mathbb{R},
+\]
+其中 $K_{0}$ 为第二类修正贝塞尔函数（order $0$）。
+
+\end{solution}
+\chapter{第三章作业}
+\begin{homework}[3.3]
+将 $3$ 个球逐个独立且任意地放入编号为 $1$ 至 $4$ 的盒中，以 $X$ 表示非空盒的最小号码，求 $E(X)$。
+\end{homework}
+\begin{solution}
+记 $X$ 为非空盒的最小号码。对 $k=0,1,2,3$，
+\[
+P(X>k)=\Big(\frac{4-k}{4}\Big)^{3},
+\]
+因为 $X>k$ 等价于盒 $1,\dots,k$ 全空，而每个球都必须落在余下 $4-k$ 个盒中。
+
+故
+\[
+E[X]=\sum_{k=0}^{3}P(X>k)
+=1+\Big(\frac{3}{4}\Big)^3+\Big(\frac{2}{4}\Big)^3+\Big(\frac{1}{4}\Big)^3
+=1+\frac{27}{64}+\frac{1}{8}+\frac{1}{64}
+=\frac{25}{16}.
+\]
+
+（亦可求出分布：
+$P(X=1)=1-(\tfrac{3}{4})^3=\tfrac{37}{64}$，
+$P(X=2)=\tfrac{27}{64}-\tfrac{1}{8}=\tfrac{19}{64}$，
+$P(X=3)=\tfrac{1}{8}-\tfrac{1}{64}=\tfrac{7}{64}$，
+$P(X=4)=\tfrac{1}{64}$；代入也得 $E[X]=\tfrac{25}{16}$。)
+\end{solution}
+\begin{definition}[离散非负整数随机变量的尾和公式]
+设 $X$ 为离散非负整数值随机变量，则有如下恒等式：
+
+\begin{itemize}
+  \item 若 $X\ge 1$（取值为 $1,2,\dots$），则
+  \[
+  \mathbb E[X]=\sum_{k=0}^{\infty}\mathbb P(X>k).
+  \]
+
+  \item 若 $X\ge 0$（取值为 $0,1,2,\dots$），则
+  \[
+  \mathbb E[X]=\sum_{k=1}^{\infty}\mathbb P(X\ge k).
+  \]
+\end{itemize}
+
+该公式称为离散非负整数随机变量期望的尾和公式，
+可用于在不显式求出分布的情况下直接计算期望。
+\end{definition}
+\begin{homework}[3.4]
+设离散型随机变量 $X$ 有概率分布
+\[
+P\!\left(X=(-1)^{i+1}\frac{3^i}{i}\right)=\frac{2}{3^i}, \quad i=1,2,\ldots,
+\]
+说明 $X$ 的期望不存在。
+\end{homework}
+\begin{theorem}[期望存在的判别准则]
+随机变量 $X$ 的期望 $E(X)$ 存在，当且仅当
+\[
+E|X| < \infty,
+\]
+即 $X$ 是绝对可积的（absolute integrability condition）。
+\end{theorem}
+\begin{solution}
+$X$ 取值
+\[
+x_i = (-1)^{i+1}\frac{3^i}{i}, \qquad P(X=x_i)=\frac{2}{3^i}\ (i\ge1).
+\]
+先注意 $\sum_{i=1}^\infty \frac{2}{3^i}=1$，故上式确为一个概率分布。
+
+按勒贝格意义，期望存在当且仅当 $E|X|<\infty$。计算
+\[
+E|X|
+=\sum_{i=1}^\infty |x_i|\,P(X=x_i)
+=\sum_{i=1}^\infty \frac{3^i}{i}\cdot\frac{2}{3^i}
+=\sum_{i=1}^\infty \frac{2}{i}
+=+\infty.
+\]
+因此 $X$ 不可积，$E(X)$ 不存在。
+
+（注：虽然 $\sum_{i\ge1} x_iP(X=x_i)=\sum_{i\ge1}(-1)^{i+1}\frac{2}{i}$ 为交错调和级数并收敛，
+但其\emph{绝对}和 $\sum_{i\ge1}\frac{2}{i}$ 发散，故期望在概率论的标准定义下不存在。）
+\end{solution}
+\begin{homework}[3.7]
+设离散型随机变量 $X$ 取正整数的概率依几何数列减少，选择数列的首项 $a$ 及公比 $q$，使 $E(X)=10$，并计算 $P(X\le10)$。
+\end{homework}
+\begin{dxtips}
+    大胆假设，然后根据概率总和是1算出各个位置量是多少
+\end{dxtips}
+\begin{solution}[作业 3.7]
+设 $P(X=k)$ 构成以公比 $q\in(0,1)$ 递减的几何数列，则
+\[
+P(X=k)=a q^{k-1},\quad k=1,2,\ldots
+\]
+由 $\sum_{k\ge1}P(X=k)=1$ 得 $a=1-q$，于是 $X$ 为几何分布
+\[
+P(X=k)=(1-q)q^{k-1},\qquad E(X)=\frac{1}{1-q}.
+\]
+题给 $E(X)=10$，故 $1-q=\frac1{10}$，即
+\[
+a=\frac{1}{10},\qquad q=\frac{9}{10}.
+\]
+又
+\[
+P(X\le 10)=1-q^{10}=1-\Big(\tfrac{9}{10}\Big)^{10}.
+\]
+\end{solution}
+\begin{dxtips}
+先用条件概率加和是1 然后第一项是a 也就是a*1 ，先把a提出剩下的用等比数列求和公式
+首项-末项*公比/1-公比 参考1 2 4 8等比数列 。也就是1-q^n/1-q 因为他加和是1所以q一定小于1 ，q的k次方=0。就求出a了
+然后先把a提出来， kqk-1次方求和就是 q的k次方求和再求导也就是1/1-q求导也就是1/(1-q)²，因为a=1-q 所以E=1/1-q
+\end{dxtips}
+\begin{homework}[3.19]
+设二维离散型随机变量 $(X,Y)$ 有下表所示的概率分布：
+\[
+\begin{array}{c|ccc}
+  X \backslash Y & -1 & 0 & 1 \\ \hline
+  1 & 0.2 & 0.1 & 0.1 \\
+  2 & 0.1 & 0 & 0.1 \\
+  3 & 0 & 0.3 & 0.1
+\end{array}
+\]
+求 $E(X)$，$E(Y)$ 和 $E[(X-Y)^2]$。
+\end{homework}
+\begin{solution}[作业 3.19]
+表中给出 $(X,Y)$ 的分布（$Y=-1,0,1$ 为列；$X=1,2,3$ 为行）：
+\[
+\begin{array}{c|ccc}
+X\backslash Y & -1 & 0 & 1\\\hline
+1 & 0.2 & 0.1 & 0.1\\
+2 & 0.1 & 0   & 0.1\\
+3 & 0   & 0.3 & 0.1
+\end{array}
+\]
+边际：$P(X=1,2,3)=(0.4,0.2,0.4)$，$P(Y=-1,0,1)=(0.3,0.4,0.3)$。
+\[
+E(X)=1\cdot0.4+2\cdot0.2+3\cdot0.4=2,
+\qquad
+E(Y)=(-1)\cdot0.3+0\cdot0.4+1\cdot0.3=0.
+\]
+又
+\[
+E(X^2)=0.4+0.8+3.6=4.8,\quad
+E(Y^2)=0.3+0+0.3=0.6,
+\]
+\[
+E(XY)=\sum_{x,y}xy\,p(x,y)=(-0.2+0+0.1)+(-0.2+0+0.2)+(0+0+0.3)=0.2.
+\]
+故
+\[
+E\!\left[(X-Y)^2\right]=E(X^2)+E(Y^2)-2E(XY)=4.8+0.6-0.4=5.
+\]
+\end{solution}
+\begin{homework}[3.20]
+设二维连续型随机变量 $(X,Y)$ 的概率密度函数为
+\[
+f(x,y)=
+\begin{cases}
+12y^2, & 0 \le y \le x \le 1,\\[4pt]
+0, & \text{其他}.
+\end{cases}
+\]
+求 $E(X)$，$E(Y)$ 和 $E(XY)$。
+\end{homework}
+\begin{dxtips}[如何分辨先积谁后积谁]
+就通过把范围拆开来，谁能不依赖另一个就是最后再积，谁必须背另一个限制就先积分
+    \begin{itemize}
+  \item 外层积分取 $x$ 的范围：
+  \[
+    0 \le x \le 1;
+  \]
+  \item 当 $x$ 固定之后，合法的 $y$ 必须满足：
+  \[
+    0 \le y \le x.
+  \]
+\end{itemize}
+\end{dxtips}
+\begin{solution}[作业 3.20]
+给定密度
+\[
+f(x,y)=\begin{cases}
+12y^2,& 0\le y\le x\le 1,\\
+0,& \text{其他}.
+\end{cases}
+\]
+直接积分：
+\[
+E(Y)=\int_{0}^{1}\!\!\int_{0}^{x} y\cdot12y^2\,dy\,dx
+= \int_{0}^{1} 12\frac{x^4}{4}\,dx=\int_{0}^{1}3x^4\,dx=\frac{3}{5}.
+\]
+\[
+E(X)=\int_{0}^{1}\!\!\int_{0}^{x} x\cdot12y^2\,dy\,dx
+= \int_{0}^{1} 4x^4\,dx=\frac{4}{5}.
+\]
+\[
+E(XY)=\int_{0}^{1}\!\!\int_{0}^{x} xy\cdot12y^2\,dy\,dx
+= \int_{0}^{1} 3x^5\,dx=\frac{1}{2}.
+\]
+\end{solution}
+\begin{dxtips}
+    在计算期望时，概率权重不变，只需将随机变量替换为相应的幂，即
+\[
+E(X^k)=\sum_i x_i^k\,P(X=x_i)
+\quad\text{或}\quad
+E(X^k)=\int x^k f(x)\,dx,
+\]
+其中权重 \(P(X=x_i)\)（或密度 \(f(x)\)）保持不变。
+\end{dxtips}
+\begin{homework}[3.21]
+设随机变量 $X$ 与 $Y$ 相互独立，分别有概率密度函数
+\[
+f_X(x)=
+\begin{cases}
+e^{-x}, & x>0,\\
+0, & x\le0,
+\end{cases}
+\qquad
+f_Y(y)=
+\begin{cases}
+2e^{-2y}, & y>0,\\
+0, & y\le0.
+\end{cases}
+\]
+求 $E(XY)$ 和 $E(X^2+3Y)$。
+\end{homework}
+
+
+
+\begin{solution}[作业 3.21]
+$X\sim \mathrm{Exp}(1)$，$Y\sim \mathrm{Exp}(2)$，且相互独立。
+\[
+E(X)=1,\qquad E(Y)=\frac{1}{2},\qquad E(X^2)=\frac{2}{1^2}=2.
+\]
+由独立性 $E(XY)=E(X)E(Y)=\frac{1}{2}$，于是
+\[
+E(XY)=\frac{1}{2},\qquad E(X^2+3Y)=E(X^2)+3E(Y)=2+\frac{3}{2}=\frac{7}{2}.
+\]
+\end{solution}
+\section{第八次作业}
+
+\begin{dxtips}
+    $S_n=\sum_{k=1}^{n} a_k = a_1\frac{1-q^{\,n}}{1-q}.$
+等比数列记忆方法，Sn的和减去Sn的和乘上公比得来的，错位相减只剩第一项1和最后一项q的n次方。容易记忆，开始有n项所以最后一项是第一项乘n-1个公比。
+这个和等比级数就是 $q$ 变成 $x$，$a_1=1$，然后因为收敛的所以 $q^n$ 趋近于 $0$ 。对两边关于 $x$ 求导：
+
+\[
+\sum_{n=1}^{\infty} n x^{\,n-1} = \frac{1}{(1-x)^2}.
+\]
+
+注意：左边的指数是 $n-1$，但我们想要的是 $x^n$ 形式，因此两边同乘以 $x$：
+
+\[
+x \sum_{n=1}^{\infty} n x^{\,n-1}
+= \sum_{n=1}^{\infty} n x^n
+= \frac{x}{(1-x)^2}.
+\]
+
+因此得到所需级数：
+
+\[
+\boxed{
+\sum_{n=1}^{\infty} n x^n = \frac{x}{(1-x)^2},\qquad |x|<1
+}
+\]
+\end{dxtips}
+\begin{solution}
+设随机变量 $X$ 的概率质量函数为
+\[
+P(X=n)=2^{-n},\quad n=1,2,3,\dots
+\]
+容易验证它是一个概率分布：
+\[
+\sum_{n=1}^{\infty}P(X=n)=\sum_{n=1}^\infty 2^{-n}
+=\frac{\frac{1}{2}}{1-\frac{1}{2}} = 1.
+\]
+
+我们计算期望值：
+\[
+E(X) = \sum_{n=1}^{\infty} n \cdot 2^{-n}.
+\]
+利用幂级数求和公式：对 \( |x|<1 \)，有
+\[
+\sum_{n=1}^{\infty} n x^n = \frac{x}{(1 - x)^2}.
+\]
+令 \(x = \tfrac12\)，得
+\[
+E(X) = \sum_{n=1}^{\infty} n \cdot 2^{-n}
+= \sum_{n=1}^{\infty} n \cdot \left( \tfrac{1}{2} \right)^n
+= \frac{\tfrac12}{(1 - \tfrac12)^2} = \frac{\tfrac12}{\tfrac14} = 2.
+\]
+
+再计算
+\[
+E(X^2) = \sum_{n=1}^{\infty} n^2 \cdot 2^{-n}.
+\]
+利用公式：对 \( |x|<1 \)，
+\[
+\sum_{n=1}^{\infty} n^2 x^n = \frac{x(1 + x)}{(1 - x)^3},
+\]
+取 \(x = \tfrac12\)，得
+\[
+E(X^2) = \sum_{n=1}^{\infty} n^2 \cdot 2^{-n}
+= \frac{\tfrac12(1 + \tfrac12)}{(1 - \tfrac12)^3}
+= \frac{\tfrac32 \cdot \tfrac12}{\tfrac18}
+= \frac{\tfrac34}{\tfrac18} = 6.
+\]
+
+因此方差为
+\[
+\operatorname{Var}(X) = E(X^2) - [E(X)]^2 = 6 - 2^2 = 2.
+\]
+\end{solution}
+\begin{homework}[3.5]
+设离散型随机变量 $X$ 有概率分布
+\[
+P(X = n) = 2^{-n}, \quad n = 1, 2, \dots,
+\]
+求 $E(X)$ 和 $\operatorname{Var}(X)$。
+\end{homework}
+\begin{dxtips}
+    变量替换还得复习
+\end{dxtips}
+\begin{homework}[3.12]
+气体分子的速度值 $X$ 服从麦克斯韦分布（Maxwell distribution），其概率密度函数为
+\[
+f(x) =
+\begin{cases}
+\dfrac{4}{a^3 \sqrt{\pi}} x^2 \exp\left(-\dfrac{x^2}{a^2} \right), & x \ge 0, \\[1ex]
+0, & x < 0,
+\end{cases}
+\]
+其中 $a$ 是正常数。求 $E(X)$ 和 $\operatorname{Var}(X)$。
+\end{homework}
+\begin{solution}
+设气体分子的速度值 $X$ 服从麦克斯韦分布，其概率密度函数为
+\[
+f(x) = 
+\begin{cases}
+\dfrac{4}{a^3 \sqrt{\pi}}\,x^2 \exp\left(-\dfrac{x^2}{a^2}\right), & x \ge 0, \\[6pt]
+0, & x < 0,
+\end{cases}
+\]
+其中 $a>0$ 为正常数。
+
+$\blacktriangleright$ 计算期望：
+\[
+E(X) = \int_0^{\infty} x f(x)\,\mathrm{d}x
+= \int_0^{\infty} x \cdot \dfrac{4}{a^3 \sqrt{\pi}}\,x^2 e^{-x^2/a^2}\,\mathrm{d}x
+= \dfrac{4}{a^3 \sqrt{\pi}} \int_0^{\infty} x^3 e^{-x^2/a^2} \,\mathrm{d}x.
+\]
+令 \( u = x^2/a^2 \)，即 \( x = a \sqrt{u} \)，则
+\[
+\mathrm{d}x = \frac{a}{2\sqrt{u}}\,\mathrm{d}u,\quad
+x^3 = a^3 u^{3/2}.
+\]
+代入得：
+\[
+E(X) = \dfrac{4}{a^3 \sqrt{\pi}} \cdot \int_0^\infty a^3 u^{3/2} e^{-u} \cdot \dfrac{a}{2\sqrt{u}}\,\mathrm{d}u
+= \dfrac{4a^1}{\sqrt{\pi}} \cdot \dfrac{1}{2} \int_0^\infty u \cdot e^{-u} \,\mathrm{d}u.
+\]
+注意：
+\[
+\int_0^\infty u e^{-u} \,\mathrm{d}u = \Gamma(2) = 1!
+= 1.
+\]
+故：
+\[
+E(X) = \dfrac{2a}{\sqrt{\pi}}.
+\]
+
+$\blacktriangleright$ 计算二阶矩：
+\[
+E(X^2) = \int_0^{\infty} x^2 f(x)\,\mathrm{d}x
+= \int_0^{\infty} x^2 \cdot \dfrac{4}{a^3 \sqrt{\pi}}\,x^2 e^{-x^2/a^2}\,\mathrm{d}x
+= \dfrac{4}{a^3 \sqrt{\pi}} \int_0^{\infty} x^4 e^{-x^2/a^2}\,\mathrm{d}x.
+\]
+使用换元法，或查表：
+\[
+\int_0^{\infty} x^4 e^{-x^2/a^2} \,\mathrm{d}x = \dfrac{3 \sqrt{\pi}}{8} a^5,
+\]
+因此：
+\[
+E(X^2) = \dfrac{4}{a^3 \sqrt{\pi}} \cdot \dfrac{3 \sqrt{\pi}}{8} a^5 = \dfrac{3}{2} a^2.
+\]
+
+$\blacktriangleright$ 计算方差：
+\[
+D(X) = E(X^2) - [E(X)]^2 = \dfrac{3}{2}a^2 - \left(\dfrac{2a}{\sqrt{\pi}}\right)^2
+= \dfrac{3}{2}a^2 - \dfrac{4a^2}{\pi}
+= a^2 \left( \dfrac{3}{2} - \dfrac{4}{\pi} \right).
+\]
+\end{solution}
+\begin{dxtips}
+    arcsin arccos还得背
+\end{dxtips}
+\begin{homework}[3.14]
+设随机变量 $X$ 有分布函数
+\[
+F(x) =
+\begin{cases}
+0, & x < -1, \\
+0.5 + \dfrac{1}{\pi} \arcsin x, & -1 \le x < 1, \\
+1, & x \ge 1,
+\end{cases}
+\]
+求 $E(X)$ 和 $\operatorname{Var}(X)$。
+\end{homework}
+\begin{solution}
+由题意，随机变量 $X$ 的分布函数为
+\[
+F(x) =
+\begin{cases}
+0, & x < -1,\\[6pt]
+0.5 + \dfrac{1}{\pi}\arcsin x, & -1 \le x < 1,\\[6pt]
+1, & x \ge 1.
+\end{cases}
+\]
+
+对 $-1 < x < 1$，对 $F(x)$ 求导得到概率密度函数
+\[
+f(x) = F'(x) = \frac{1}{\pi}\cdot \frac{1}{\sqrt{1-x^2}},\qquad -1 < x < 1.
+\]
+
+---
+
+\textbf{计算数学期望}：
+\[
+E(X) = \int_{-1}^{1} x f(x) \, dx
+      = \int_{-1}^{1} x \cdot \frac{1}{\pi \sqrt{1-x^2}}\, dx.
+\]
+
+被积函数是奇函数（$x$ 为奇函数，$\frac{1}{\sqrt{1-x^2}}$ 为偶函数），
+因此：
+\[
+E(X) = 0.
+\]
+
+---
+
+\textbf{计算方差}：
+
+先求
+\[
+E\!\left(X^2\right)
+= \int_{-1}^{1} x^2 f(x)\, dx
+= \frac{1}{\pi}\int_{-1}^{1} \frac{x^2}{\sqrt{1-x^2}}\, dx.
+\]
+
+利用对称性，化为
+\[
+E(X^2) = \frac{2}{\pi}\int_{0}^{1} \frac{x^2}{\sqrt{1-x^2}}\, dx.
+\]
+
+作变量替换 $x=\sin\theta$，$dx=\cos\theta \, d\theta$，$\theta \in [0,\frac{\pi}{2}]$，有
+\[
+\int_{0}^{1} \frac{x^2}{\sqrt{1-x^2}}\, dx
+= \int_{0}^{\frac{\pi}{2}} \frac{\sin^2\theta}{\cos\theta} \cdot \cos\theta\, d\theta
+= \int_{0}^{\frac{\pi}{2}} \sin^2\theta\, d\theta 
+= \frac{\pi}{4}.
+\]
+
+因此
+\[
+E(X^2) = \frac{2}{\pi} \cdot \frac{\pi}{4} = \frac{1}{2}.
+\]
+
+于是
+\[
+\boxed{ \operatorname{Var}(X)=E(X^2)-[E(X)]^2=\frac{1}{2}-0=\frac{1}{2} }.
+\]
+
+---
+
+最终答案：
+
+\[
+\boxed{E(X)=0,\qquad \operatorname{Var}(X)=\frac{1}{2}}
+\]
+\end{solution}
+\begin{homework}[3.16]
+设取值于区间 $(a, b)$ 的随机变量 $X$ 的期望与方差存在，证明：
+\[
+\quad a \le E(X) \le b, \qquad
+\operatorname{Var}(X) \le \frac{(b - a)^2}{4}.
+\]
+\end{homework}
+\begin{solution}
+已知随机变量 $X$ 取值于区间 $(a, b)$，说明对于任意 $x$，有
+\[
+a < x < b.
+\]
+由于期望是加权平均，必落在最小值与最大值之间，因此有：
+\[
+a < E(X) < b.
+\]
+再由方差定义式：
+\[
+D(X) = E[(X - E(X))^2],
+\]
+由于 $X \in (a, b)$，故对任意 $x$ 有
+\[
+|x - E(X)| \le \max\{|a - E(X)|,\ |b - E(X)|\} \le \max\{E(X) - a,\ b - E(X)\}.
+\]
+从而
+\[
+(X - E(X))^2 \le \max\{(E(X) - a)^2,\ (b - E(X))^2\}.
+\]
+
+此时我们令函数
+\[
+f(t) = \max\{(t - a)^2,\ (b - t)^2\},\quad t \in [a,b].
+\]
+它在区间 $[a,b]$ 上的最大值出现在中点 $t = \frac{a + b}{2}$，即有
+\[
+f(t) \le \left( \frac{b - a}{2} \right)^2.
+\]
+因此对任意 $x\in(a,b)$ 都有：
+\[
+(X - E(X))^2 \le \left( \frac{b - a}{2} \right)^2.
+\]
+取期望得：
+\[
+D(X) = E[(X - E(X))^2] \le \left( \frac{b - a}{2} \right)^2 = \frac{(b - a)^2}{4}.
+\]
+证毕。
+\end{solution}
+\begin{dxtips}
+    在求方差 $D(X)$ 的时候，我们确实还是在使用 $P(X = x_i)$ 作为“权重”，只不过我们不再对 $x_i$ 本身求和，而是对 $(x_i - E(X))^2$ 求和：
+
+\[
+D(X)=\sum P(X = x_i)\cdot (x_i - E(X))^2
+\]\[
+E(c) = c \cdot P(\text{总是发生}) = c \cdot 1 = c
+\]
+\end{dxtips}
+\begin{homework}[3.22]
+设二维连续型随机变量 $(X, Y)$ 有概率密度函数
+\[
+f(x, y) =
+\begin{cases}
+4xy \exp\left(-x^2 - y^2\right), & x > 0,\ y > 0, \\[1ex]
+0, & \text{其他},
+\end{cases}
+\]
+求 $Z = \sqrt{X^2 + Y^2}$ 的期望和方差。
+\end{homework}
+\begin{dxtips}
+ \textbf{极坐标变换：}$\quad 
+x = r\cos\theta,\quad y = r\sin\theta.$
+
+\textbf{Jacobian 行列式：}
+
+\[
+J = \left| \frac{\partial(x,y)}{\partial(r,\theta)} \right|
+= \begin{vmatrix}
+\cos\theta & -r\sin\theta \\
+\sin\theta & r\cos\theta
+\end{vmatrix}
+= r.
+\]
+
+因此：
+\[
+dx\,dy = r\,dr\,d\theta.
+\]
+
+由于 \(x>0,\; y>0\)，仅在第一象限，故：
+\[
+0 < \theta < \frac{\pi}{2},\qquad r > 0.
+\] 
+\end{dxtips}
+\begin{solution}
+    \begin{note}
+        \[
+\begin{pmatrix}
+dx \\
+dy
+\end{pmatrix}
+=
+\begin{pmatrix}
+\dfrac{\partial x}{\partial r} & \dfrac{\partial x}{\partial \theta} \\[6pt]
+\dfrac{\partial y}{\partial r} & \dfrac{\partial y}{\partial \theta}
+\end{pmatrix}
+\begin{pmatrix}
+dr \\
+d\theta
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos\theta & -r\sin\theta \\
+\sin\theta & r\cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+dr \\
+d\theta
+\end{pmatrix}.
+\]
+    \end{note}
+设 $Z=\sqrt{X^2+Y^2}$。由题意
+\[
+f(x,y)=
+\begin{cases}
+4xy e^{-(x^2+y^2)}, & x>0,\ y>0,\\[4pt]
+0,&\text{其他}.
+\end{cases}
+\]
+
+引入极坐标 $x=r\cos\theta,\ y=r\sin\theta$，雅可比行列式为 $r$，且第一象限对应 $\theta\in(0,\tfrac{\pi}{2})$，$r>0$。于是
+\[
+f_{R,\Theta}(r,\theta)
+=4\,(r\cos\theta)(r\sin\theta)\,e^{-r^2}\,r
+=4 r^3\cos\theta\sin\theta\,e^{-r^2},\qquad r>0,\ \theta\in(0,\tfrac{\pi}{2}).
+\]
+
+对 $\theta$ 积分得到 $R$（即 $Z$）的边缘密度：
+\[
+f_R(r)=\int_0^{\pi/2}4 r^3\cos\theta\sin\theta\,e^{-r^2}\,d\theta
+=4 r^3 e^{-r^2}\int_0^{\pi/2}\cos\theta\sin\theta\,d\theta.
+\]
+因为 $\int_0^{\pi/2}\cos\theta\sin\theta\,d\theta=\tfrac12$，所以
+\[
+\boxed{\,f_R(r)=2 r^3 e^{-r^2},\quad r>0\,.}
+\]
+
+接下来计算数学期望与二阶矩。
+
+\[
+E(R)=\int_0^{\infty} r\,f_R(r)\,dr
+=2\int_0^{\infty} r^4 e^{-r^2}\,dr.
+\]
+\begin{definition}
+    \textbf{伽马函数：}
+
+
+\[
+\Gamma(\alpha+1)=\alpha\,\Gamma(\alpha),
+\qquad 
+\Gamma(n+1)=n!.
+\]
+x是可以被替换的但是要保证x，$e^x$,dx三个位置是一个变量。
+被积函数是 $x$ 的几次方被积函数就是伽马几+1：
+
+\[
+\Gamma(\alpha)=\int_{0}^{+\infty} x^{\alpha-1} e^{-x}\,dx.
+\]
+
+伽马函数的特征：积分从 $0$ 到 $+\infty$，对 $x$ 积分，前面是 $x$ 的若干次方，后面是 $e^{-x}$。
+
+\[
+\Gamma(1)=1,\qquad 
+\Gamma\!\left(\tfrac{1}{2}\right)=\sqrt{\pi}.
+\]
+
+\bigskip
+
+\textbf{伽马函数的另一个写法：}
+\[
+\Gamma(\alpha)=2\int_{0}^{+\infty} x^{2\alpha-1} e^{-x^{2}}\,dx.
+\]
+
+$令\; 2\alpha-1=n,\; 则\; \alpha=\frac{n+1}{2}$，从而
+\[
+\Gamma\!\left(\frac{n+1}{2}\right)
+=2\int_{0}^{+\infty} x^{n} e^{-x^{2}}\,dx.
+\]
+有：
+\[
+\int_{0}^{+\infty} x^{3} e^{-x^{2}}\,dx
+= \frac12 \int_{0}^{+\infty} x^{(1)} e^{-x^{2}}\,dx
+= \frac12\,\Gamma\!\left(\frac{1+1}{2}\right)
+= \frac12.
+\]
+\end{definition}
+使用公式 $\displaystyle\int_0^\infty r^m e^{-r^2}\,dr=\tfrac12\Gamma\!\big(\tfrac{m+1}{2}\big)$，当 $m=4$ 时
+\[
+\int_0^{\infty} r^4 e^{-r^2}\,dr=\tfrac12\Gamma\!\big(\tfrac{5}{2}\big)
+=\tfrac12\cdot\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}=\frac{3\sqrt{\pi}}{8}.
+\]
+\begin{dxtips}
+    这里用了两次$\Gamma(\alpha+1)=\alpha\,\Gamma(\alpha),$
+\end{dxtips}
+因此
+\[
+\boxed{\,E(Z)=E(R)=2\cdot\frac{3\sqrt{\pi}}{8}=\frac{3\sqrt{\pi}}{4}\,.}
+\]
+
+再求二阶矩
+\[
+E(R^2)=\int_0^{\infty} r^2 f_R(r)\,dr
+=2\int_0^{\infty} r^5 e^{-r^2}\,dr.
+\]
+当 $m=5$ 时，
+\[
+\int_0^{\infty} r^5 e^{-r^2}\,dr=\tfrac12\Gamma(3)=\tfrac12\cdot 2=1,
+\]
+所以
+\[
+\boxed{\,E(Z^2)=E(R^2)=2. \,}
+\]
+
+由此得方差
+\[
+\boxed{\,\operatorname{Var}(Z)=E(Z^2)-[E(Z)]^2
+=2-\left(\frac{3\sqrt{\pi}}{4}\right)^2
+=2-\frac{9\pi}{16}
+=\frac{32-9\pi}{16}. \,}
+\]
+
+综上：
+\[
+\boxed{\,E(Z)=\frac{3\sqrt{\pi}}{4},\qquad \operatorname{Var}(Z)=2-\frac{9\pi}{16}=\frac{32-9\pi}{16}\,.}
+\]
+\end{solution}
+\begin{dxtips}
+    要背的例题
+\end{dxtips}
+\begin{homework}[3.23]
+设随机变量 $X$ 与 $Y$ 相互独立，$\operatorname{Var}(X)$ 和 $\operatorname{Var}(Y)$ 存在，证明
+\[
+\operatorname{Var}(XY) = \operatorname{Var}(X) \operatorname{Var}(Y)
++ [E(X)]^2 \operatorname{Var}(Y)
++ [E(Y)]^2 \operatorname{Var}(X).
+\]
+\end{homework}
+\begin{solution}
+已知随机变量 $X$ 与 $Y$ 相互独立，且 $\operatorname{Var}(X)$ 和 $\operatorname{Var}(Y)$ 存在。
+
+我们要证明：
+\[
+\operatorname{Var}(XY)
+= \operatorname{Var}(X)\operatorname{Var}(Y)
++ [E(X)]^2 \operatorname{Var}(Y)
++ [E(Y)]^2 \operatorname{Var}(X).
+\]
+
+\textbf{证明如下}：
+
+由方差定义：
+\[
+\operatorname{Var}(XY) = E\!\left[(XY)^2\right] - \left(E[XY]\right)^2.
+\]
+
+由于 $X$ 和 $Y$ 独立，有
+\[
+E[XY] = E[X]E[Y],
+\qquad
+E\!\left[(XY)^2\right] = E[X^2Y^2] = E[X^2]\,E[Y^2].
+\]
+
+因此
+\[
+\operatorname{Var}(XY)
+= E[X^2]\,E[Y^2] - (E[X]E[Y])^2.
+\]
+
+利用恒等式 $E[X^2] = \operatorname{Var}(X) + (E[X])^2$，$E[Y^2] = \operatorname{Var}(Y) + (E[Y])^2$，代入：
+
+\[
+\operatorname{Var}(XY)
+= \big( \operatorname{Var}(X) + (E[X])^2 \big)
+  \big( \operatorname{Var}(Y) + (E[Y])^2 \big)
+  - (E[X]E[Y])^2.
+\]
+
+展开并整理：
+\[
+\boxed{
+\operatorname{Var}(XY)
+= \operatorname{Var}(X)\operatorname{Var}(Y)
++ [E(X)]^2 \operatorname{Var}(Y)
++ [E(Y)]^2 \operatorname{Var}(X)
+}.
+\]
+
+证毕。
+\end{solution}
+\begin{dxtips}
+    要背的例题
+\end{dxtips}
+\begin{homework}[3.24]
+设随机变量 $X \sim B(n, p)$，记 $q = 1 - p$，证明：
+\[
+E\bigl((X - np)^4\bigr)
+= npq(p^3 + q^3) + 3p^2 q^2(n^2 - n).
+\]
+\end{homework}
+\begin{solution}
+\[
+X=\sum_{i=1}^n X_i,\qquad X_i\overset{\mathrm{i.i.d.}}{\sim}\mathrm{Bern}(p),\quad Y_i:=X_i-p.
+\]
+\[
+E\bigl((X-np)^4\bigr)
+=E\Bigl(\Bigl(\sum_{i=1}^n Y_i\Bigr)^4\Bigr)
+=\sum_{i=1}^n E(Y_i^4)+6\sum_{1\le i<j\le n}E(Y_i^2)E(Y_j^2).
+\]
+\[
+E(Y_i^2)=\mathrm{Var}(X_i)=pq.
+\]
+\[
+E(Y_i^4)=p(1-p)^4+q(-p)^4
+= p(1-4p+6p^2-4p^3+p^4)+qp^4
+= pq(1-3pq).
+\]
+\[
+E\bigl((X-np)^4\bigr)=n\cdot pq(1-3pq)+6\binom{n}{2}(pq)^2.
+\]
+\[
+1-3pq=p^3+q^3,\qquad 6\binom{n}{2}=3n(n-1).
+\]
+\[
+\boxed{\,E\bigl((X-np)^4\bigr)=npq(p^3+q^3)+3p^2q^2(n^2-n).\,}
+\]
+\end{solution}
+\begin{homework}[3.25]
+设二维离散型随机变量 $(X, Y)$ 有下表示的概率分布：
+\[
+\begin{array}{c|ccc}
+X \backslash Y & -1 & 0 & 1 \\ \hline
+-1 & \tfrac{1}{8} & \tfrac{1}{8} & \tfrac{1}{8} \\
+0  & \tfrac{1}{8} & 0           & \tfrac{1}{8} \\
+1  & \tfrac{1}{8} & \tfrac{1}{8} & \tfrac{1}{8}
+\end{array}
+\]
+验证 $X$ 与 $Y$ 既不独立，也不相关。
+\end{homework}
+\begin{solution}
+
+由联合分布表可得：
+
+\[
+P(X=-1,Y=-1)=\frac18,\quad P(X=-1,Y=0)=\frac18,\quad P(X=-1,Y=1)=\frac18,
+\]
+\[
+P(X=0,Y=-1)=\frac18,\quad P(X=0,Y=0)=0,\quad P(X=0,Y=1)=\frac18,
+\]
+\[
+P(X=1,Y=-1)=\frac18,\quad P(X=1,Y=0)=\frac18,\quad P(X=1,Y=1)=\frac18.
+\]
+
+边缘分布：
+
+\[
+P(X=-1)=\frac38,\quad P(X=0)=\frac14,\quad P(X=1)=\frac38,
+\]
+\[
+P(Y=-1)=\frac38,\quad P(Y=0)=\frac14,\quad P(Y=1)=\frac38.
+\]
+
+取 \((X,Y)=(0,0)\)：
+
+\[
+P(X=0,Y=0)=0 \neq \frac14\cdot\frac14=P(X=0)P(Y=0),
+\]
+
+故 \(X,Y\) 不独立。
+
+\[
+E(X)=(-1)\cdot\frac38+0\cdot\frac14+1\cdot\frac38=0,
+\]
+\[
+E(Y)=(-1)\cdot\frac38+0\cdot\frac14+1\cdot\frac38=0.
+\]
+
+\[
+E(XY)=(-1)(-1)\cdot\frac18+(-1)(1)\cdot\frac18+(1)(-1)\cdot\frac18+(1)(1)\cdot\frac18=\frac12,
+\]
+
+\[
+\Cov(X,Y)=E(XY)-E(X)E(Y)=\frac12\neq 0,
+\]
+
+但 \(E(X)=E(Y)=0\)，因此
+
+\[
+E(XY) \neq E(X)E(Y),
+\]
+
+故 \(X,Y\) 不相关。
+
+\[
+\boxed{X \text{ 与 } Y \text{既不独立，也不相关。}}
+\]
+
+\end{solution}
+\begin{homework}[3.26]
+设 $A$ 和 $B$ 是正概率的事件，令
+\[
+X =
+\begin{cases}
+1, & A \text{ 出现}, \\
+0, & A \text{ 不出现},
+\end{cases}
+\qquad
+Y =
+\begin{cases}
+1, & B \text{ 出现}, \\
+0, & B \text{ 不出现}.
+\end{cases}
+\]
+若 $X$ 与 $Y$ 不相关，证明 $X$ 与 $Y$ 相互独立。
+\end{homework}
+\begin{solution}
+\[
+X=1_A,\qquad Y=1_B
+\]
+\[
+E(X)=P(A),\qquad E(Y)=P(B)
+\]
+\[
+E(XY)=E(1_{A\cap B})=P(A\cap B)
+\]
+\[
+\Cov(X,Y)=E(XY)-E(X)E(Y)=P(A\cap B)-P(A)P(B)
+\]
+若 \(X\) 与 \(Y\) 不相关，则 \(\Cov(X,Y)=0\)，故
+\[
+P(A\cap B)-P(A)P(B)=0\implies P(A\cap B)=P(A)P(B),
+\]
+即 \(A\) 与 \(B\) 相互独立。 
+\end{solution}
+\begin{definition}  [协方差对角线是平方项]
+    相关系数的母式定义为
+\[
+\rho_{X,Y}
+=\frac{\operatorname{Cov}(X,Y)}
+       {\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}},
+\]
+这是相关系数最根本的形式，适用于任意具有有限方差的随机变量。另一方面，二维随机向量 \((X,Y)\) 的协方差矩阵为
+\[
+\Sigma=
+\begin{pmatrix}
+E\big[(X-E[X])^{2}\big] & E\big[(X-E[X])(Y-E[Y])\big] \\[6pt]
+E\big[(X-E[X])(Y-E[Y])\big] & E\big[(Y-E[Y])^{2}\big]
+\end{pmatrix}.
+\]
+其中对角线给出方差，非对角元素给出协方差。将相关系数写成协方差矩阵的形式，可得
+\[
+\rho_{X,Y}
+=\frac{\Sigma_{12}}{\sqrt{\Sigma_{11}\Sigma_{22}}},
+\]
+因此相关系数实际上就是协方差在对应方差尺度下的标准化结果。
+\end{definition}
+\begin{homework}[3.28]
+在 10 件产品中有 2 件一级品，7 件二级品，1 件次品。从中不放回地抽取 3 件，用 $X$ 表示抽到的一级品数，$Y$ 表示抽到的二级品数，求 $X$ 与 $Y$ 的相关系数。
+\end{homework}
+\begin{solution}
+N=10,\;K_1=2,\;K_2=7,\;n=3.
+
+\[
+E(X)=n\frac{K_1}{N}=3\cdot\frac{2}{10}=\frac{3}{5},\qquad
+E(Y)=n\frac{K_2}{N}=3\cdot\frac{7}{10}=\frac{21}{10}.
+\]
+
+\[
+\operatorname{Var}(X)
+= n\frac{K_1}{N}\Bigl(1-\frac{K_1}{N}\Bigr)\frac{N-n}{N-1}
+= 3\cdot\frac{2}{10}\cdot\frac{8}{10}\cdot\frac{7}{9}
+= \frac{28}{75}.
+\]
+
+\[
+\operatorname{Var}(Y)
+= n\frac{K_2}{N}\Bigl(1-\frac{K_2}{N}\Bigr)\frac{N-n}{N-1}
+= 3\cdot\frac{7}{10}\cdot\frac{3}{10}\cdot\frac{7}{9}
+= \frac{49}{100}.
+\]
+
+\[
+\operatorname{Cov}(X,Y)
+= -\,n\frac{K_1}{N}\frac{K_2}{N}\frac{N-n}{N-1}
+= -3\cdot\frac{2}{10}\cdot\frac{7}{10}\cdot\frac{7}{9}
+= -\frac{49}{150}.
+\]
+
+\[
+\rho_{X,Y}
+= \frac{\operatorname{Cov}(X,Y)}
+       {\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}}
+= -\frac{49/150}{\sqrt{(28/75)(49/100)}}
+\approx -0.763.
+\]
+\end{solution}
+\begin{homework}[3.30]
+设二维连续型随机变量 $(X, Y)$ 有概率密度函数：
+\[
+f(x, y) =
+\begin{cases}
+1, & |y| < x,\quad 0 < x < 1, \\
+0, & \text{其他}.
+\end{cases}
+\]
+求 $\operatorname{Cov}(X, Y)$。
+\end{homework}
+\begin{solution}
+已知联合密度
+\[
+f(x,y)=
+\begin{cases}
+1, & 0<x<1,\ |y|<x,\\[3pt]
+0, & \text{其它}.
+\end{cases}
+\]
+
+先求边缘密度：
+\[
+f_X(x)=\int_{-x}^{x}1\,dy=2x,\qquad 0<x<1.
+\]
+
+\[
+f_Y(y)=\int_{|y|}^{1}1\,dx=1-|y|,\qquad -1<y<1.
+\]
+
+计算期望：
+\[
+E(X)=\int_0^1 x\cdot 2x\,dx = 2\int_0^1 x^2 dx=\frac{2}{3}.
+\]
+
+\[
+E(Y)=\int_{-1}^1 y(1-|y|)\,dy = 0 \quad (\text{被积函数为奇函数}).
+\]
+
+计算 $E(XY)$：
+\[
+E(XY)=\int_0^1\int_{-x}^{x}xy\,dy\,dx
+=\int_0^1 x\left[\frac{y^2}{2}\right]_{-x}^{x}dx
+=\int_0^1 x\cdot 0\,dx = 0.
+\]
+
+于是协方差为
+\[
+\Cov(X,Y)=E(XY)-E(X)E(Y)=0-\frac{2}{3}\cdot 0=0.
+\]
+
+\[
+\boxed{\Cov(X,Y)=0}
+\]
+\end{solution}
+\begin{homework}[3.32]
+设 $X, Y, Z$ 是随机变量，且
+\[
+E(X) = E(Y) = 1,\quad E(Z) = -1,\quad \operatorname{Var}(X) = \operatorname{Var}(Y) = \operatorname{Var}(Z) = 1,
+\]
+\[
+\rho_{X,Y} = 0,\quad \rho_{X,Z} = 0.5,\quad \rho_{Y,Z} = -0.5.
+\]
+求 $E(X + Y + Z)$ 和 $\operatorname{Var}(X + Y + Z)$。
+\end{homework}
+
+\begin{homework}[3.34]
+设 $n > m$，随机变量 $X_1, X_2, \dots, X_{n+m}$ 相互独立，且具有相同的分布函数，$\operatorname{Var}(X_1)$ 存在。在下列定义下，
+\[
+Y = \sum_{i=1}^n X_i,\qquad Z = \sum_{k=1}^m X_{n+k},
+\]
+求 $\rho_{Y,Z}$。
+\end{homework}
+\begin{solution}
+已知：
+\[
+E(X)=E(Y)=1,\qquad E(Z)=-1,
+\]
+\[
+\operatorname{Var}(X)=\operatorname{Var}(Y)=\operatorname{Var}(Z)=1,
+\]
+\[
+\rho_{X,Y}=0,\qquad \rho_{X,Z}=0.5,\qquad \rho_{Y,Z}=-0.5.
+\]
+
+（1）计算期望：
+\[
+E(X+Y+Z)=E(X)+E(Y)+E(Z)=1+1-1=1.
+\]
+
+（2）计算方差：
+\[
+\operatorname{Var}(X+Y+Z)
+=\operatorname{Var}(X)+\operatorname{Var}(Y)+\operatorname{Var}(Z)
++2\operatorname{Cov}(X,Y)+2\operatorname{Cov}(X,Z)+2\operatorname{Cov}(Y,Z)
+\]
+
+由于
+\[
+\operatorname{Cov}(X,Y)=\rho_{X,Y}\sqrt{\operatorname{Var}(X)\operatorname{Var}(Y)}=0,
+\]
+\[
+\operatorname{Cov}(X,Z)=0.5,\qquad
+\operatorname{Cov}(Y,Z)=-0.5,
+\]
+
+代入：
+\[
+\operatorname{Var}(X+Y+Z)=1+1+1+2\cdot 0+2\cdot 0.5+2\cdot (-0.5)=3.
+\]
+
+\[
+\boxed{E(X+Y+Z)=1,\qquad \operatorname{Var}(X+Y+Z)=3.}
+\]
+\end{solution}
+\begin{solution}
+\[
+Y=\sum_{i=1}^{n} X_i,\qquad Z=\sum_{k=1}^{m} X_{n+k}.
+\]
+
+因为 $X_1,X_2,\dots,X_{n+m}$ 互相独立，
+
+\[
+\operatorname{Cov}(Y,Z)
+=\operatorname{Cov}\left(\sum_{i=1}^{n}X_i,\ \sum_{k=1}^{m}X_{n+k}\right)
+=\sum_{i=1}^{n}\sum_{k=1}^{m}\operatorname{Cov}(X_i,X_{n+k})=0.
+\]
+
+并且
+\[
+\operatorname{Var}(Y)=n\operatorname{Var}(X_1), \qquad
+\operatorname{Var}(Z)=m\operatorname{Var}(X_1).
+\]
+
+因此相关系数
+\[
+\rho_{Y,Z}=
+\frac{\operatorname{Cov}(Y,Z)}{\sqrt{\operatorname{Var}(Y)\operatorname{Var}(Z)}}=
+\frac{0}{\sqrt{nm}\operatorname{Var}(X_1)}=0.
+\]
+
+\[
+\boxed{\rho_{Y,Z}=0.}
+\]
+\end{solution}
+\section{第九次作业}
+\begin{homework}[37]
+设每天进入货站的货物件数 $N$ 有如下概率分布：
+
+\[
+\begin{array}{c|cccccc}
+N=n & 10 & 11 & 12 & 13 & 14 & 15 \\ \hline
+P(N=n) & 0.05 & 0.10 & 0.10 & 0.20 & 0.35 & 0.20
+\end{array}
+\]
+
+并设每天到达的货物中次品的概率均为 $0.10$。以 $X$ 表示每天进货中次品的件数，求 $E(X)$。
+\end{homework}
+\begin{solution}
+每天进货 $N=n$ 时，$X\mid(N=n)$ 为二项分布：
+\[
+X\mid(N=n)\sim \mathrm{Bin}(n,0.1).
+\]
+
+所以条件期望为
+\[
+E(X\mid N=n)=0.1\,n.
+\]
+
+由全期望公式：
+\[
+E(X)=E\!\left[E(X\mid N)\right]
+      =0.1\,E(N).
+\]
+
+计算 $E(N)$：
+\[
+\begin{aligned}
+E(N) &=10(0.05)+11(0.10)+12(0.10)
+      +13(0.20)+14(0.35)+15(0.20)\\[4pt]
+     &=0.5+1.1+1.2+2.6+4.9+3.0\\
+     &=13.3.
+\end{aligned}
+\]
+
+因此
+\[
+E(X)=0.1\times 13.3=1.33.
+\]
+
+所以每天平均次品件数为：
+\[
+\boxed{E(X)=1.33 }.
+\]
+\end{solution}
+\begin{solution}
+由于 $X_1,X_2$ 独立且分别服从泊松分布，其联合分布为
+\[
+P(X_1=i,X_2=j)
+= e^{-(\lambda_1+\lambda_2)}
+  \frac{\lambda_1^{\,i}}{i!}\frac{\lambda_2^{\,j}}{j!},
+\qquad i,j=0,1,2,\dots
+\]
+
+\paragraph{(1) 条件分布} 对任意 $i=0,1,\dots,n$，
+\[
+P(X_1=i\mid X_1+X_2=n)
+= \frac{P(X_1=i,X_2=n-i)}{P(X_1+X_2=n)}.
+\]
+分子为
+\[
+P(X_1=i,X_2=n-i)
+= e^{-(\lambda_1+\lambda_2)}
+  \frac{\lambda_1^{\,i}}{i!}\frac{\lambda_2^{\,n-i}}{(n-i)!}.
+\]
+分母为
+\[
+P(X_1+X_2=n)
+= e^{-(\lambda_1+\lambda_2)}
+  \frac{(\lambda_1+\lambda_2)^n}{n!},
+\]
+因为独立泊松和仍为泊松： $X_1+X_2\sim P(\lambda_1+\lambda_2)$。
+
+于是
+\[
+P(X_1=i\mid X_1+X_2=n)
+= \frac{ \dfrac{\lambda_1^i}{i!}\dfrac{\lambda_2^{n-i}}{(n-i)!} }
+       { \dfrac{(\lambda_1+\lambda_2)^n}{n!} }
+= \binom{n}{i}
+  \Bigl(\frac{\lambda_1}{\lambda_1+\lambda_2}\Bigr)^i
+  \Bigl(\frac{\lambda_2}{\lambda_1+\lambda_2}\Bigr)^{n-i},
+\]
+即 $X_1\mid(X_1+X_2=n)\sim B\!\left(n,\frac{\lambda_1}{\lambda_1+\lambda_2}\right)$。
+
+\paragraph{(2) 条件期望} 由上面的二项分布结论，
+\[
+E\bigl(X_1\mid X_1+X_2=n\bigr)
+= n\cdot \frac{\lambda_1}{\lambda_1+\lambda_2}.
+\]
+又因为 $X_1+X_2=n$，故
+\[
+E\bigl(X_2\mid X_1+X_2=n\bigr)
+= n - E\bigl(X_1\mid X_1+X_2=n\bigr)
+= n\cdot \frac{\lambda_2}{\lambda_1+\lambda_2}.
+\]
+
+因此
+\[
+E\bigl(X_1\mid X_1+X_2=n\bigr)
+= n\frac{\lambda_1}{\lambda_1+\lambda_2},\qquad
+E\bigl(X_2\mid X_1+X_2=n\bigr)
+= n\frac{\lambda_2}{\lambda_1+\lambda_2}.
+\]
+\end{solution}
+\begin{homework}[ 3.38]
+设随机变量 $X_1 \sim P(\lambda_1)$，$X_2 \sim P(\lambda_2)$，且二者独立。
+
+\begin{itemize}
+    \item[(1)] 证明：当 $n \ge 2$ 时，有
+    \[
+        P(X_1 = i \mid X_1 + X_2 = n) = C_n^i
+        \left( \frac{\lambda_1}{\lambda_1 + \lambda_2} \right)^i
+        \left( \frac{\lambda_2}{\lambda_1 + \lambda_2} \right)^{n-i},
+        \qquad i = 0, 1, 2, \ldots, n.
+    \]
+
+    \item[(2)] 求
+    \[
+        E(X_1 \mid X_1 + X_2 = n) \quad \text{和} \quad
+        E(X_2 \mid X_1 + X_2 = n).
+    \]
+\end{itemize}
+\end{homework}
+
+\begin{homework}[ 3.39]
+设二维连续型随机变量 $(X,Y)$ 的概率密度函数为
+\[
+f(x,y) =
+\begin{cases}
+    8xy, & 0 < y < x < 1, \\
+    0,   & \text{其他}.
+\end{cases}
+\]
+
+求条件期望：
+\[
+E(X \mid Y = y) \quad \text{与} \quad E(Y \mid X = x).
+\]
+\end{homework}
+
+\begin{solution}
+
+---
+
+### **1. 求 $E(X\mid Y=y)$**
+
+先求 $Y$ 的边缘密度：
+\[
+f_Y(y)=\int_{x=y}^{1} 8xy\,dx
+     = 8y\int_y^{1}x\,dx
+     = 8y\left[\frac{x^2}{2}\right]_{y}^{1}
+     =4y(1-y^2),\qquad 0<y<1.
+\]
+
+再求条件密度：
+\[
+f_{X\mid Y}(x\mid y)
+=\frac{f(x,y)}{f_Y(y)}
+=\frac{8xy}{4y(1-y^2)}
+=\frac{2x}{1-y^2},\qquad y<x<1.
+\]
+
+因此：
+\[
+E(X\mid Y=y)
+=\int_y^{1} x\cdot \frac{2x}{1-y^2}\,dx
+=\frac{2}{1-y^2}\int_y^{1} x^2\,dx
+=\frac{2}{1-y^2}\left[\frac{x^3}{3}\right]_{y}^{1}.
+\]
+
+计算：
+\[
+E(X\mid Y=y)
+=\frac{2}{3(1-y^2)}(1-y^3)
+=\frac{2(1+y+y^2)}{3}.
+\]
+
+---
+
+### **2. 求 $E(Y\mid X=x)$**
+
+先求 $X$ 的边缘密度：
+\[
+f_X(x)=\int_{0}^{x} 8xy\,dy
+      =8x\left[\frac{y^2}{2}\right]_{0}^{x}
+      =4x^3,\qquad 0<x<1.
+\]
+
+条件密度：
+\[
+f_{Y\mid X}(y\mid x)
+=\frac{8xy}{4x^3}
+=\frac{2y}{x^2},\qquad 0<y<x.
+\]
+
+因此：
+\[
+E(Y\mid X=x)
+=\int_0^{x} y\cdot\frac{2y}{x^2}\,dy
+=\frac{2}{x^2}\int_0^{x} y^2\,dy
+=\frac{2}{x^2}\left[\frac{y^3}{3}\right]_{0}^{x}
+=\frac{2x}{3}.
+\]
+
+---
+
+### **最终答案：**
+
+\[
+\boxed{E(X\mid Y=y)=\frac{2}{3}(1+y+y^2)}
+\]
+
+\[
+\boxed{E(Y\mid X=x)=\frac{2x}{3}}
+\]
+
+\end{solution}
+\begin{solution}
+已知二维正态分布
+\[
+(\xi,\eta)\sim N(1,4;\,2,9;\,-\tfrac12),
+\]
+即
+\[
+E\xi=1,\quad D\xi=4,\qquad E\eta=2,\quad D\eta=9,\qquad \rho_{\xi,\eta}=-\frac12.
+\]
+
+(1) 由二维正态分布的性质，边缘分布仍为正态，故
+\[
+\xi\sim N(1,4).
+\]
+
+(2) 协方差为
+\[
+\operatorname{cov}(\xi,\eta)
+=\rho_{\xi,\eta}\sqrt{D\xi}\sqrt{D\eta}
+=-\frac12\cdot\sqrt{4}\cdot\sqrt{9}
+=-\frac12\cdot 2\cdot 3=-3.
+\]
+
+因此，
+\[
+\xi\sim N(1,4),\qquad \operatorname{cov}(\xi,\eta)=-3.
+\]
+\end{solution}
+\chapter{第四章作业}
+
+\section{第十次作业}
+\begin{homework}[4.1]
+设随机变量 $X$ 服从几何分布，概率分布为
+\[
+P(X=k)=p q^{\,k},\qquad k=0,1,2,\ldots,
+\]
+其中 $0<p<1,\; q=1-p$。求 $X$ 的特征函数、$E(X)$ 和 $\mathrm{Var}(X)$。
+\end{homework}
+\begin{solution}
+由题意，$X$ 服从几何分布
+\[
+P(X=k)=p q^{k},\qquad k=0,1,2,\dots,\quad 0<p<1,\ q=1-p.
+\]
+
+\textbf{(1) 特征函数}
+\[
+\begin{aligned}
+\varphi_X(t)
+&=E(e^{itX})
+=\sum_{k=0}^{\infty} e^{itk} P(X=k)
+=\sum_{k=0}^{\infty} e^{itk} p q^{k}  \\
+&= p\sum_{k=0}^{\infty}(q e^{it})^{k}
+= \frac{p}{1-q e^{it}},\qquad t\in\mathbb R.
+\end{aligned}
+\]
+
+\textbf{(2) 期望}
+\[
+\begin{aligned}
+E(X)
+&=\sum_{k=0}^{\infty} k\,p q^{k}
+=p\sum_{k=1}^{\infty} k q^{k}
+=pq\sum_{k=1}^{\infty} k q^{k-1}
+=pq\cdot\frac{1}{(1-q)^2}
+=\frac{q}{p}.
+\end{aligned}
+\]
+
+\textbf{(3) 方差}
+
+先求二阶矩：
+\[
+E(X^2)
+=\sum_{k=0}^{\infty}k^2 p q^{k}
+=pq\sum_{k=1}^{\infty}k^2 q^{k-1}
+=pq\cdot\frac{1+q}{(1-q)^3}
+=\frac{q(1+q)}{p^2}.
+\]
+
+于是
+\[
+\begin{aligned}
+\operatorname{Var}(X)
+&=E(X^2)-[E(X)]^2
+=\frac{q(1+q)}{p^2}-\left(\frac{q}{p}\right)^2
+=\frac{q}{p^2}.
+\end{aligned}
+\]
+
+综上，
+\[
+\boxed{\displaystyle
+\varphi_X(t)=\frac{p}{1-qe^{it}},\quad
+E(X)=\frac{q}{p},\quad
+\operatorname{Var}(X)=\frac{q}{p^{2}}.}
+\]
+\end{solution}
+\begin{dxtips}
+  记忆口诀：
+\begin{itemize}
+  \item 先背
+  \[
+    \sum_{k=0}^{\infty} x^k = \frac{1}{1-x}.
+  \]
+  \item 一阶导数给
+  \[
+    \sum_{k=1}^{\infty} k x^{k-1} = \frac{1}{(1-x)^2}.
+  \]
+  \item 二阶导数再整理给
+  \[
+    \sum_{k=1}^{\infty} k^2 x^{k-1} = \frac{1+x}{(1-x)^3}.
+  \]
+\end{itemize}
+
+以后看到几何分布那种
+\(\displaystyle \sum_{k=1}^{\infty} k q^{k-1},\ 
+\sum_{k=1}^{\infty} k^2 q^{k-1}\)，就直接套这三条。
+\end{dxtips}
+\begin{homework}[4.2]
+设随机变量 $X$ 服从帕斯卡分布，概率分布为
+\[
+P(X=k)=C^{\,r-1}_{k-1} p^{\,r} q^{\,k-r},\qquad k=r,r+1,r+2,\ldots,
+\]
+其中 $0<p<1,\; q=1-p,\; r$ 为正整数。求 $X$ 的特征函数。
+\end{homework}
+\begin{dxtips}[负二项级数展开公式]
+    \[
+(1-x)^{-r}
+=\sum_{n=0}^{\infty} C_{n+r-1}^{\,r-1} x^{n},
+\qquad |x|<1,\ r\in\mathbb N.
+\]
+\[
+\sum_{n=0}^{\infty} C_{n+r-1}^{\,r-1} (q e^{it})^{n}
+= \frac{1}{(1-q e^{it})^{r}}.
+\]
+\end{dxtips}
+\begin{dxtips}[负二项的来源]
+  从最熟的几何级数开始：
+\[
+\frac{1}{1-x}=1+x+x^2+\cdots=\sum_{n=0}^{\infty}x^n.
+\]
+
+把两边都提高到 $r$ 次方：
+\[
+\frac{1}{(1-x)^r}=(1+x+x^2+\cdots)^r.
+\]
+
+右边展开，就是“从 $r$ 个因子里选出若干个幂次相加为 $n$”的组合计数问题。
+算一算就会发现，对应的系数正好是
+\[
+C_{n+r-1}^{\,r-1},
+\]
+于是得到上面的公式。
+
+（严格推导可以用生成函数或归纳，这里你记住
+“从 $r$ 个盒子里分配 $n$ 个球”的结果就是 $C_{n+r-1}^{\,r-1}$ 就行。）  
+\end{dxtips}
+\begin{solution}
+由定义，特征函数为
+\[
+\varphi_X(t)
+=E(e^{itX})
+=\sum_{k=r}^{\infty} e^{itk} P(X=k)
+=\sum_{k=r}^{\infty} e^{itk} C_{k-1}^{\,r-1} p^{\,r} q^{\,k-r},
+\qquad t\in\mathbb{R}.
+\]
+
+整理：
+\[
+\varphi_X(t)
+= p^{\,r} e^{itr}
+  \sum_{k=r}^{\infty} C_{k-1}^{\,r-1}
+       (q e^{it})^{k-r}.
+\]
+令 $n=k-r$，则
+\[
+\varphi_X(t)
+= p^{\,r} e^{itr}
+  \sum_{n=0}^{\infty} C_{n+r-1}^{\,r-1} (q e^{it})^{n}.
+\]
+
+利用幂级数恒等式
+\[
+\sum_{n=0}^{\infty} C_{n+r-1}^{\,r-1} x^{n}
+= \frac{1}{(1-x)^{r}},\qquad |x|<1,
+\]
+取 $x=q e^{it}$，得到
+\[
+\varphi_X(t)
+= p^{\,r} e^{itr} \frac{1}{(1-q e^{it})^{r}}
+= \left(\frac{p e^{it}}{1-q e^{it}}\right)^{r}.
+\]
+
+因此随机变量 $X$ 的特征函数为
+\[
+\boxed{\displaystyle
+\varphi_X(t)=\left(\frac{p e^{it}}{1-q e^{it}}\right)^{r}},\qquad t\in\mathbb{R}.
+\]
+\end{solution}
+\begin{homework}[4.5]
+设 $a_k>0,\ \sum_{k=0}^{\infty}a_k=1$，证明
+\[
+\varphi_1(t)=\sum_{k=0}^\infty a_k\cos kt,\qquad 
+\varphi_2(t)=\sum_{k=0}^\infty a_k e^{jkt}
+\]
+均为特征函数，并求相应的离散型概率分布（傅里叶逆变换）。
+\end{homework}
+\begin{solution}
+已知 $a_k>0,\ \sum_{k=0}^\infty a_k=1$。
+
+\medskip\noindent
+\textbf{(1) }$\varphi_2(t)=\displaystyle\sum_{k=0}^\infty a_k e^{jkt}$
+
+取离散随机变量
+\[
+P(X_2=k)=a_k,\quad k=0,1,2,\dots.
+\]
+则
+\[
+\varphi_{X_2}(t)
+=E(e^{jtX_2})
+=\sum_{k=0}^\infty e^{jtk}P(X_2=k)
+=\sum_{k=0}^\infty a_k e^{jkt}
+=\varphi_2(t).
+\]
+
+\medskip\noindent
+\textbf{(2) }$\varphi_1(t)=\displaystyle\sum_{k=0}^\infty a_k\cos(kt)$
+
+取离散随机变量 $X_1$：
+\[
+P(X_1=0)=a_0,\qquad
+P(X_1=k)=P(X_1=-k)=\frac{a_k}{2},\ k=1,2,\dots.
+\]
+则
+\[
+\begin{aligned}
+\varphi_{X_1}(t)
+&=E(e^{jtX_1}) \\
+&=a_0 + \sum_{k=1}^\infty \frac{a_k}{2} e^{jtk}
+              + \sum_{k=1}^\infty \frac{a_k}{2} e^{-jtk} \\
+&=a_0+\sum_{k=1}^\infty a_k\frac{e^{jtk}+e^{-jtk}}{2}
+=\sum_{k=0}^\infty a_k\cos(kt)
+=\varphi_1(t).
+\end{aligned}
+\]
+
+故 $\varphi_1,\varphi_2$ 均为特征函数，且对应分布为：
+\[
+P(X_2=k)=a_k,\ k\ge0;\qquad
+P(X_1=0)=a_0,\ P(X_1=\pm k)=\frac{a_k}{2},\ k\ge1.
+\]
+\end{solution}
+\begin{dxtips}
+    我理解一下：特征函数的母式是固定的，
+\[
+\varphi_X(t)=E(e^{itX})=\sum_{k}P(X=k)e^{ikt}.
+\]
+在做题时，先把给定的函数化成出现 $e^{ikt}$ 这种形式，
+也就是写成
+\[
+\varphi(t)=\sum_{k} a_k e^{ikt},
+\]
+然后拆解它的系数，其中每个系数 $a_k$ 就是对应 $X=k$ 的概率 $P(X=k)$。
+\end{dxtips}
+\begin{remark}[母函数与特征函数的关系]
+设随机变量 $X$ 取非负整数值 $0,1,2,\dots$。其
+
+\[
+\text{母函数： }\Psi_X(s)=E[s^X],\qquad s\in[-1,1];
+\]
+\[
+\text{特征函数： }\varphi_X(t)=E(e^{itX}),\qquad t\in\mathbb{R}.
+\]
+
+因为
+\[
+\Psi_X(s)=\sum_{k=0}^{\infty}P(X=k)s^k,\qquad
+\varphi_X(t)=\sum_{k=0}^{\infty}P(X=k)e^{ikt},
+\]
+对整数值 $X$ 有简单关系
+\[
+\boxed{\ \varphi_X(t)=\Psi_X(e^{it})\ },\qquad t\in\mathbb{R}.
+\]
+
+直观记法：
+\begin{itemize}
+  \item 母函数：幂级数视角，系数就是 $P(X=k)$；
+  \item 特征函数：傅里叶视角，用 $e^{itX}$ 做变换。
+\end{itemize}
+两者只差一个代换 $s=e^{it}$。
+\end{remark}
+\begin{dxtips}
+    逆变换就是弄成和的形式然后观察系数和头上除了it的东西。
+\end{dxtips}
+\begin{homework}[4.6]
+设特征函数分别为 $\cos t$ 和 $\cos^{2} t$，求相应的离散型概率分布（傅里叶逆变换）。
+\end{homework}
+\begin{solution}
+特征函数定义为
+\[
+\varphi_X(t)=E(e^{itX})
+=\sum_k p_k e^{itx_k}.
+\]
+
+\textbf{(1) 特征函数 } $\varphi(t)=\cos t$：
+
+有
+\[
+\cos t = \frac{e^{it}+e^{-it}}{2}.
+\]
+与
+\[
+\varphi_X(t)=\sum_k p_k e^{itx_k}
+\]
+比较可知
+\[
+\varphi(t)=\frac{1}{2}e^{it}+\frac{1}{2}e^{-it},
+\]
+因此
+\[
+P(X=1)=\frac{1}{2},\quad P(X=-1)=\frac{1}{2},
+\]
+其它取值概率为 $0$。
+
+\medskip
+\begin{dxtips}
+    都是先弄成基础的cost和sint然后转化为指数。
+\end{dxtips}
+\textbf{(2) 特征函数 } $\varphi(t)=\cos^2 t$：
+
+先将 $\cos^2 t$ 写成指数形式：
+\[
+\cos^2 t = \frac{1+\cos 2t}{2}
+= \frac{1}{2}+\frac{1}{2}\cdot\frac{e^{2it}+e^{-2it}}{2}
+= \frac{1}{2}+\frac{1}{4}e^{2it}+\frac{1}{4}e^{-2it}.
+\]
+与
+\[
+\varphi_X(t)=\sum_k p_k e^{itx_k}
+\]
+比较可见
+\[
+\varphi(t)=\frac{1}{2}
++ \frac{1}{4}e^{2it}
++ \frac{1}{4}e^{-2it},
+\]
+于是
+\[
+P(X=0)=\frac{1}{2},\quad
+P(X=2)=\frac{1}{4},\quad
+P(X=-2)=\frac{1}{4},
+\]
+其它取值概率为 $0$。
+
+\end{solution}
+\begin{definition}[概率积分变换]
+    更精准一点说：
+\textcolor{purple}{用自己的分布函数 F 把随机变量 X 映射到 (0,1)，得到一个标准均匀随机变量，这个映射就叫概率积分变换。}
+\begin{itemize}
+  \item 一般情况：
+
+  把随机变量 $X$ 通过自己的分布函数
+  \[
+    U = F(X)
+  \]
+  映到区间 $(0,1)$ 上，并且得到 $U\sim\mathrm{Unif}(0,1)$，
+  这整个操作就叫 \emph{概率积分变换}（probability integral transform）。
+
+  \item 你刚才那个 $\mathrm{Unif}(2,5)$ 的例子里：
+
+  分布函数是
+  \[
+    F(x)=\frac{x-2}{3},\quad 2<x<5,
+  \]
+  所以
+  \[
+    U = F(X)=\frac{X-2}{3},
+  \]
+  这在几何上就是一个“线性缩放 + 平移”，把区间 $(2,5)$ 压到 $(0,1)$ 上。
+  这是概率积分变换在“线性均匀分布”情形下的一个特别简单的例子。
+\end{itemize}
+
+更一般的连续分布里，$F$ 不一定是线性的，但“用 $F$ 把 $X$ 送到 $(0,1)$ 并变成均匀”的这件事，统称为概率积分变换。你可以在脑子里记成：
+\[
+  U = F(X)\sim \mathrm{Unif}(0,1)
+  \quad\text{这一步就叫概率积分变换。}
+\]
+\end{definition}
+\begin{dxtips}
+    \begin{itemize}
+  \item \textbf{$F(x)$：一个普通函数的值}
+
+  这里的 $F$ 是随机变量 $X$ 的分布函数（CDF）：
+  \[
+    F(x)=P(X\le x),\quad x\in\mathbb{R}.
+  \]
+  把一个实数 $x$ 丢进去，$F(x)$ 是一个具体的数（在 $[0,1]$ 里）。
+
+  \item \textbf{$F(X)$：一个新的随机变量}
+
+  这次自变量是随机变量 $X$，所以
+  \[
+    U := F(X)
+  \]
+  本身是一个随机变量（不是固定数）。它的含义是“样本 $X$ 在自己分布里的分位值”。
+
+  若 $F$ 连续且严格单调递增，由概率积分变换可知
+  \[
+    U = F(X)\sim \mathrm{Unif}(0,1).
+  \]
+\end{itemize}
+
+\end{dxtips}
+\begin{dxtips}
+    \begin{itemize}
+  \item $P$：给“事件”分配概率；
+  \item $F_X(x)$：给“点 $x$”之前的累计概率；
+  \item $f_X(x)$：给“点 $x$”附近的概率密度。
+\end{itemize}
+\end{dxtips}
+\begin{homework}[4.7]
+设 $a,b$ 是实常数，$a\neq 0$，随机变量 $X$ 的分布函数 $F(x)$ 连续且严格单调递增。分别求 $aF(X)+b$ 及 $\ln F(X)$ 的特征函数。
+\end{homework}
+\begin{solution}
+由题设，$F$ 连续且严格递增，故由概率积分变换可知
+\[
+U:=F(X)\sim \mathrm{Unif}(0,1).
+\]
+
+\medskip
+\noindent\textbf{(1) $Y=aF(X)+b$ 的特征函数}
+
+令
+\[
+Y=aU+b.
+\]
+则
+\[
+\varphi_Y(t)
+=E\bigl(e^{itY}\bigr)
+=E\bigl(e^{it(aU+b)}\bigr)
+=e^{itb}E\bigl(e^{itaU}\bigr).
+\]
+因为 $U\sim\mathrm{Unif}(0,1)$，其密度为 $1_{(0,1)}(u)$，故
+\[
+E\bigl(e^{itaU}\bigr)
+=\int_0^1 e^{ita u}\,du
+=\left.\frac{e^{ita u}}{ita}\right|_{0}^{1}
+=\frac{e^{ita}-1}{ita},\quad a\neq 0.
+\]
+从而
+\[
+\boxed{\displaystyle
+\varphi_{aF(X)+b}(t)
+=e^{itb}\cdot\frac{e^{ita}-1}{ita},\quad t\in\mathbb{R}.}
+\]
+
+\medskip
+\noindent\textbf{(2) $Z=\ln F(X)$ 的特征函数}
+
+令
+\[
+Z=\ln U.
+\]
+则
+\[
+\varphi_Z(t)
+=E\bigl(e^{itZ}\bigr)
+=E\bigl(e^{it\ln U}\bigr)
+=E\bigl(U^{it}\bigr)
+=\int_0^1 u^{it}\,du.
+\]
+计算得
+\[
+\int_0^1 u^{it}\,du
+=\left.\frac{u^{1+it}}{1+it}\right|_{0}^{1}
+=\frac{1}{1+it}.
+\]
+因此
+\[
+\boxed{\displaystyle
+\varphi_{\ln F(X)}(t)=\frac{1}{1+it},\quad t\in\mathbb{R}.}
+\]
+
+\end{solution}
+\begin{dxtips}
+    我梳理一下不同的正态分布有长得很像的特征函数，所以叫特征函数。然后这里就是求特征函数然后证明长正态分布特征函数该有的样子
+\end{dxtips}
+\begin{homework}[4.11]
+设随机变量 $X_1,X_2,\ldots,X_n$ 独立同分布，且均服从标准正态分布，证明
+\[
+n^{-1/2}\sum_{i=1}^n X_i
+\]
+服从标准正态分布。
+\end{homework}
+\begin{solution}
+设 $X_i\sim N(0,1)$ 相互独立，记
+\[
+S_n=\frac1{\sqrt{n}}\sum_{i=1}^n X_i.
+\]
+
+单个标准正态的特征函数为
+\[
+\varphi_X(t)=E(e^{itX})=\exp\!\left(-\frac{t^2}{2}\right).
+\]
+
+和 $T_n=\sum_{i=1}^n X_i$ 的特征函数：
+\[
+\varphi_{T_n}(t)
+=\prod_{i=1}^n \varphi_X(t)
+=\bigl(\exp(-t^2/2)\bigr)^n
+=\exp\!\left(-\frac{n t^2}{2}\right).
+\]
+
+由于 $S_n = T_n/\sqrt{n}$，
+\[
+\varphi_{S_n}(t)
+=\varphi_{T_n}\!\left(\frac{t}{\sqrt{n}}\right)
+=\exp\!\left(-\frac{n}{2}\Bigl(\frac{t}{\sqrt{n}}\Bigr)^2\right)
+=\exp\!\left(-\frac{t^2}{2}\right).
+\]
+
+故 $S_n$ 的特征函数为标准正态 $N(0,1)$ 的特征函数，因而
+\[
+\boxed{S_n=\frac1{\sqrt{n}}\sum_{i=1}^n X_i \sim N(0,1).}
+\]
+\end{solution}
+\begin{dxtips}
+    % 正态分布特征函数与本题思路小结
+
+\begin{itemize}
+  \item \textbf{正态分布的特征函数“家族长相”}
+
+  对任意正态分布
+  \[
+    X\sim N(\mu,\sigma^2),
+  \]
+  它的特征函数都是下面这种“标准长相”：
+  \[
+    \varphi_X(t)=E(e^{itX})
+    =\exp\!\Bigl(i\mu t-\frac{\sigma^2 t^2}{2}\Bigr).
+  \]
+
+  只要一看到 $\exp(i\mu t - \sigma^2 t^2/2)$ 这种形状，就能立刻认出来
+  “这是一个正态分布，均值 $\mu$，方差 $\sigma^2$”。
+
+  因此
+  \[
+    \varphi_{X_1}(t)=\varphi_{X_2}(t)\quad\Longleftrightarrow\quad
+    X_1,X_2\ \text{具有相同分布},
+  \]
+  “特征”二字，正是因为特征函数\emph{唯一地刻画了分布的特征}；
+  不只是正态，任何分布都可以用它来“编码”。
+
+  \item \textbf{这道题在干什么？}
+
+  这题的策略就是：
+
+  先求出 $S_n$ 的特征函数，然后检查它是不是
+  “长成正态分布特征函数的样子”。
+
+  具体就是：
+  \begin{enumerate}
+    \item 算出
+    \[
+      \varphi_{S_n}(t)
+      =\exp\!\left(-\frac{t^2}{2}\right),
+    \]
+    \item 发现它和 $N(0,1)$ 的特征函数一模一样：
+    \[
+      N(0,1)\ \text{的特征函数}\
+      =\exp\!\left(-\frac{t^2}{2}\right),
+    \]
+    \item 利用“特征函数唯一确定分布”这个定理，得到
+    \[
+      S_n\sim N(0,1).
+    \]
+  \end{enumerate}
+
+  所以这题的逻辑链是：
+  \[
+    \text{算特征函数}
+    \;\Longrightarrow\;
+    \text{认出是某个已知分布的特征函数}
+    \;\Longrightarrow\;
+    \text{推出随机变量服从这个分布}.
+  \]
+
+  你可以把它记成一句话：
+  \[
+    \boxed{\text{算出特征函数，发现长得像哪个分布，就说明它就是哪个分布。}}
+  \]
+\end{itemize}
+\end{dxtips}
+\begin{homework}[4.12]
+设 $(X_1,X_2)$ 服从非退化的二维正态分布
+\[
+N\!\left(0,\sigma_1^{2};\ 0,\sigma_2^{2};\ \frac{\sigma_{12}}{\sigma_1\sigma_2}\right),
+\]
+其中 $\sigma_{12}=\operatorname{Cov}(X_1,X_2)$，求
+\[
+E\bigl[(X_1^{2}-\sigma_1^{2})(X_2^{2}-\sigma_2^{2})\bigr].
+\]
+\end{homework}
+\begin{solution}
+记 $\sigma_{12}=\Cov(X_1,X_2)$。零均值二维正态的四阶矩公式给出  
+\[
+E(X_1^2 X_2^2)
+=E(X_1X_1X_2X_2)
+=E(X_1^2)E(X_2^2)+2\bigl(E(X_1X_2)\bigr)^2
+=\sigma_1^2\sigma_2^2+2\sigma_{12}^2.
+\]
+
+于是
+\[
+\begin{aligned}
+E\bigl[(X_1^2-\sigma_1^2)(X_2^2-\sigma_2^2)\bigr]
+&=E(X_1^2X_2^2)-\sigma_1^2E(X_2^2)-\sigma_2^2E(X_1^2)+\sigma_1^2\sigma_2^2\\
+&=(\sigma_1^2\sigma_2^2+2\sigma_{12}^2)-\sigma_1^2\sigma_2^2\\
+&=2\sigma_{12}^2.
+\end{aligned}
+\]
+
+\[
+\boxed{E\bigl[(X_1^2-\sigma_1^2)(X_2^2-\sigma_2^2)\bigr]=2\sigma_{12}^2.}
+\]
+\end{solution}
+\begin{dxtips}
+    % 设 $(X_1,X_2)$ 服从零均值二维正态分布，
+% 记 $\sigma_i^2=\Var(X_i)$，$\sigma_{ij}=\Cov(X_i,X_j)$。
+
+% 一般的四阶矩公式（Wick / Isserlis 公式的二维情形）：
+\[
+E(X_i X_j X_k X_\ell)
+= \Cov(X_i,X_j)\Cov(X_k,X_\ell)
++ \Cov(X_i,X_k)\Cov(X_j,X_\ell)
++ \Cov(X_i,X_\ell)\Cov(X_j,X_k).
+\]
+
+% 常用三个特例：
+\[
+E(X_i^4)=3\sigma_i^4,
+\]
+\[
+E(X_i^3 X_j)=0,
+\]
+\[
+E(X_i^2 X_j^2)=\sigma_i^2\sigma_j^2+2\sigma_{ij}^2.
+\]
+\end{dxtips}
+\section{十一次作业}
+\begin{homework}[4.14]
+设随机变量 $X$ 的母函数如下，求 $X$ 的概率分布：
+\begin{enumerate}[(1)]
+  \item $\Psi_X(s)=0.25(1+s)^2$；
+  \item $\Psi_X(s)=\dfrac{1}{2-s}$；
+  \item $\Psi_X(s)=e^{s-1}$。
+\end{enumerate}
+\end{homework}
+\begin{solution}
+由母函数定义
+\[
+\Psi_X(s)=E[s^X]=\sum_{k=0}^\infty P(X=k)s^k,
+\]
+把给定的母函数展开成关于 $s$ 的幂级数即可读出各项系数 $P(X=k)$。
+
+\begin{enumerate}[(1)]
+\item
+\[
+\Psi_X(s)=0.25(1+s)^2
+       =0.25(1+2s+s^2)
+       =0.25+0.5s+0.25s^2.
+\]
+与
+\[
+\Psi_X(s)=\sum_{k=0}^\infty P(X=k)s^k
+\]
+比较得
+\[
+P(X=0)=0.25,\quad P(X=1)=0.5,\quad P(X=2)=0.25,\quad P(X=k)=0\ (k\ge3).
+\]
+\begin{dxtips}
+    用例子1也可以n=w，p，q都等于二分之一。
+\end{dxtips}
+\item
+\[
+\Psi_X(s)=\frac{1}{2-s}
+=\frac{1}{2}\cdot\frac{1}{1-\frac{s}{2}}
+=\frac{1}{2}\sum_{k=0}^\infty\left(\frac{s}{2}\right)^k
+=\sum_{k=0}^\infty\frac{1}{2^{k+1}}s^k.
+\]
+因此
+\[
+P(X=k)=\frac{1}{2^{k+1}},\qquad k=0,1,2,\dots.
+\]
+
+\item
+\[
+\Psi_X(s)=e^{s-1}=e^{-1}e^s
+=e^{-1}\sum_{k=0}^\infty\frac{s^k}{k!}
+=\sum_{k=0}^\infty\frac{e^{-1}}{k!}s^k.
+\]
+于是
+\[
+P(X=k)=\frac{e^{-1}}{k!},\qquad k=0,1,2,\dots.
+\]
+\end{enumerate}
+\end{solution}
+\begin{example}[二项分布的母函数]
+设 $X \sim B(n,p)$，其母函数为
+\[
+\psi(s)
+= \sum_{k=0}^{n} C_n^k p^{k} q^{\,n-k} s^{k}
+= \sum_{k=0}^{n} C_n^k (ps)^{k} q^{\,n-k}
+= (ps+q)^n,\qquad q = 1-p.
+\]
+\end{example}
+
+\begin{example}[泊松分布的母函数]
+设 $X \sim P(\lambda)$，其母函数为
+\[
+\psi(s)
+= \sum_{k=0}^{\infty} \frac{\lambda^{k}}{k!} e^{-\lambda} s^{k}
+= \sum_{k=0}^{\infty} \frac{(\lambda s)^{k}}{k!} e^{-\lambda}
+= e^{\lambda(s-1)}.
+\]
+\end{example}
+
+\begin{example}[几何分布的母函数]
+设 $X \sim G(p)$，其母函数为
+\[
+\psi(s)
+= \sum_{k=1}^{\infty} p(1-p)^{k-1} s^{k}
+= \frac{ps}{1-qs},\qquad q = 1-p.
+\]
+\end{example}
+\begin{homework}[4.15]
+在伯努利试验中，假设每次试验成功的概率为 $p$，
+如果记 $X$ 为第 $r$ 次失败之前成功出现的总次数，
+求 $X$ 的概率分布、母函数、期望和方差。
+\end{homework}
+\begin{solution}
+在一列伯努利试验中，每次试验成功的概率为 $p$，失败的概率为 $q=1-p$。
+记随机变量 $X$ 为第 $r$ 次失败之前成功出现的总次数（$r=1,2,\dots$）。
+
+\begin{itemize}
+  \item[(1)] 概率分布
+
+  若 $X=k\,(k=0,1,2,\dots)$，则在前 \textcolor{purple}{$k+r-1$ }次试验中出现了 $k$ 次成功和 $r-1$ 次失败，
+  第 $k+r$ 次试验为第 $r$ 次失败。于是
+  \[
+  P(X=k) = C_{k+r-1}^{k} p^{k} q^{r},\qquad k=0,1,2,\dots.
+  \]
+
+  \item[(2)] 母函数
+
+  由母函数定义
+  \[
+  \Psi_X(s)=E[s^X]=\sum_{k=0}^{\infty}P(X=k)s^k,
+  \]
+  代入上式得
+  \[
+  \Psi_X(s)
+  = \sum_{k=0}^{\infty} C_{k+r-1}^{k} p^{k} q^{r} s^{k}
+  = q^{r} \sum_{k=0}^{\infty} C_{k+r-1}^{k} (ps)^{k}.
+  \]
+  利用幂级数公式
+  \[
+  \sum_{k=0}^{\infty} C_{k+r-1}^{k} x^{k} = \frac{1}{(1-x)^{r}},\qquad |x|<1,
+  \]
+  取 $x=ps$，得
+  \[
+  \Psi_X(s)=q^{r}\frac{1}{(1-ps)^{r}}
+  = \left(\frac{q}{1-ps}\right)^{r},\qquad |ps|<1.
+  \]
+  \begin{dxtips}[他和要背的负二项分布是一样的]
+      关键只是一条组合恒等式：
+\[
+C_{k+r-1}^{k}
+= C_{k+r-1}^{(k+r-1)-k}
+= C_{k+r-1}^{r-1}.
+\]
+  \end{dxtips}
+  \item[(3)] 期望与方差
+
+  由母函数求矩：
+  \[
+  E[X]=\Psi'_X(1),\qquad
+  \operatorname{Var}(X)=\Psi''_X(1)+\Psi'_X(1)-\bigl(\Psi'_X(1)\bigr)^2.
+  \]
+  记
+  \[
+  \Psi_X(s)=q^{r}(1-ps)^{-r},
+  \]
+  则
+  \[
+  \Psi'_X(s)=r p q^{r} (1-ps)^{-r-1},\qquad
+  \Psi''_X(s)=r(r+1)p^{2} q^{r} (1-ps)^{-r-2}.
+  \]
+  在 $s=1$ 处，因 $1-p=q$，有
+  \[
+  \Psi'_X(1)=r p q^{r} q^{-r-1}=\frac{r p}{q},\qquad
+  \Psi''_X(1)=r(r+1)p^{2} q^{r} q^{-r-2}
+  =\frac{r(r+1)p^{2}}{q^{2}}.
+  \]
+  因此
+  \[
+  E[X]=\frac{r p}{q},\qquad
+  \operatorname{Var}(X)
+  =\frac{r(r+1)p^{2}}{q^{2}}+\frac{r p}{q}-\left(\frac{r p}{q}\right)^{2}
+  =\frac{r p}{q^{2}}.
+  \]
+\end{itemize}
+\end{solution}
+\begin{definition}[母函数与期望、方差的关系]
+设随机变量 $X$ 取非负整数值，其母函数为
+\[
+\Psi_X(s)=E[s^X]=\sum_{k=0}^{\infty}P(X=k)s^k,\qquad s\in[-1,1].
+\]
+若各式导数在 $s=1$ 处存在，则有
+\[
+E[X]=\Psi'_X(1),
+\]
+\[
+\operatorname{Var}(X)=\Psi''_X(1)+\Psi'_X(1)-\bigl(\Psi'_X(1)\bigr)^2.
+\]
+\end{definition}
+
+\begin{proof}
+由母函数的定义
+\[
+\Psi_X(s)=E[s^X]=\sum_{k=0}^{\infty}P(X=k)s^k,
+\]
+在收敛半径内逐项求导得
+\[
+\Psi'_X(s)=\sum_{k=1}^{\infty}k\,P(X=k)s^{k-1}
+         =E[Xs^{X-1}].
+\]
+令 $s=1$，得到
+\[
+\Psi'_X(1)=E[X\cdot1^{X-1}]=E[X],
+\]
+即
+\[
+E[X]=\Psi'_X(1).
+\]
+
+再对 $\Psi'_X(s)$ 求导：
+\[
+\Psi''_X(s)=\sum_{k=2}^{\infty}k(k-1)P(X=k)s^{k-2}
+          =E[X(X-1)s^{X-2}].
+\]
+令 $s=1$，得
+\[
+\Psi''_X(1)=E[X(X-1)].
+\]
+
+又因为
+\[
+X^2=X(X-1)+X,
+\]
+取期望得
+\[
+E[X^2]=E[X(X-1)]+E[X]=\Psi''_X(1)+\Psi'_X(1).
+\]
+方差为
+\[
+\operatorname{Var}(X)=E[X^2]-\bigl(E[X]\bigr)^2,
+\]
+代入上式得到
+\[
+\operatorname{Var}(X)
+=\Psi''_X(1)+\Psi'_X(1)-\bigl(\Psi'_X(1)\bigr)^2.
+\]
+命题得证。
+\end{proof}
+\begin{dxtips}
+    母函数构造的时候s上面是k次方就是为了求导的时候把k拿下来当权重
+\end{dxtips}
+\begin{homework}[4.16]
+设 $\{X_k,\,k\ge 1\}$ 是独立随机变量序列，
+且 $P(X_k=i)=1/m,\ i=0,1,2,\dots,m-1,\ k=1,2,\dots$。
+令
+\[
+S_n=\sum_{k=1}^n X_k,
+\]
+求 $S_n$ 的母函数。
+\end{homework}
+\begin{solution}
+由题意可知，对每个 $k\ge1$，
+\[
+P(X_k=i)=\frac1m,\quad i=0,1,\dots,m-1,
+\]
+且 $\{X_k\}$ 相互独立。先求单个 $X_k$ 的母函数，记为 $\Psi_X(s)$。
+
+\begin{itemize}
+  \item[(1)] 单个 $X_k$ 的母函数
+  \[
+  \Psi_X(s)=E[s^{X_k}]
+  =\sum_{i=0}^{m-1} P(X_k=i)s^i
+  =\sum_{i=0}^{m-1} \frac1m s^i
+  =\frac1m\sum_{i=0}^{m-1}s^i.
+  \]
+  由于
+  \[
+  \sum_{i=0}^{m-1}s^i=\frac{1-s^m}{1-s}\quad (s\neq1),
+  \]
+  得
+  \[
+  \Psi_X(s)=\frac1m\cdot\frac{1-s^m}{1-s}.
+  \]
+
+  \item[(2)] 和 $S_n=\sum_{k=1}^n X_k$ 的母函数
+
+  因为 $X_1,\dots,X_n$ 相互独立，故和的母函数为各母函数的乘积：
+  \[
+  \Psi_{S_n}(s)
+  =\Psi_{X_1+\cdots+X_n}(s)
+  =\Psi_{X_1}(s)\cdots\Psi_{X_n}(s)
+  =\bigl(\Psi_X(s)\bigr)^n.
+  \]
+  代入 $\Psi_X(s)$ 的表达式，得到
+  \[
+  \Psi_{S_n}(s)
+  =\left(\frac1m\cdot\frac{1-s^m}{1-s}\right)^n.
+  \]
+\end{itemize}
+\end{solution}
+\begin{theorem}[独立随机变量和的母函数]
+设 $X_1,\dots,X_n$ 是相互独立的非负整数值随机变量，
+其母函数分别为
+\[
+\Psi_{X_k}(s)=E[s^{X_k}],\qquad k=1,\dots,n.
+\]
+令
+\[
+S_n = X_1+\cdots+X_n,
+\]
+则 $S_n$ 的母函数为
+\[
+\Psi_{S_n}(s) = E[s^{S_n}]
+             = \prod_{k=1}^n \Psi_{X_k}(s).
+\]
+\end{theorem}
+
+\begin{proof}
+先证明 $n=2$ 的情形，令 $S=X_1+X_2$。则
+\[
+\Psi_S(s)=E[s^S]=E[s^{X_1+X_2}]=E[s^{X_1}s^{X_2}].
+\]
+因为 $X_1,X_2$ 独立，$s^{X_1}$ 与 $s^{X_2}$ 也是独立的随机变量，
+于是
+\[
+E[s^{X_1}s^{X_2}] = E[s^{X_1}]\,E[s^{X_2}]
+                  = \Psi_{X_1}(s)\,\Psi_{X_2}(s).
+\]
+故
+\[
+\Psi_{X_1+X_2}(s) = \Psi_{X_1}(s)\,\Psi_{X_2}(s).
+\]
+
+对一般的 $n$，可用数学归纳法。已知对 $n-1$ 个独立随机变量成立：
+\[
+\Psi_{X_1+\cdots+X_{n-1}}(s)
+= \prod_{k=1}^{n-1}\Psi_{X_k}(s).
+\]
+令
+\[
+T_{n-1}=X_1+\cdots+X_{n-1},
+\]
+则 $T_{n-1}$ 与 $X_n$ 也独立，于是由 $n=2$ 的情形得到
+\[
+\Psi_{S_n}(s)
+= \Psi_{T_{n-1}+X_n}(s)
+= \Psi_{T_{n-1}}(s)\,\Psi_{X_n}(s)
+= \left(\prod_{k=1}^{n-1}\Psi_{X_k}(s)\right)\Psi_{X_n}(s)
+= \prod_{k=1}^{n}\Psi_{X_k}(s).
+\]
+命题得证。
+\end{proof}
+\section{上课作业}
+\begin{homework}[1]
+设 $A,B$ 互不相容，且 $P(A)\ne0,\ P(B)\ne0$，则下列结论肯定正确的是（\hfill）。
+
+\begin{enumerate}[(A)]
+  \item $P(A-B)=P(A)$；
+  \item $P(AB)=P(A)P(B)$；
+  \item $\overline{A}$ 和 $\overline{B}$ 互不相容；
+  \item $P(\overline{B}A)=P(B)$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[2]
+设二维随机向量 $(X,Y)$，则对任意实数 $x,y$ 有
+\[
+\overline{\{X\le x,\ Y\ge y\}} =\ (\hfill)
+\]
+
+\begin{enumerate}[(A)]
+  \item $\{X<x\}\cup\{Y<y\}$；
+  \item $\{X>x\}\cup\{Y<y\}$；
+  \item $\{X>x\}\cup\{Y>y\}$；
+  \item $\{X<x\}\cup\{Y>y\}$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[3]
+设随机变量 $X,Y$ 相互独立，且服从相同的分布 $B(1,0.8)$，则（\hfill）
+
+\begin{enumerate}[(A)]
+  \item $P(X=Y)=0$；
+  \item $P(X=Y)=0.68$；
+  \item $P(X=Y)=1$；
+  \item $P(X=Y)=0.4$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[4]
+商业建筑火灾损失 $X$（万元）的概率密度函数为
+\[
+f(x)=
+\begin{cases}
+0.005(20-x), & 0\le x\le20,\\[3pt]
+0, & \text{else},
+\end{cases}
+\]
+已知某次火灾损失超过 $8$ 万元，计算该损失超过 $16$ 万元的概率（\hfill）
+
+\begin{enumerate}[(A)]
+  \item $\dfrac13$；
+  \item $\dfrac18$；
+  \item $\dfrac37$；
+  \item $\dfrac19$。
+\end{enumerate}
+\end{homework}
+\begin{homework}[5]
+设随机变量 $X_1,X_2$，则下列命题中正确的有（\hfill）。
+
+\[
+\begin{aligned}
+(1)\ &E(CX_1+b)=CE(X_1)+b;\\
+(2)\ &E(X_1+X_2)=E(X_1)+E(X_2);\\
+(3)\ &D(CX_1+b)=C^2D(X_1)+b;\\
+(4)\ &D(X_1+X_2)=D(X_1)+D(X_2).
+\end{aligned}
+\]
+
+\begin{enumerate}[(A)]
+  \item 1 个；
+  \item 2 个；
+  \item 3 个；
+  \item 4 个。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[6]
+对随机变量 $X$，关于 $E(X),E(X^2)$ 合适的值为（\hfill）。
+
+\begin{enumerate}[(A)]
+  \item $3,\ 8$；
+  \item $3,\ -8$；
+  \item $3,\ -10$；
+  \item $3,\ 10$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[7]
+某品牌日光灯使用寿命服从指数分布，平均寿命为 $500$ 小时，
+则此品牌的一个日光灯实际使用寿命超过其平均寿命的概率为（\hfill）。
+
+\begin{enumerate}[(A)]
+  \item $1-\dfrac1{500}e^{-1}$；
+  \item $\dfrac12$；
+  \item $e^{-1}$；
+  \item $1-e^{-1}$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[1]
+设事件 $A$ 与 $B$ 是相互对立的事件，且 $P(A)>0,\ P(B)>0$，则（\hfill）。
+
+\begin{enumerate}[(A)]
+  \item $P(B|A)>0$；
+  \item $P(AB)=P(A)P(B)$；
+  \item $P(A|B)=P(A)$；
+  \item $P(A|B)=0$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[2]
+设随机变量 $X$ 和 $Y$ 的联合密度函数为
+\[
+f(x,y)=
+\begin{cases}
+e^{-(x+y)}, & 0\le x,y<\infty,\\[2pt]
+0, & \text{else},
+\end{cases}
+\]
+则（\hfill）。
+\end{homework}
+\begin{enumerate}[(A)]
+  \item $1-e^{-2}$；
+  \item $1-e^{-4}$；
+  \item $e^{-2}$；
+  \item $e^{-4}$。
+\end{enumerate}
+\begin{homework}[3]
+设随机变量 $T$ 的分布函数为
+\[
+F(t)=
+\begin{cases}
+1-\left(\dfrac{2}{t}\right)^2, & t>2,\\[4pt]
+0, & \text{else},
+\end{cases}
+\]
+则 $Y=T^2$ 的密度函数在 $y>4$ 时等于（\hfill）
+
+\begin{enumerate}[(A)]
+  \item $\dfrac{4}{y^{2}}$；
+  \item $\dfrac{16}{y}$；
+  \item $\dfrac{8}{y^{3}}$；
+  \item $\dfrac{8}{y^{3/2}}$。
+\end{enumerate}
+\end{homework}
+
+\begin{homework}[4]
+设随机变量 $X$ 和 $Y$ 独立同分布，且服从 $p=0.5$ 的 $0$--$1$ 分布，
+则
+\[
+P\bigl(\max(X,Y)=1\bigr) = (\hfill)
+\]
+
+\begin{enumerate}[(A)]
+  \item $0.5$；
+  \item $0.75$；
+  \item $0.25$；
+  \item $1$。
+\end{enumerate}
+\end{homework}
+\begin{homework}[2]
+一大批同规格零件由甲、乙、丙三台机器共同生产，
+产量分别占总产量的 $20\%, 35\%, 45\%$，
+次品率分别为 $3.5\%, 2\%, 4\%$。
+
+(1) 求该批产品的次品率；
+
+(2) 从该批产品中随机抽取 $1$ 件，发现其为次品，
+求该产品是由甲台机器生产的概率。
+\begin{solution}
+(1) 该批产品的总体次品率为  
+\[
+P(D)=0.2\cdot0.035+0.35\cdot0.02+0.45\cdot0.04
+=0.0295.
+\]
+
+(2) 设 $A_1$ 为“甲机生产”，$D$ 为“次品”，则  
+\[
+P(A_1\mid D)=\frac{P(A_1)P(D\mid A_1)}
+{P(D)}
+=\frac{0.2\cdot0.035}{0.0295}
+\approx0.237.
+\]
+\end{solution}
+\end{homework}
+\begin{homework}[3]
+设 $(\Omega,\mathcal F,P)$ 为概率空间，
+$A$ 为其上的随机事件。
+证明：事件 $A$ 与任意事件独立的充要条件是  
+$P(A)=0$ 或 $P(A)=1$。
+\begin{solution}
+必要性：若 $A$ 与任意事件 $B$ 独立，则  
+\[
+P(A\cap B)=P(A)P(B).
+\]
+取 $B=A$ 得  
+\[
+P(A)=P(A)^2,
+\]
+故 $P(A)=0$ 或 $P(A)=1$。
+
+充分性：若 $P(A)=0$，则  
+\[
+P(A\cap B)=0=P(A)P(B).
+\]
+若 $P(A)=1$，则  
+\[
+P(A\cap B)=P(B)=P(A)P(B).
+\]
+均与任意 $B$ 独立。
+\end{solution}
+\end{homework}
+\begin{homework}[4]
+随机变量 $X$ 的分布函数为
+\[
+F(x)=
+\begin{cases}
+c-e^{-x/2}, & x\ge0,\\
+0, & \text{else}.
+\end{cases}
+\]
+
+(1) 求 $c$ 的值；  
+(2) 求 $X$ 的密度函数 $f_X(x)$；  
+(3) 求 $E[X], D(X)$；  
+(4) 设 $Y=\sqrt{X}$，求其概率密度 $f_Y(y)$。
+\begin{solution}
+(1) 由 $F(\infty)=1$ 得  
+\[
+c-0=1 \Rightarrow c=1.
+\]
+
+(2) 密度为  
+\[
+f_X(x)=F'(x)=\frac12 e^{-x/2},\quad x\ge0.
+\]
+
+(3)  
+\[
+E[X]=\int_0^\infty x\frac12 e^{-x/2}\,dx=2^2=4.
+\]
+指数分布方差为 $4$, 故  
+\[
+D(X)=4.
+\]
+
+(4) 变换 $Y=\sqrt X\Rightarrow X=y^2$，  
+\[
+f_Y(y)=f_X(y^2)\cdot 2y
+=\frac12 e^{-y^2/2}\cdot2y
+=ye^{-y^2/2},\quad y\ge0.
+\]
+\end{solution}
+\end{homework}
+\begin{homework}[5]
+随机向量 $(X,Y)$ 的联合密度为
+\[
+f(x,y)=
+\begin{cases}
+c(x+y), & 0\le x\le2,\ 0\le y\le2,\\
+0, & \text{else}.
+\end{cases}
+\]
+
+(1) 求 $c$ 的值；  
+(2) 计算 $P(1<Y<2\mid X=1)$；  
+(3) 判断 $X,Y$ 是否独立；  
+(4) 令 $Z=X+Y$，求其密度 $f_Z(z)$。
+\begin{solution}
+(1)
+\[
+1=c\int_0^2\int_0^2 (x+y)\,dy\,dx
+=c\cdot8
+\Rightarrow c=\frac18.
+\]
+
+(2) 条件密度  
+\[
+f_{Y|X}(y|1)=\frac{c(1+y)}{\int_0^2 c(1+y)dy}
+=\frac{1+y}{4}.
+\]
+故  
+\[
+P(1<Y<2\mid X=1)
+=\int_1^2\frac{1+y}{4}dy
+=\frac{5}{8}.
+\]
+
+(3) 若独立，应满足  
+\[
+f(x,y)=f_X(x)f_Y(y).
+\]
+但  
+\[
+f(x,y)=\frac18(x+y)=\frac18x+\frac18y
+\]
+不可写成单变量函数之积，故 **不独立**。
+
+(4) 卷积：$Z=X+Y$，支持为 $0\le z\le4$。
+
+当 $0<z<2$：
+\[
+f_Z(z)=\int_0^z \frac18(x+z-x)\,dx
+=\frac18 z^2.
+\]
+
+当 $2\le z\le4$：
+\[
+f_Z(z)=\int_{z-2}^2 \frac18(x+z-x)\,dx
+=\frac18 z(4-z).
+\]
+
+综上：
+\[
+f_Z(z)=
+\begin{cases}
+\frac18 z^2,&0<z<2,\\[4pt]
+\frac18 z(4-z),&2\le z<4,\\[4pt]
+0,&\text{else}.
+\end{cases}
+\]
+\end{solution}
+\end{homework}
+\begin{homework}[6]
+离散型随机变量 $X$ 具有几何分布
+\[
+P(X=k)=pq^{k-1},\quad k=1,2,\ldots,\quad 0<p<1,q=1-p.
+\]
+
+(1) 求 $X$ 的特征函数；  
+(2) 求 $Y=2X+3$ 的特征函数；  
+(3) 利用特征函数求 $E(Y)$。
+\begin{solution}
+(1)
+\[
+\varphi_X(t)=E[e^{itX}]
+=\sum_{k=1}^\infty pq^{k-1}e^{itk}
+=\frac{pe^{it}}{1-qe^{it}}.
+\]
+
+(2)
+\[
+\varphi_Y(t)=E[e^{it(2X+3)}]
+=e^{i3t}\varphi_X(2t)
+=\frac{pe^{i(3+2) t}}{1-qe^{2it}}.
+\]
+
+(3) 利用  
+\[
+E(Y)=\frac1{i}\varphi_Y'(0)
+=2E[X]+3.
+\]
+几何分布均值为  
+\[
+E[X]=\frac1p,
+\]
+故  
+\[
+E(Y)=\frac{2}{p}+3.
+\]
+\end{solution}
+\end{homework}
+\section{十二次作业}
+\begin{dxtips}
+   大数定律本质上要证明的是 $n$ 次抽取的平均等于他的期望值，
+比如说投骰子可能连着几次是 $2,3,4,4,3,2$，
+数字越多这些平均数越接近他的期望 $3.5$，
+他就符合大数定律。
+
+用概率的话表述这个就是任意$\varepsilon$>0
+
+\[
+\lim_{n\to\infty}
+\mathbb P\!\left(
+\left|
+\frac{1}{n}\sum_{k=1}^{n} X_k - \mathbb E[X_1]
+\right|
+< \varepsilon
+\right)
+= 1.
+\]
+有多种表述方式反正就是小于ε概率=1，大于ε概率等于0
+\end{dxtips}
+\begin{homework}[5.3]
+将编号为 $1,2,\ldots,n$ 的球放入编号为 $1,2,\ldots,n$ 的盒，每盒只放一球，
+以 $S_n$ 表示球与盒的编号正好相同的个数，证明
+\[
+\frac1n \bigl[S_n - E(S_n)\bigr] \xrightarrow{P} 0 
+\qquad (n\to\infty).
+\]
+\end{homework}
+\begin{dxtips}
+    依概率收敛
+\end{dxtips}
+\begin{solution}
+设
+\[
+X_i=
+\begin{cases}
+1,& \text{第 $i$ 个球放入第 $i$ 个盒},\\
+0,& \text{否则},
+\end{cases}
+\qquad i=1,2,\ldots,n.
+\]
+则
+\[
+S_n=\sum_{i=1}^n X_i.
+\]
+
+由对称性，
+\[
+E(X_i)=\frac{1}{n},
+\qquad
+E(S_n)=\sum_{i=1}^n E(X_i)=1.
+\]
+
+注意到
+\[
+E(X_i^2)=E(X_i)=\frac{1}{n},
+\]
+且当 $i\neq j$ 时，
+\[
+E(X_iX_j)=\frac{1}{n(n-1)}.
+\]
+因此
+\[
+\mathrm{Var}(S_n)
+=\sum_{i=1}^n \mathrm{Var}(X_i)
++2\sum_{1\le i<j\le n}\mathrm{Cov}(X_i,X_j)
+=1.
+\]
+
+由切比雪夫不等式，对任意 $\varepsilon>0$，
+\[
+P\!\left(
+\left|\frac{S_n-E(S_n)}{n}\right|>\varepsilon
+\right)
+\le
+\frac{\mathrm{Var}(S_n)}{n^2\varepsilon^2}
+=\frac{1}{n^2\varepsilon^2}
+\to 0 \quad (n\to\infty).
+\]
+
+因此
+\[
+\frac1n\bigl[S_n-E(S_n)\bigr]\xrightarrow{P}0.
+\]
+\end{solution}
+\begin{dxtips}
+    E符号就是加权平均符号，权重就是骰子的数，平均就平均在乘概率
+\end{dxtips}
+\begin{definition}
+    设 $S_n$ 是 $n$ 重伯努利试验中事件 $A$ 发生的次数，
+$p$ 是事件 $A$ 发生的概率，
+则对任给的 $\varepsilon>0$，
+
+\[
+\lim_{n\to\infty}
+P\!\left\{
+\left|
+\frac{S_n}{n}-p
+\right|
+<\varepsilon
+\right\}
+=1,
+\]
+
+或
+
+\[
+\lim_{n\to\infty}
+P\!\left\{
+\left|
+\frac{S_n}{n}-p
+\right|
+\ge \varepsilon
+\right\}
+=0.
+\]
+\end{definition}
+\begin{dxtips}
+    一共n个数，第n个只能和n-1个其他的组成cov，首先(1+n-1)*(n-1)/2才是总项数
+\end{dxtips}
+\begin{definition}
+    大数定律就是：当随机变量序列满足独立同分布且 $\mathbb E|X_1|<\infty$
+（或更一般地独立但满足 $\sum_{n\ge1}\mathrm{Var}(X_n)/n^2<\infty$）时，
+样本均值 $\frac1n\sum_{k=1}^n X_k$ 会收敛到其期望
+（强：几乎处处；弱：依概率）。
+\end{definition}
+\begin{dxtips}
+    \begin{itemize}
+  \item 切比雪夫不等式（$k=2$，用于“弱大数/依概率收敛”的常见套路）  
+  设 $S_n=\sum_{i=1}^n X_i$，$E[X_i]=\mu$，且独立（保证方差可加）。对任意 $\varepsilon>0$，
+  \[
+  P\!\left(\left|\frac{S_n}{n}-\mu\right|\ge \varepsilon\right)
+  =P\!\left(\left|S_n-E[S_n]\right|\ge n\varepsilon\right)
+  \le \frac{\operatorname{Var}(S_n)}{n^2\varepsilon^2}
+  =\frac{\sum_{i=1}^n \operatorname{Var}(X_i)}{n^2\varepsilon^2}.
+  \]
+  若进一步 $X_i$ 同分布且 $\operatorname{Var}(X_i)=\sigma^2<\infty$，则
+  \[
+  P\!\left(\left|\bar X_n-\mu\right|\ge \varepsilon\right)
+  \le \frac{\sigma^2}{n\varepsilon^2}\xrightarrow[n\to\infty]{}0,
+  \]
+  从而 $\bar X_n\to \mu$（依概率收敛，弱大数定律）。
+
+  \item 强大数定律（a.s. 收敛）与“仅靠切比雪夫”的差别  
+  强大数要证明
+  \[
+  \bar X_n=\frac{S_n}{n}\xrightarrow{a.s.}\mu,
+  \]
+  常用 Borel--Cantelli 需要对每个 $\varepsilon>0$ 有
+  \[
+  \sum_{n=1}^\infty P\!\left(|\bar X_n-\mu|\ge \varepsilon\right)<\infty.
+  \]
+  但切比雪夫给出的是
+  \[
+  P\!\left(|\bar X_n-\mu|\ge \varepsilon\right)\le \frac{\sigma^2}{n\varepsilon^2},
+  \]
+  而
+  \[
+  \sum_{n=1}^\infty \frac{1}{n}=\infty,
+  \]
+  因此“切比雪夫 + Borel--Cantelli”一般不能直接推出强大数。
+
+  \item Kolmogorov 判别法（一个能直接推出强大数的充分条件）  
+  若 $\{X_n\}$ 独立，$\operatorname{Var}(X_n)=\sigma_n^2$ 存在且
+  \[
+  \sum_{n=1}^\infty \frac{\sigma_n^2}{n^2}<\infty,
+  \]
+  则
+  \[
+  \frac{1}{n}\sum_{k=1}^n \bigl(X_k-E[X_k]\bigr)\xrightarrow{a.s.}0,
+  \]
+  即强大数定律成立。
+\end{itemize}
+\end{dxtips}
+\begin{homework}[5.4]
+设 $\{X_n\}$ 为独立随机变量序列，满足
+\[
+P(X_n = n^\lambda) = P(X_n = -n^\lambda) = 0.5 , \qquad n=1,2,\ldots,
+\]
+其中常数 $\lambda<0.5$。证明 $\{X_n\}$ 服从大数定律。
+\end{homework}
+\begin{solution}
+由题设，
+\[
+E(X_n)=0,
+\qquad
+\mathrm{Var}(X_n)=E(X_n^2)=n^{2\lambda}.
+\]
+
+注意到
+\[
+\sum_{n=1}^\infty \frac{\mathrm{Var}(X_n)}{n^2}
+=\sum_{n=1}^\infty n^{2\lambda-2}.
+\]
+由于 $\lambda<\tfrac12$，有 $2\lambda-2<-1$，故该级数收敛。
+
+由 Kolmogorov 强大数定律，独立随机变量序列 $\{X_n\}$ 满足
+\[
+\frac1n\sum_{k=1}^n \bigl(X_k-E(X_k)\bigr)\xrightarrow{a.s.}0.
+\]
+又因为 $E(X_k)=0$，于是
+\[
+\frac1n\sum_{k=1}^n X_k \xrightarrow{a.s.}0.
+\]
+
+因此 $\{X_n\}$ 服从大数定律。
+\end{solution}
+%------------------------------------------------------
+\begin{dxtips}
+    你不断重复做同一个随机实验（或观察一串随机变量）得到数据 $X_1,X_2,\dots$，然后算前 $n$ 次的平均数
+\[
+\overline X_n=\frac1n\sum_{k=1}^n X_k.
+\]
+当 $n$ 越来越大时，这个平均数会越来越接近“理论平均值”（期望）$\mathbb E[X]$。
+
+更严格地说有两种常见表述：
+
+\begin{itemize}
+  \item \textbf{弱大数定律（依概率收敛）}：对任意 $\varepsilon>0$，
+  \[
+  \mathbb P\big(|\overline X_n-\mathbb E[X]|>\varepsilon\big)\to 0\quad (n\to\infty).
+  \]
+  意思是：偏离期望超过 $\varepsilon$ 的概率越来越小。
+
+  \item \textbf{强大数定律（几乎处处收敛）}：
+  \[
+  \mathbb P\left(\lim_{n\to\infty}\overline X_n=\mathbb E[X]\right)=1.
+  \]
+  意思是：在“几乎所有”随机结果下，$\overline X_n$ 最终都会收敛到期望。
+\end{itemize}
+
+直观一句话：做的次数足够多，平均值就会稳定在理论平均附近（例如抛硬币正面比例会越来越接近 $1/2$）。
+\end{dxtips}
+\begin{homework}[5.5]
+设 $\{X_n\}$ 为独立同分布随机变量序列，$X_1$ 的分布函数为
+\[
+F(x)=\frac12 + \frac1\pi \arctan x , \qquad -\infty < x < \infty .
+\]
+问该随机变量序列是否服从大数定律？并说明结论。
+\end{homework}
+\begin{solution}
+由题设，
+\[
+F(x)=\frac12+\frac{1}{\pi}\arctan x,\qquad -\infty<x<\infty,
+\]
+因此 $X_1$ 的概率密度函数为
+\[
+f(x)=F'(x)=\frac{1}{\pi}\cdot\frac{1}{1+x^2},\qquad -\infty<x<\infty.
+\]
+这表明 $X_1$ 服从标准 Cauchy 分布。
+
+注意到
+\[
+E[X_1]=\int_{-\infty}^{\infty} x f(x)\,dx
+=\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{x}{1+x^2}\,dx
+\]
+该积分不收敛，因此 $E[X_1]$ 不存在（从而方差也不存在）。
+
+由于 $\{X_n\}$ 为独立同分布随机变量序列，而单个随机变量的数学期望不存在，
+不满足大数定律（无论弱大数定律还是强大数定律）所要求的基本条件，
+因此该随机变量序列不服从大数定律。
+
+事实上，对独立同分布的 Cauchy 随机变量序列 $\{X_n\}$，其样本均值
+\[
+\bar X_n=\frac{1}{n}\sum_{k=1}^n X_k
+\]
+与 $X_1$ 具有相同的分布，仍为 Cauchy 分布，从而并不收敛到某个常数。
+
+综上，随机变量序列 $\{X_n\}$ 不服从大数定律。
+\end{solution}
+\begin{dxtips}
+    \begin{itemize}
+  \item \textbf{马尔可夫不等式（Markov）}：若随机变量 $Y\ge 0$，则对任意 $a>0$，
+  \[
+    \mathbb P(Y\ge a)\le \frac{\mathbb E[Y]}{a}.
+  \]
+
+  \item \textbf{由马尔可夫推出切比雪夫不等式（Chebyshev）}：
+  设随机变量 $X$ 满足 $\mathbb E[X]=\mu$ 且 $\mathrm{Var}(X)=\sigma^2<\infty$。
+  取非负随机变量
+  \[
+    Y=(X-\mu)^2 \ge 0,
+  \]
+  并令 $a=\varepsilon^2$（$\varepsilon>0$），则由马尔可夫不等式得
+  \[
+    \mathbb P\!\left((X-\mu)^2 \ge \varepsilon^2\right)
+    \le
+    \frac{\mathbb E\!\left[(X-\mu)^2\right]}{\varepsilon^2}
+    =
+    \frac{\mathrm{Var}(X)}{\varepsilon^2}.
+  \]
+  注意到事件等价
+  \[
+    \{(X-\mu)^2 \ge \varepsilon^2\}=\{|X-\mu|\ge \varepsilon\},
+  \]
+  因而得到切比雪夫不等式
+  \[
+    \mathbb P\!\left(|X-\mu|\ge \varepsilon\right)
+    \le
+    \frac{\sigma^2}{\varepsilon^2}.
+  \]
+
+  \item \textbf{结论}：切比雪夫不等式是马尔可夫不等式在
+  $Y=(X-\mu)^2$（并取阈值 $a=\varepsilon^2$）这一特殊选择下的直接推论。
+  马尔可夫不等式就能弄出至关重要的E也就是加权符号
+\end{itemize}
+\end{dxtips}
+\begin{dxtips}
+    切比雪夫不等式下面有ε的平方是因为最开始的时候就是小于等于ε²。
+\end{dxtips}
+\begin{dxtips}[方差深刻理解]
+   方差（Variance）的基本公式为
+\[
+\mathrm{Var}(X)=\mathbb E\!\left[(X-\mathbb E[X])^{2}\right].
+\]
+本质上还是加权平均只不过这次权重值不是骰子几点了而是骰子的点数减去他的期望(平均值升级版)再平方。
+常用等价形式（展开平方）：
+\[
+\mathrm{Var}(X)=\mathbb E[X^{2}]-(\mathbb E[X])^{2}.
+\]
+
+\end{dxtips}
+
+\begin{homework}[5.7]
+设独立随机变量序列 $\{X_n\}$ 分别有以下概率分布，讨论其是否服从大数定律：
+
+\begin{itemize}
+  \item[(1)] $P(X_n = 2^n)=P(X_n = -2^n)=0.5$；
+  \item[(2)] $P(X_n = 2^n)=P(X_n = -2^n)=2^{-(2n+1)}$, 
+              \quad $P(X_n=0)=1-2^{-2n}$；
+  \item[(3)] $P(X_n = n)=P(X_n = -n)=0.5 n^{-0.5}$, 
+              \quad $P(X_n=0)=1-n^{-0.5}$。
+\end{itemize}
+\end{homework}
+\begin{solution}
+分别讨论三种情形。记
+\[
+S_n=\sum_{k=1}^n X_k, \qquad \overline X_n=\frac{S_n}{n}.
+\]
+
+\medskip
+\noindent
+\textbf{(1) $P(X_n=\pm 2^n)=\tfrac12$}
+
+由对称性，
+\[
+E(X_n)=0,
+\qquad
+\Var(X_n)=E(X_n^2)=2^{2n}.
+\]
+因此
+\[
+\sum_{n=1}^{\infty}\frac{\Var(X_n)}{n^2}
+=
+\sum_{n=1}^{\infty}\frac{2^{2n}}{n^2}
+=+\infty.
+\]
+
+另一方面，
+\[
+P(|X_n|>n)=1 \quad (\forall n),
+\]
+说明 $X_n$ 的波动随 $n$ 指数增长，样本均值不可能稳定。
+
+因此，$\{X_n\}$ \textbf{不服从大数定律}（弱、强大数定律均不成立）。
+
+\medskip
+\noindent
+\textbf{(2) 
+$P(X_n=\pm 2^n)=2^{-(2n+1)},\;P(X_n=0)=1-2^{-2n}$}
+
+同样由对称性，
+\[
+E(X_n)=0.
+\]
+计算方差：
+\[
+\Var(X_n)=E(X_n^2)
+=
+(2^n)^2\cdot 2\cdot 2^{-(2n+1)}
+=
+1.
+\]
+于是
+\[
+\sum_{n=1}^{\infty}\frac{\Var(X_n)}{n^2}
+=
+\sum_{n=1}^{\infty}\frac{1}{n^2}
+<\infty.
+\]
+
+由 Kolmogorov 强大数定律的充分条件，
+\[
+\frac{1}{n}\sum_{k=1}^n (X_k-E X_k)
+\to 0 \quad \text{a.s.}
+\]
+即
+\[
+\overline X_n \to 0 \quad \text{a.s.}
+\]
+
+因此，$\{X_n\}$ \textbf{服从强大数定律}（从而也服从弱大数定律）。
+
+\medskip
+\noindent
+\textbf{(3) 
+$P(X_n=\pm n)=\tfrac12 n^{-1/2},\;P(X_n=0)=1-n^{-1/2}$}
+
+由对称性，
+\[
+E(X_n)=0.
+\]
+计算方差：
+\[
+\Var(X_n)=E(X_n^2)
+=
+n^2\cdot 2\cdot \frac12 n^{-1/2}
+=
+n^{3/2}.
+\]
+于是
+\[
+\sum_{n=1}^{\infty}\frac{\Var(X_n)}{n^2}
+=
+\sum_{n=1}^{\infty} n^{-1/2}
+=+\infty.
+\]
+
+并且
+\[
+P(X_n\neq 0)=n^{-1/2},
+\qquad
+\sum_{n=1}^{\infty}P(X_n\neq 0)=\infty,
+\]
+说明 $X_n$ 出现大幅波动的次数过多，样本均值无法稳定。
+
+因此，$\{X_n\}$ \textbf{不服从大数定律}。
+
+\medskip
+\noindent
+\textbf{结论：}
+\[
+\text{(1) 不服从大数定律；}\qquad
+\text{(2) 服从强大数定律；}\qquad
+\text{(3) 不服从大数定律。}
+\]
+\end{solution}
+\begin{homework}[5.8]
+设 $\{X_n\}$ 为随机变量序列，且 $i\ne j$ 时协方差满足 $\operatorname{Cov}(X_i,X_j)<0$。
+讨论该随机变量序列是否服从大数定律。
+\end{homework}
+\begin{solution}
+设
+\[
+S_n=\sum_{k=1}^n X_k.
+\]
+由方差展开公式，
+\[
+\mathrm{Var}(S_n)
+=\sum_{k=1}^n \mathrm{Var}(X_k)
++2\sum_{1\le i<j\le n}\mathrm{Cov}(X_i,X_j).
+\]
+由于当 $i\neq j$ 时 $\mathrm{Cov}(X_i,X_j)<0$，故
+\[
+\mathrm{Var}(S_n)
+\le \sum_{k=1}^n \mathrm{Var}(X_k).
+\]
+
+若进一步假设
+\[
+\sup_{n}\mathrm{Var}(X_n)<\infty,
+\]
+则存在常数 $C>0$ 使得
+\[
+\mathrm{Var}(S_n)\le Cn.
+\]
+于是
+\[
+\mathrm{Var}\!\left(\frac{S_n}{n}\right)
+=\frac{\mathrm{Var}(S_n)}{n^2}
+\le \frac{C}{n}\to 0.
+\]
+
+由切比雪夫不等式，
+\[
+\frac{S_n-E(S_n)}{n}\xrightarrow{P}0,
+\]
+即该随机变量序列服从大数定律（弱大数定律）。
+
+\medskip
+\noindent
+需要指出的是，仅有 $\mathrm{Cov}(X_i,X_j)<0$ 本身不足以保证大数定律，
+仍需对方差作适当控制。
+\end{solution}
+%------------------------------------------------------
+\begin{dxtips}[协方差的理解]
+    就是每一个取的是Xi和Xj同时发生的概率然后乘的是 xi减去期望值和xj减去期望值。
+    \[
+\mathrm{Cov}(X_i, X_j)
+=
+\mathbb E[X_i X_j]
+-
+\mathbb E[X_i]\mathbb E[X_j].
+\]
+因为Xi乘Yi这个值是确定所以，如果不等于只能是Xi和Yi同时发生的概率不等于他们分别的概率相乘，因此协方差可以衡量相关性
+\end{dxtips}
+\begin{homework}[5.9]
+设 $\{X_n\}$ 是随机变量序列，各 $\operatorname{Var}(X_n)$ 存在，且 $\operatorname{Var}(X_n)\le c$，
+其中常数 $c$ 与 $n$ 无关。又设当 $|i-j|\to\infty$ 时，相关系数 $\rho_{ij}\to 0$。
+讨论 $\{X_n\}$ 是否服从大数定律。
+\end{homework}
+\begin{solution}
+设
+\[
+S_n=\sum_{k=1}^n X_k.
+\]
+由方差展开公式，
+\[
+\mathrm{Var}(S_n)
+=\sum_{k=1}^n \mathrm{Var}(X_k)
++2\sum_{1\le i<j\le n}\mathrm{Cov}(X_i,X_j).
+\]
+
+由题设 $\mathrm{Var}(X_n)\le c$，且
+\[
+\mathrm{Cov}(X_i,X_j)
+=\rho_{ij}\sqrt{\mathrm{Var}(X_i)\mathrm{Var}(X_j)}
+\le c\,|\rho_{ij}|.
+\]
+
+于是
+\[
+\mathrm{Var}(S_n)
+\le cn + 2c\sum_{1\le i<j\le n} |\rho_{ij}|.
+\]
+
+由于当 $|i-j|\to\infty$ 时 $\rho_{ij}\to 0$，对任意 $\varepsilon>0$，
+存在整数 $m$，使得当 $|i-j|>m$ 时 $|\rho_{ij}|<\varepsilon$。
+从而
+\[
+\sum_{1\le i<j\le n} |\rho_{ij}|
+\le Cn + \varepsilon n^2,
+\]
+其中 $C$ 为常数。
+
+因此
+\[
+\mathrm{Var}(S_n)\le C_1 n + C_2 \varepsilon n^2.
+\]
+从而
+\[
+\mathrm{Var}\!\left(\frac{S_n}{n}\right)
+=\frac{\mathrm{Var}(S_n)}{n^2}
+\le \frac{C_1}{n}+C_2\varepsilon.
+\]
+
+令 $n\to\infty$，再令 $\varepsilon\to 0$，得
+\[
+\mathrm{Var}\!\left(\frac{S_n}{n}\right)\to 0.
+\]
+
+由切比雪夫不等式，
+\[
+\frac{S_n-E(S_n)}{n}\xrightarrow{P}0,
+\]
+因此随机变量序列 $\{X_n\}$ 服从大数定律（弱大数定律）。
+\end{solution}
+\begin{definition}[协方差与方差]
+  \begin{itemize}
+  \item \textbf{方差是协方差的特例：}
+  \[
+    \mathrm{Var}(X)=\mathrm{Cov}(X,X).
+  \]
+
+  \item \textbf{协方差的双线性展开（把方差/协方差连起来的最常用工具）：}
+  \[
+    \mathrm{Cov}(aX+b,\;cY+d)=ac\,\mathrm{Cov}(X,Y).
+  \]
+  特别地，
+  \[
+    \mathrm{Var}(aX+b)=a^2\mathrm{Var}(X).
+  \]
+
+  \item \textbf{和的方差展开：}
+  \[
+    \mathrm{Var}(X+Y)=\mathrm{Var}(X)+\mathrm{Var}(Y)+2\,\mathrm{Cov}(X,Y).
+  \]
+
+  \item \textbf{一般化到 $n$ 个变量（大数定律/中心极限定理里最常见）：}
+  \[
+    \mathrm{Var}\!\left(\sum_{k=1}^n X_k\right)
+    =
+    \sum_{k=1}^n \mathrm{Var}(X_k)
+    +2\sum_{1\le i<j\le n}\mathrm{Cov}(X_i,X_j).
+  \]
+
+  \item \textbf{若两两独立（或至少两两不相关且满足相应条件），则协方差项消失：}
+  \[
+    \mathrm{Cov}(X_i,X_j)=0\ (i\ne j)
+    \quad\Longrightarrow\quad
+    \mathrm{Var}\!\left(\sum_{k=1}^n X_k\right)=\sum_{k=1}^n \mathrm{Var}(X_k).
+  \]
+\end{itemize}  
+\end{definition}
