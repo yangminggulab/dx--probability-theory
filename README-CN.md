@@ -1,33 +1,44 @@
-<!-- Author : Dongsheng Deng & Liam Huang-->
-<!-- Program Email: elegantlatex2e@gmail.com -->
+# dx 的概率论
 
-[Homepage](https://elegantlatex.org/) | [Github](https://github.com/ElegantLaTeX/ElegantBook) | [CTAN](https://ctan.org/pkg/elegantbook) | [Download](https://github.com/ElegantLaTeX/ElegantBook/releases) | [Wiki](https://github.com/ElegantLaTeX/ElegantBook/wiki) | [Weibo](https://weibo.com/elegantlatex)
+## 序
 
-![License](https://img.shields.io/ctan/l/elegantbook.svg) ![CTAN Version](https://img.shields.io/ctan/v/elegantbook.svg) ![Github Version](https://img.shields.io/github/release/ElegantLaTeX/ElegantBook.svg) ![Repo Size](https://img.shields.io/github/repo-size/ElegantLaTeX/ElegantBook.svg)
+我后来越来越觉得，概率论是一门特别容易被误解的课。
 
----
+很多人一提到概率论，先想到的是分布、公式、期望、方差、积分，甚至会觉得它的难点主要在计算上。但我自己真正学进去以后，印象最深的反而不是某一个公式有多复杂，而是这门课一直在训练一种很特别的判断力: 你到底有没有看清题目在描述谁，样本空间有没有变，哪个量是结果，哪个量是条件，哪个对象应该先固定，哪个对象应该后处理。
 
-# ElegantBook 优美的 LaTeX 书籍模板
+所以这本书从一开始，就不是照着目录把定义和定理重新排一遍的整理稿。我更想把自己真正理解概率论的路径保留下来。你会在里面看到很多地方不是直接上公式，而是先停一下，先问一句: “这个概率到底在说什么？”
 
-ElegantBook 是为 LaTeX 书籍写作而设计的模板，由 [Dongsheng Deng](https://ddswhu.me/) 和 [Liam Huang](https://liam.page/) 创立，模板创立的初衷是方便我们自己做笔记 :smile:。如果你有其他问题、建议或者报告 bug，可以提交 issues 或者给我们发邮件：elegantlatex2e@gmail.com。QQ 用户交流群：692108391，欢迎加入。
+## 为什么我想这样写概率论
 
-## 重要提示
+因为我觉得，概率论真正难的地方，从来不只是“不会算”，而是“看错了”。
 
-**重要提示**：ElegantLaTeX 项目 **不接受** 任何非预授权的提交（pull requests）！
+题目一旦看错，后面所有计算都只是在把错误做得更完整。可如果题目看对了，很多原本吓人的东西会一下子变得很自然。书里那些我特别舍不得删的 `dxtips`，其实大多都在做这件事。像“谁做选择谁做指数”“发生什么就设什么”“零概率事件不一定是不可能事件”“如何分辨先积谁后积谁”，这些话看起来很口语，可它们恰恰是在帮我们训练一种概率直觉: 不要急着算，先分清结构。
 
-## 致谢
+我很喜欢书里对条件概率的一种说法: 在 A 发生的前提下发生 B，本质上就是把样本空间从 $\Omega$ 切换成 A。像这样的解释，会让我觉得概率论终于不再只是符号游戏，而是真正在重新安排“我们站在哪里看问题”。一旦这个动作想清楚了，贝叶斯公式、全概率公式、条件分布，都会比单纯背结论容易得多。
 
-特别感谢 [sikouhjw](https://github.com/sikouhjw) 和 [syvshc](https://github.com/syvshc) 长期以来对于 Github 上 issue 的快速回应，以及各个社区论坛对于 ElegantLaTeX 相关问题的回复。
-特别感谢 ChinaTeX 以及 [LaTeX 工作室](http://www.latexstudio.net/)对于本系列模板的大力宣传与推广。
+## 这本书里想留下什么
 
-如果你喜欢我们的模板，你可以在 Github 上收藏我们的模板。
+我当然也写了完整的主线。
 
-## 协议
+第一章从随机事件、概率公理、条件概率、独立性讲起，把最基本的概率语言搭起来。第二章进入一维随机变量、分布函数、离散型与连续型分布、二维分布和卷积型问题。第三章到第五章再往前走到数字特征、特征函数、大数定律和中心极限定理。
 
-本模板发布遵循 LaTeX 项目公共许可证 1.3 c 或更高版本。如果是衍生作品，请务必加入协议声明和模板信息（github、CTAN 地址）。
+但如果只把这本书看成这些章节标题，你会错过它最重要的一部分。因为这本书真正花心思保住的，不只是“知识点”，而是做题时脑子里应该怎么想。尤其是 `作业.tex`、`最后要看的作业.tex`、`考试最后要看的.tex` 这些文件，它们不是正文的附属物，很多时候反而更像这本书的另一条暗线: 用一大堆具体题目，把概率论里那些最容易模糊的判断，一次次钉牢。
 
-## 衍生作
+## 我想把它写给谁
 
-+ [ElegantBookdown](https://github.com/XiangyunHuang/ElegantBookdown)：[XiangyunHuang](https://github.com/XiangyunHuang) 开发并维护的基于 ElegantBook 的 Bookdown 模板。
-+ [bookdownplus](https://github.com/pzhaonet/bookdownplus)：应网友要求，[pzhaonet](https://github.com/pzhaonet) 在 bookdownplus 收录了 ElegantPaper 模板，并为 Mac 做了字体适配。
-+ [PanBook](https://github.com/annProg/PanBook)：[annProg](https://github.com/annProg) 开发并维护的基于 Markdown 写作的工作流，收录了 ElegantBook 和 ElegantPaper 模板。
+我想把它写给两种人。
+
+第一种，是第一次学概率论、经常觉得“老师一讲我就懂，题一做我就乱”的人。如果你也有这种感受，那你并不孤单。很多时候问题不是你不会算，而是你还没有习惯用概率论的方式去看题。这本书如果能帮你慢慢建立这种方式，它就已经很有价值了。
+
+第二种，是已经学过一遍、正在备考或者回头复盘的人。第二遍学概率论时，最重要的往往不再是从头认识分布，而是终于开始意识到，很多题背后重复出现的是同一种结构。那时你会明白，真正好用的从来不只是公式表，而是那些看似短促、其实非常关键的判断句。
+
+## 最后
+
+如果这本书最后能让你在看到一道概率题时，不再第一反应就是去找公式，而是先问“这里到底是谁在做选择”“样本空间有没有变”“发生了什么就该设什么”；如果它能让你慢慢觉得，概率论不是一门靠记忆强撑的课，而是一门越来越讲究视角和结构的课；如果它能让你第一次真正体会到，题目做顺的时候，背后其实不是运气好，而是你终于看对了，那么这本书就已经完成了我最想让它完成的任务。
+
+## 仓库说明
+
+- 主文件是 `main.tex`。
+- 正文按章节拆在 `第一章随机事件及其概率.tex`、`第二章随机变量和分布函数.tex`、`第三章.tex`、`第四章特征函数.tex`、`第五章大数定理与中心极限定理.tex`。
+- 作业与复习材料主要在 `作业.tex`、`纯作业.tex`、`最后要看的作业.tex`、`考试最后要看的.tex`。
+- 若需要本地编译，通常运行 `xelatex main.tex` 两次即可。
